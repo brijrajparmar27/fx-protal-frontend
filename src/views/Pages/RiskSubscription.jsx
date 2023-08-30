@@ -185,6 +185,10 @@ const RiskSubscription = ({ classes }) => {
       }
     } else {
       console.log(res.data);
+      if(res.data && res.data.status==="ACTIVE")
+      {
+        history.push("/auth/risk-portal");
+      }
       setRiskStatus(res.data);
       if (res.data.subsCancelled) setCancelledUser(res.data.subsCancelled);
       else setCancelledUser(false);
