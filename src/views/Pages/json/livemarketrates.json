@@ -1,0 +1,22 @@
+{
+    "date": "2021-01-28",
+    "endpoint": "live",
+    "exchangeRates": [
+        {
+            "ask": 1.21258,
+            "mid": 1.21258,
+            "bid": 1.21257,
+            "currencyPair": "EURUSD",
+            "quoteCurrency": "USD",
+            "baseCurrency": "EUR"
+        },
+        {
+            "ask": 72.9417,
+            "mid": 72.93745,
+            "bid": 72.9332,
+            "currencyPair": "USDINR",
+            "quoteCurrency": "INR",
+            "baseCurrency": "USD"
+        }
+    ]
+}

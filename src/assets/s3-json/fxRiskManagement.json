@@ -1,0 +1,77 @@
+{
+    "seo": {
+        "title": "Foreign Exchange Risk Management Tools For Business",
+        "description": "FX risk management tools involve identifying, quantifying, evaluating, and monitoring foreign exchange risks with access to historical and live market FX data.",
+        "name": "FXGuard - Foreign Exchange Risk Management Tools For Business",
+        "type": "Fx risk management page"
+    },
+
+    "heading": {
+        "content": "FX Risk Management"
+    },
+    "body": {
+        "content": [
+            {
+                "type": "p",
+                "content": ["FX Risk Management enables you to identify, quantify, evaluate, and monitor FX risks in your business. It also provides access to historical and live market FX data, reference Spot and Forward pricing checks, and various risk management tools to enable you effectively manage your FX exposure."]
+            },
+            {
+                "type": "p",
+                "content": ["Given below are various components of FX Risk Management:"]
+            },
+            {
+                "heading": "Risk Insight",
+                "type": "p",
+                "content": ["Risk Insight gives insight into the foreign exchange (FX) risks that exist in your business."]
+            },
+            {
+                "type": "p",
+                "content": ["This tool helps you identify different types of FX risks in your business. It also allows you to quantify these FX risks. Furthermore, it suggests a way forward for you to mitigate and manage FX risks in your business."]
+            },
+            {
+                "heading": "FX Exposure Calculator",
+                "type": "p",
+                "content": ["FX Exposure Calculator is one of the most powerful risk management tools. This provides you with an easy and intuitive way to look at the impact of FX changes on your bottom line or margins. Furthermore, it also provides a scenario analysis on how different levels of hedging percentages can protect your gross margin taking into account certain hedging costs that may be required for hedging."]
+            },
+            {
+                "heading": "Risk Radar",
+                "type": "p",
+                "content": ["This a key tool that enables you to monitor FX risks in real time by inputting your exposure data and any existing hedging that you may have done with hedge providers. It calculates the FX Risk impact, and can be set up to alert you beyond a specific level of FX risks. It also provides you “What If” scenario on a particular hedging decision that you may consider. Furthermore, it provides you various reports that may further help you in understanding your FX risks and in decision making."]
+            },
+            {
+                "heading": "Market Intelligence",
+                "type": "p",
+                "content": ["Market Intelligence is a key tool to monitor the FX market which helps in decision making on assessing and hedging FX exposure, benchmarking the hedges, and getting the required FX data for accounting and other reporting purposes."]
+            },
+            {
+                "type": "p",
+                "content": ["Market Intelligence has a number of components including Live Exchange Rates, Cross Rates, Forward Rates, Economic Calendar and Currency News. Both live and historical information and FX data including in charts forms can be obtained in most traded currency pairs. Furthermore, a Live Reference FX Spot and Forward Calculator can be used to benchmark the pricing of any hedge provider."]
+            },
+            {
+                "heading": "FX Risk Policy",
+                "type": "p",
+                "content": ["This gives you a simple generic template policy framework which when required you can further customise based on your own specific requirements."]
+            },
+            {
+                "heading": "Hedge Accounting",
+                "type": "p",
+                "content": ["Hedge Accounting deals with introduction of hedge accounting, type of hedge accounting, a tool to assess if hedge accounting may be applicable to your hedging situation and which type, and sample documentation for the hedge accounting. Accounting entries for the hedge accounting is also expected to be added in the near future."]
+            },
+            {
+                "heading": "Hedging Guidance Q&A",
+                "type": "p",
+                "content": ["This covers a range of most commonly asked questions including how various FX exposures can be hedged using FX Forward contracts."]
+            },
+            {
+                "heading": "Live Reference Price Check – Spot and Forward",
+                "type": "p",
+                "content": ["Want to compare what value you are getting from any FX provider on Spot and Forward rates? Use the Calculator to get the live, time stamped mid-rate for the chosen/available currency pair. The rate obtained from this Reference Price Check is a mid-rate obtained from independent provider Xignite. This is one of the valuable and handy risk management tools to get information on the rates at which the FX market is trading at the time of enquiry."]
+            },
+            {
+                "heading": "Historical FX Data Download",
+                "type": "p",
+                "content": ["You can get the historical FX Spot data on any chosen currency pair for various information requirements such as for charting, or for accounting. This high quality, accurate, and reliable data is provided by the independent provider Xignite which we bring to you in a very simple and easy to access manner."]
+            }
+        ]
+    }
+}

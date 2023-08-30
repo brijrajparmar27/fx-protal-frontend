@@ -1,0 +1,94 @@
+{
+  "heading": {
+    "content": "Type of Hedge Accounting"
+  },
+  "body": {
+    "content": [
+      {
+        "type": "p",
+        "content": ["There are three types of hedge accounting: fair value hedges, cash flow hedges and hedges of the net investment in a foreign operation:"]
+      },
+      {
+        "heading": "Fair Value Hedges",
+        "type": "p",
+        "content": [
+          {
+            "type": "inline",
+            "content": [
+              {
+                "type": "p",
+                "content": [
+                  "The risk being hedged in a fair value hedge is a change in the fair value of an asset or a liability or an unrecognised firm commitment that is attributable to movements in foreign exchange rates that could affect P&L"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          "The value of hedged item is adjusted for fair value changes attributable to the risk being hedged, and those fair value changes are recognised in P&L. The hedging instrument is also measured at fair value, with changes in fair value recognised in P&L. Therefore, both the hedged item, and hedging instrument impact the P&L of the firm in the same accounting period."
+        ]
+      },
+      {
+        "heading": "Cash Flows Hedges",
+        "type": "p",
+        "content": [
+          {
+            "type": "inline",
+            "content": [
+              {
+                "type": "p",
+                "content": [
+                  "The risk being hedged in a cash flow hedge is the exposure to variability in cash flows that is attributable to currency risk associated with a recognised asset or liability, an unrecognised firm commitment or a highly probable forecast transaction, and could affect P&L."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          "Under the Cash Flow Hedge Accounting, provided the hedge is effective, changes in the fair value of the hedging instrument are initially recognised in OCI. The ineffective portion of the change in the fair value of the hedging instrument (if any) is recognised directly in P&L"
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          "For cash flow hedges of a highly forecastable transaction which result in the recognition of a financial asset or liability, the accumulated gains and losses recorded in equity should be reclassified to P&L in the same period or periods during which the hedged expected future cash flows affect P&L. Where there is a cumulative loss on the hedging instrument and it is no longer expected that the loss will be recovered by increase in value of expected underlying hedged item, it must be immediately recognised in P&L."
+        ]
+      },
+      {
+        "heading": "Hedges of net investment in a foreign operation",
+        "type": "p",
+        "content": [
+          {
+            "type": "inline",
+            "content": [
+              {
+                "type": "p",
+                "content": [
+                  "A firm may have overseas subsidiaries, associates, joint ventures or branches (‘foreign operations’). It may hedge the currency risk associated with the translation of the net assets of these foreign operations into the group’s currency."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          "Exchange differences arising on the consolidation of the net assets of the firm are deferred in equity until the foreign operation is disposed of or liquidated. They are recognised in P&L, on disposal or liquidation, as part of the gain or loss on disposal."
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          "The foreign currency gains or losses on the hedging instrument are deferred in OCI, to the extent that the hedge is effective, until the subsidiary is disposed of or liquidated, when they become part of the gain or loss on disposal."
+        ]
+      }
+    ]
+  }
+}

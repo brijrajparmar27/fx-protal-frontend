@@ -1,0 +1,59 @@
+{
+    "seo": {
+        "title": "Our Team | Fxguard",
+        "description": "Our team has deep expertise in foreign exchange risk management and decades of combined experience working with businesses to mitigate their forex risk.",
+        "name": "FXGuard - Our Team",
+        "type": "Our Team page"
+    },
+
+    "heading": {
+        "content": "Our Team"
+    },
+    "body": {
+        "content": [
+            {
+                "type": "p",
+                "content": ["Our team has deep expertise in foreign exchange risk management and decades of combined experience working with businesses to mitigate their forex risk. We combine this with broad knowledge and expertise of global financial markets, macro-economics, regulation and digital technology. This pool of expertise and knowledge enables us to understand our customers requirements and offer a new approach and solution to manage their risk and preserve profitability."]
+             },
+             {
+                 "type": "p",
+                 "content": ["Together as a team we offer a compelling, efficient and cost-effective solution that works for your business and helps you mitigate your foreign exchange risks."]
+             }
+        ]
+    },
+    "list": [
+        {
+            "image": {
+                "url": "cms/public/images/JP.jpg"
+            },
+            "heading": {
+                "content": "JP Agrawal"
+            },
+            "body": {
+                "content": "JP Agrawal is a founder & CEO of FXGuard. JP has over 25 years of experience in FX risk management, financial markets, and corporate finance with several large international banks based in London and Amsterdam where he focussed on corporate and institutional customers in the UK, and EMEA region. JP has also worked with the biggest oil company in the world – Saudi Aramco and has advised them on management of their FX risks. JP is also a Managing Director of Derivatives Value Advisors Ltd (DVAL), a derivatives advisory boutique he founded in 2012."
+            }
+        },
+        {
+            "image": {
+                "url": "cms/public/images/Trevor.jpg"
+            },
+            "heading": {
+                "content": "Professor Trevor Williams"
+            },
+            "body": {
+                "content": "Trevor Williams is the former Chief Economist at Lloyds Bank Plc. Trevor runs a research consultancy - TW research. He is visiting Professor at the University of Derby, rotating Chairman of the Institute of Economic Affairs Shadow Monetary Policy Committee (SMPC) and author of Trading Economics: A Guide to Economic Statistics for Practitioners (with Victoria Turton). Trevor also lectures at CASS business school and Cardiff University. He is on the editorial board of Economia and Sheffield University Management Schools Advisory Board. He regularly writes articles for publications and speaks at conferences."
+            }
+        },
+        {
+            "image": {
+                "url": "cms/public/images/vikram.jpg"
+            },
+            "heading": {
+                "content": "Vikram Yadav"
+            },
+            "body": {
+                "content": "Vikram Yadav, has been appointed as Chief Risk Advisor of FXGuard. Prior to this, he was with RBS Group for almost a decade in senior and leadership roles, most recently as Treasurer of NatWest Markets N.V. and prior to which, he was RBS European Treasurer. Vikram is a senior executive with 20+ years of international banking experience delivering strategy, capability, change and governance in Treasury, Finance & Risk, covering different business lines across local markets in Europe, Asia, and Africa. In his role as a Chief Risk Advisor, Vikram will advise FXGuard on all aspects of AML, Security risk, Payments Risk, Counterparty Credit, Compliance and Regulatory issues and all aspects of governance. He will significantly strengthen the Risk and Governance function of FXGuard."
+            }
+        }
+    ]
+}

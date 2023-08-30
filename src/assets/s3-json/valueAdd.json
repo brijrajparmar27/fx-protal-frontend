@@ -1,0 +1,49 @@
+{
+    "seo": {
+        "title": " User-Friendly Tools And Solutions For Managing FX Risk",
+        "description": "FXGuard offers value-added solutions for managing FX risk. Protect your business from currency fluctuations with our tools and stay ahead of the competition.",
+        "name": "managing fx risk",
+        "type": "Our Advantage page"
+    },
+
+    "heading": {
+        "content": "Our Advantage"
+    },
+    "body": {
+        "content": [
+            {
+                "heading": "",
+                "type": "p",
+                "content": ["We are a game changer in the overcrowded market of banks and FX brokers. We are confident that our robust, cost-effective and unique subscription-based proposition will disrupt the current exploitative dominance of banks, especially in their dealings with small and medium enterprises (SMEs)."]
+            },
+            {
+                "heading": "Our Solution",
+                "type": "p",
+                "content":[
+                    "Simple, intuitive, and effective. Our solution and tools offer insight and efficacy in managing FX risk as per your own specific requirements, without the need to incur expensive costs on consultants, additional systems, payments and associated overheads."
+                ]
+            },
+            {
+                "heading": "Expertise",
+                "type": "p",
+                "content":[
+                    "A proactive approach to managing FX risk can help businesses maintain financial stability, protect profit margins, and enhance competitiveness in the global marketplace. Our firms’ founders and management have extensive FX risk management knowledge built through decades of domain experience. We have a deep understanding of businesses requirement and issues faced in hedging foreign exchange risks by corporates and institutions, particularly the SMEs. We are delivering this expertise through fully digital technology driven portal for all our customers."
+                ]
+            },
+            {
+                "heading": "Price",
+                "type": "p",
+                "content":[
+                    "Our fees, whether subscription based or one-off (for FX Deals and payments), are transparent and lower than most providers, offering excellent value to our customers."
+                ]
+            },
+            {
+                "heading": "",
+                "type": "p",
+                "content":[
+                    "Simply put, FXGuard facilitates a simple, intuitive and effective FX risk management solution delivered via a web-based portal and tools built on advanced digital technology."
+                ]
+            }
+        ]
+    }
+}

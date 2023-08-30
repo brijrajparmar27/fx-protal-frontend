@@ -1,0 +1,23 @@
+{"heading":{"content":"What is Hedge Accounting"},
+"body":{
+    "content":[
+        {
+            "type": "p",
+            "content": ["Without Hedge Accounting the standard accounting treatment for hedge instruments (such as FX Forward contracts) is that changes in fair value will have to be recorded in Profit and Loss (P&L). Whereas, the underlying hedged assets or liabilities are often measured at (amortized) cost or fair value through equity, or are forecasted items which are not recognized in the Balance Sheet. This results in a (temporary) valuation and or timing mismatch between the hedged item and the hedge instrument and impacts the P&L of a firm."]
+          },
+          {
+            "type": "p",
+            "content": ["Hedge accounting is a technique that modifies the normal basis for recognising gains and losses (or income and expenses) on hedged items and associated hedging instruments, so that both are  recognised in the financial statements in the same accounting period. Hedge Accounting, thus, eliminates or reduces the volatility in the P&L that otherwise would arise if the hedged item and the hedging instrument were accounted for separately."]
+          },
+          {
+            "type": "p",
+            "content": ["Under both UK GAAP (FAS102), and IFRS 9 hedge accounting is optional, and a firm should consider the costs and benefits when deciding whether to use the Hedge Accounting. The costs are usually related to increased resource requirements due to greater documentation, administration and monitoring of hedges and underlying hedged items."]
+          }
+    ]
+    
+    
+    
+}
+}
+
+

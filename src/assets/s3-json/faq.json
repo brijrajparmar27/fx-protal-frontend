@@ -1,0 +1,150 @@
+{
+    "seo": {
+        "title": "Frequently Asked Questions And Answers | FAQ | Fxguard",
+        "description": "Find answers to your questions about managing foreign exchange currency risk with FXGuard. Learn how to protect your investments with our risk management tool.",
+        "name": "FXGuard - FAQ",
+        "type": "FXGuard - Questions and Answers"
+    },
+    "heading": {
+        "content": "Frequently Asked Questions"
+    },
+    "body": {
+        "content": [
+            {
+                "heading": "How is FXGuard different from other banks and FX brokers",
+                "type": "p",
+                "classes": "mb5",
+                "content": ["FXGuard focuses on delivering FX risk management in a simple, intuitive, and effective manner through fully digital means. This brings transparency, increases consistency and effectiveness of foreign exchange currency risk management, and adds value to customers by saving money and protecting profits from FX changes. Traditional banks and FX brokers focus on maximising FX trading volume with an aim to increase their transactional revenues."]
+            },
+            {
+                "heading": "Where does FXGuard gets its FX data for reference rates, various analysis, reports, and market intelligence?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                    "FXGuard primarily sources its FX data from Xignite, a leading market data provider, through APIs. Xignite integrates FX rate data from multiple leading data providers to provide the highest level of liquidity and coverage."
+                ]
+            },
+            {
+                "heading": "My bank or FX broker offers FX advisory and solutions, and they do not charge a fee for this. Why should we subscribe to FX risk management services from FXGuard at a monthly cost?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                    "Banks and FX brokers get paid only if you do any FX transactions with them, and therefore, their incentives are aligned to encourage increased customer transactions. FXGuard’s FX Risk Management subscription-driven offering provides robust analysis, framework, and information to enable customers to take control of their foreign exchange currency risk management without needing expensive consultants or treasury systems. The customers can have the clarity and confidence to manage FX risks on our cloud hosted platform anywhere in the world, with live market data independently and without any bias."
+                ]
+            },
+            {
+                "heading": "Why is your monthly subscription fee for FX Risk Management very cost-effective at £25 plus VAT (if applicable)? How else do you make money?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                    "We are on a mission to make foreign exchange currency risk management simple, intuitive, and effective for SMEs in the UK and eventually worldwide. We are therefore delivering the solution at compelling and very competitive prices for the benefit of our customers. We do not make any money through other means. When we launch our FX Deals and Payments, we will make money from the subscription, one-off transactions costs, and any credit charges (all pre-agreed and transparent) in place of any margin requirements."
+                ]
+            },
+            {
+                "heading": "Can I do FX Spot, Forward and Payments transactions now with FXGuard?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                    "We are working towards launching FX Deals and Payments module of our offering soonest. When we offer this, you can register and do all of the above at a very compelling subscription prices (or with one-off transaction costs if you wish). In the meantime, please register your interest in using these services when we offer them so that we will inform you as soon as they are available."
+                ]
+            },
+            {
+                "heading": "When you launch FX Deals and Payments, will my money be safe?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                    "Your money will be safeguarded in separate bank accounts from the ones we use to fund our business operations. The safeguarding accounts where the customer funds will be deposited will be with established financial institutions. If FXGuard has financial or liquidity problems, customer funds will be protected and ring-fenced from FXGuard’s funds."
+                ]
+            },
+            {
+                "heading": "Are you regulated?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                    "Yes, FXGuard is regulated by the Financial Conduct Authority (FCA), UK (FRN 918221), as an Authorised Payment Institution (API). It is also registered with HMRC (XFML00000163557); HMRC is a supervisory body for Money Laundering Regulations in the UK."
+                ]
+            },
+            {
+                "heading": "Can I try FX Risk Management offering for free before I decide to buy it?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                        {
+                          "type": "inline",
+                          "content": [
+                            {
+                              "type": "p",
+                              "content": "Yes. Please go to our website "
+                            },
+                            {
+                              "type": "a",
+                              "link": "https://fxguard.co.uk",
+                              "linkText": " fxguard.co.uk"
+                            },
+                            {
+                                "type": "p",
+                                "content": "  and click "
+                            },
+                            {
+                                "type": "a",
+                                "link": "https://fxguard.co.uk/home/signup-page",
+                                "linkText": " FREE SIGN UP"
+                            },
+                            {
+                                "type": "p",
+                                "content": " and follow the process. Once you have successfully signed up and have login and password, you can subscribe to any of our Risk Subscription plans for free trial for one month. You will not need to provide any credit card or payment details; you will have live access to all the plan features for one month."
+                            }
+                          ]
+                        },
+                        {
+                            "type": "p",
+                            "content": "During the free trial, if you decide to continue the subscription after the free trial, you can simply provide (add) the payment information on Manage Account section of the web-portal. After the expiry of the trial, if you wish to continue, you will have to resubscribe your chosen plan."
+                        }                    
+                ]
+            },
+            {
+                "heading": "How can I get in touch with you?",
+                "type": "p",
+                "classes": "mb5",
+                "content":[
+                    {
+                      "type": "inline",
+                        "content": [
+                                {
+                                "type": "p",
+                                "content": "Please email us on "
+                                },
+                                {
+                                "type": "a",
+                                "link": "mailto:info@fxguard.co.uk",
+                                "linkText": " info@fxguard.co.uk"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": " or call us on the customer line at  "
+                                },
+                                {
+                                    "type": "a",
+                                    "link": "tel:+442081680505",
+                                    "linkText": " +44 (0) 20 8168 0505"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": ". You can also complete our enquiry form within "
+                                },
+                                {
+                                    "type": "a",
+                                    "link": "https://fxguard.co.uk/home/contact-us",
+                                    "linkText": " CONTACT US"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": " on our website."
+                                }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }   
+}

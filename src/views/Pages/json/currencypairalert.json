@@ -1,0 +1,34 @@
+[
+    {
+        "currencyPair":"EURGBP",
+        "priceOption":"Moves above",
+        "price":10000,
+        "frequency":"Once",
+        "deliveryEmailEnabled":true,
+        "emailRecipents":"ankur.gupta@gmail.com;ankur.gupta1@gmail.com"
+    },
+    {
+        "currencyPair":"USDGBP",
+        "priceOption":"Moves below",
+        "price":99,
+        "frequency":"Once",
+        "deliveryEmailEnabled":false,
+        "emailRecipents":"ankur.gupta@gmail.com;ankur.gupta1@gmail.com"
+    },
+    {
+        "currencyPair":"EURUSB",
+        "priceOption":"Moves above",
+        "price":56540,
+        "frequency":"Once",
+        "deliveryEmailEnabled":true,
+        "emailRecipents":"ankur.gupta@gmail.com;ankur.gupta1@gmail.com"
+    },
+    {
+        "currencyPair":"EURGBP",
+        "priceOption":"Moves above",
+        "price":900,
+        "frequency":"Once",
+        "deliveryEmailEnabled":true,
+        "emailRecipents":"ankur.gupta@gmail.com"
+    }
+]

@@ -1,0 +1,404 @@
+{
+    "seo": {
+        "title": "Foreign Exchange Risk Management | Homepage | FXGuard",
+        "description": "Foreign exchange risk management strategies helps in managing currency risk which helps organisations achieve their goals amid fluctuations.",
+        "name": "FXGuard - Homepage",
+        "type": "Homepage"
+    },
+
+    "header": {
+        "logo": {
+            "url": "assets/img/home.png"
+        },
+        "menu": [
+            {
+                "label": "About Us",
+                "type": "buttonMenu",
+                "children": [
+                    {
+                        "label": "What We Do",
+                        "link": "/home/what-we-do",
+                        "type": "button"
+                    },
+                    {
+                        "label": "Our Team",
+                        "link": "/home/our-team",
+                        "type": "button"
+                    },
+                    {
+                        "label": "Our Values",
+                        "link": "/home/our-values",
+                        "type": "button"
+                    },
+                    {
+                        "label": "Our Clients",
+                        "link": "/home/our-clients",
+                        "type": "button"
+                    }
+                ]
+            },
+            {
+                "label": "Products",
+                "type": "buttonMenu",
+                "children": [
+                    {
+                        "label": "FX Risk Management",
+                        "link": "/home/fx-risk-management",
+                        "type": "buttonMenu"
+                    },
+                    {
+                        "label": "FX Deals and Payments",
+                        "link": "/home/fx-deals-payments",
+                        "type": "button"
+                    }
+                ]
+            },
+            {
+                "label": "PRICING",
+                "type": "buttonMenu",
+                "children": [
+                    {
+                        "label": "FX Risk Management",
+                        "link": "/home/pricing/fx-risk-management",
+                        "type": "buttonMenu"
+                    },
+                    {
+                        "label": "FX Deals and Payments",
+                        "link": "/home/pricing/fx-deals-payments",
+                        "type": "button"
+                    }
+                ]
+            },
+            {
+                "label": "NEWS / BLOGS",
+                "link": "/home/news-blogs",
+                "type": "button"
+            },
+            {
+                "label": "Our Advantage",
+                "link": "/home/value-add",
+                "type": "button"
+            },
+            {
+                "label": "FAQ",
+                "link": "/home/faq",
+                "type": "button"
+            },
+            {
+                "label": "Free Sign Up",
+                "link": "/home/signup-page",
+                "type": "buttonPrimary",
+                "isAuthenticated": false
+            },
+            {
+                "label": "Log In",
+                "link": "/home/login-page",
+                "type": "buttonPrimary",
+                "isAuthenticated": false
+            },
+            {
+                "label": "Contact Us",
+                "link": "/home/contact-us",
+                "type": "buttonPrimary",
+                "isAuthenticated": false
+            }
+        ]
+    },
+    "body": {
+        "banner": {
+            "backgroundImage": {
+                "url": ""
+            },
+            "heading": {
+                "content": "Managing foreign exchange risk made easy and cost effective for SMEs",
+                "level": 1
+            },
+            "subHeading": {
+                "content": "We believe that foreign exchange risk management, which involves hedging a firm's foreign currency cash flows or balance sheet positions, must be made a simpler, more transparent and cost-effective proposition for all Corporates - specifically for those small and mid-sized firms for which elaborate Treasury Management Solutions are too expensive, resource-intensive, complex to implement or onerous to manage.",
+                "level": 2
+            },
+            "buttons": [
+                {
+                    "label": "Learn more",
+                    "link": "",
+                    "type": "button",
+                    "content": ["Managing foreign exchange risks can be complex and expensive despite the provision of foreign exchange products and services by numerous banks and brokers. The reason for this is largely down to lack of focus on FX risk management and a transaction driven approach taken by providers of such products and services. This often leads to an increase in traded FX volumes, and profitability of the provider banks and brokers rather than the effective FX risk management of their customers.",
+                    "We aim to make it easy, simple and cost effective for you to manage foreign exchange risk whilst remaining focused on your core business. In our full-service technology driven web-portal, you can use our robust proprietary platform, FX risk management tools and institutional quality liquidity to manage foreign exchange risk in your business while reducing transactional costs through our unique ‘industry first’ subscription-based service."]
+                },
+                {
+                    "label": "Free Sign Up",
+                    "link": "",
+                    "type": "button"
+                }
+            ]
+        },
+        "featureSection": [
+            {
+                "image": {
+                    "url": "cms/public/images/Money.png"
+                },
+                "heading": {
+                    "content": "FX Risk Management",
+                    "level": 1
+                },
+                "subHeading": {
+                    "content": ["Easy and intuitive tools such as ‘Risk Insight’, ‘FX Calculator’, ‘Risk        Radar’, ‘Risk Impact’, and ‘Risk Alert’ help you identify, assess the impact of foreign exchange fluctuation on your bottom line; as well as the mitigating impact of hedging, on your assessed risk.",
+                    "These also help you monitor the FX risks in your business in real time so that timely action can be taken to manage the risk effectively.",
+                    "Market Intelligence is a key tool to monitor the FX market which helps in decision making on assessing and hedging FX exposure, benchmarking the hedges, and getting the required FX data for accounting and other reporting purposes."],
+                    "moreContent": " Caution: FXGuard limited provides the platform, tools and execution services; however, it does not provide advice on suitability, requirement, proportion or decision by a firm to hedge its business. Hedging may or may not be appropriate for your firm and you should rely on your own decision-making in this regard, or seek professional advice, if necessary.",
+                    "level": 2
+                }
+            },            
+            {
+                "image": {
+                    "url": "cms/public/images/Exchange.png"
+                },
+                "heading": {
+                    "content": "FX Deals and Payments",
+                    "level": 1
+                },
+                "subHeading": {
+                    "content": ["FX Spot and Forward: Most Corporates can manage their foreign exchange risks by using vanilla FX Spot and Forward products. Our platform facilitates simple trade execution, whilst offering transparent and competitive prices to our customers.",
+                    "Payments: Towards risk management execution and settlement, a firm may need to make payments to its associates, subsidiaries or third-parties. Our platform can facilitate payments in an easy, secure and cost-effective manner."],
+                    "level": 2
+                }
+            }
+        ],
+        "contentBox": [
+            {
+                "heading": {
+                    "content": "The Digital Foreign Exchange Risk Manager",
+                    "level": 1
+                },
+                "subHeading": {
+                    "content": "We have deployed our expertise and in-depth understanding of the drivers and dynamics of foreign exchange risk management through tools and analytics such as FX calculators, FX data analytics, plus other features and support put at your disposal on an ongoing basis.",
+                    "level": 2
+                },
+                "body": {
+                    "content": "",
+                    "level": 2
+                }
+            },            
+            {
+                "heading": {
+                    "content": "New Age Foreign Exchange Provider",
+                    "level": 1
+                },
+                "subHeading": {
+                    "content": "No more lack of clarity and transparency about where you can get the best FX prices. Opt for our easy subscription services and always get the institutional rates that we receive and pass on without any added mark-up. For FX Forwards, when dealing without margins (collateral), pay a transparent mark-up based on your profile and requirements.",
+                    "level": 2
+                },
+                "body": {
+                    "content": "",
+                    "level": 2
+                }
+            }
+        ],
+        "planOptionsRisks": {
+            "heading": {
+                "content": "Manage your FX Risks by using our simple, intuitive, and effective Risk Management Solution",
+                "level": 1
+            },
+            "subHeading": {
+                "content": "We believe that customers should have access to simple, intuitive and cost-effective insight and tools to enable them to manage their FX exposures themselves. Most SME customers and some large customers too do not need to spend in expensive treasury staff and expensive systems to enable them to protect their bottom line from FX movements. The digital technology and proprietary robust tools developed by us will enhance your foreign exchange risk management  and save you substantial costs.",
+                "level": 2
+            },
+            "plans": [
+                {
+                    "heading": {
+                        "content": "Subscription Plan",
+                        "level": 1
+                    },
+                    "img": {
+                        "url": ""
+                    },
+                    "price": "From £25 per month plus VAT if applicable",
+                    "body": {
+                        "content": ""
+                    },
+                    "cardType": {
+                        "raised": true
+                    },
+                    "icon": "home",
+                    "buttons": [
+                        {
+                            "name": "subscriptionBtn",
+                            "label": "Choose Plan",
+                            "link": "",
+                            "type": "button",
+                            "color": "info"
+                        }
+                    ]
+                }
+            ],
+            "buttons": [
+                {
+                    "name": "moreInfoBtn",
+                    "label": "More Information",
+                    "link": "/home/pricing/fx-risk-management",
+                    "type": "button",
+                    "color": "github"
+                },
+                {
+                    "name": "freeSignup",
+                    "label": "Free Sign up",
+                    "link": "/home/signup-page",
+                    "type": "button",
+                    "color": "info"
+                }
+            ]
+        },
+        "planOptionsDeals": {
+            "heading": {
+                "content": "Save money on FX deals by subscribing ( Launching Soon! )",
+                "level": 1
+            },
+            "subHeading": {
+                "content": "We believe that customers should always get the best price possible and not have to negotiate spreads. Through our subscription plan, we offer you FX prices as sourced directly from the market, with no additional spread applied. All you pay, is the monthly subscription fee based on your business volume. Alternately, you may opt for a standard plan with no subscription fee and instead a transparent fee is applied per trade. ",
+                "content2": "Note: Margin collateral for FX Forward would apply unless you sign-up to dealing without margin for a competitive pre-agreed credit charge, which would be based on hedge duration and your credit profile.",
+                "level": 2
+            },
+            "plans": [
+                {
+                    "heading": {
+                        "content": "Subscription Plan",
+                        "level": 1
+                    },
+                    "img": {
+                        "url": ""
+                    },
+                    "price": "From £50 per month",
+                    "body": {
+                        "content": "This may be suitable if you trade regularly."
+                    },
+                    "cardType": {
+                        "raised": true
+                    },
+                    "icon": "home",
+                    "buttons": [
+                        {
+                            "name": "subscriptionBtn",
+                            "label": "Choose Plan",
+                            "link": "",
+                            "type": "button",
+                            "color": "info"
+                        }
+                    ]
+                },
+                {
+                    "heading": {
+                        "content": "Standard Account",
+                        "level": 1
+                    },
+                    "img": {
+                        "url": ""
+                    },
+                    "price": "0.10% fixed fee per transaction",
+                    "body": {
+                        "content": "This may be suitable if you trade less frequently."
+                    },
+                    "cardType": {
+                        "raised": true
+                    },
+                    "icon": "weekend",
+                    "buttons": [
+                        {
+                            "name": "standardBtn",
+                            "label": "Default Plan",
+                            "link": "",
+                            "type": "button",
+                            "color": "info"
+                        }
+                    ]
+                }
+            ],
+            "buttons": [
+                {
+                    "name": "moreInfoBtn",
+                    "label": "More Information",
+                    "link": "/home/pricing/fx-deals-payments",
+                    "type": "button"
+                }
+            ]
+        },
+        "subscription": {
+            "heading": {
+                "content": "Subscribe and get more info",
+                "level": 1
+            },
+            "subHeading": {
+                "content": "You can join our e-mailing list by submitting your email address in the box alongside.",
+                "level": 2
+            },
+            "buttons": [
+                {
+                    "name": "keepMeUpdated",
+                    "label": "KEEP ME UPDATED",
+                    "link": "",
+                    "type": "button"
+                }
+            ]
+        },
+        "footer": {
+            "logo": {
+                "url": ""
+            },
+            "heading": {
+                "content": "MORE INFORMATION",
+                "level": 1
+            },
+            "subHeading": {
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan molestie risus a blandit.",
+                "level": 2
+            },
+            "moreInformation": {
+                "subHeading": {
+                    "content": "Simple FX calculators to help you see the impact foreign exchange fluctuations can have on your bottom line, and how by hedging you can reduce the risk of such fluctuations. A word of caution that hedging may not be appropriate on your own situation and you should seek professional assistance if you need one. FXGuard does not provide any advise on hedging or not hedging FX Exposures.",
+                    "level": 2
+                },
+                "links": [
+                    {
+                        "label": "Frequently Asked Questions",
+                        "link": "/home/faq"
+                    },
+                    {
+                        "label": "Regulatory Information",
+                        "link": "/home/regulatory-information"
+                    },
+                    {
+                        "label": "Privacy Policy & GDPR",
+                        "link": "/home/privacy-policy"
+                    },
+                    {
+                        "label": "Careers",
+                        "link": "/home/careers"
+                    }
+                ]
+            },
+            "contactUs": {
+                "socialButtons": [
+                    {
+                        "icon": "facebook",
+                        "link": "",
+                        "type": "icon"
+                    },
+                    {
+                        "icon": "linkedin",
+                        "link": "",
+                        "type": "icon"
+                    },
+                    {
+                        "icon": "twitter",
+                        "link": "",
+                        "type": "icon"
+                    },
+                    {
+                        "icon": "youtube",
+                        "link": "",
+                        "type": "icon"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+export const module = 'RISKS'; // options - FULL, RISKS, DEALS

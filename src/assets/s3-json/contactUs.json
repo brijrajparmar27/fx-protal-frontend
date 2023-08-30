@@ -1,0 +1,41 @@
+{
+    "heading": {
+        "content": "Contact Us"
+    },
+    "body":{
+        "address":{
+            "companyName":"FXGuard Limited",
+            "line1": "30 Kings Road,",
+            "line2": "London W5 2SD,",
+            "country": "United Kingdom"
+        },
+        "email":{
+            "label": "Email",
+            "content": "info@fxguard.co.uk"
+        },
+        "phone": {
+            "label": "Tel",
+            "content": "+44 (0) 20 8168 0505"
+        },
+        "enquiry": {
+            "title": "Send an enquiry:",
+            "description": "If you have a general enquiry, please fill in the form below and a FXGuard representative will contact you as soon as possible.",
+            "form": {
+                "labels":{
+                    "firstName": "First Name",
+                    "lastName": "Last Name",
+                    "corporateEmail": "Corporate email address",
+                    "phoneNumber": "Phone number",
+                    "companyName": "Company Name",
+                    "requirement": "Tell us about your requirement"
+                }
+            }
+        },
+        "agreement": "I agree to FXGuard to storing and processing my personal data and to receiving communications about products and industry insights.",
+        "buttons": [{
+            "label": "Submit",
+            "link": "",
+            "type": "button"
+        }]
+    }
+}

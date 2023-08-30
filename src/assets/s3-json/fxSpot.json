@@ -1,0 +1,21 @@
+{
+    "heading": {
+        "content": "FX Spot"
+    },
+    "body": {
+        "content": [
+            {
+                "type": "p",
+                "content": ["A spot foreign exchange transaction involves the purchase of one currency against the sale of another at an agreed price for delivery on a value date that is usually the trade date plus two working days. There are some exceptions, such as USD/CAD, USD/TRY, USD/PHP, USD/RUB and offshore USD/KZT and USD/PKR pairs which settle at trade date plus 1 working day."]
+            },
+            {
+                "type": "p",
+                "content": ["You may also be able to settle the trade same day subject to the currency pair and cut-off times, and agreed price. Generally speaking, any Spot trade that settles in longer than 2 working days is regarded as a Forward."]
+            },
+            {
+                "type": "p",
+                "content": ["The biggest advantage of an FX spot contract is its simplicity as it allows for a near immediate exchange of currencies at an agreed rate. However, Spot trading is also very restrictive for future expected receivables and payables in foreign currencies simply because these payments are to be expected and paid in future. The FX risks on future payments in foreign currencies can be better managed with FX Forward contracts."]
+            }
+        ]
+    }
+}

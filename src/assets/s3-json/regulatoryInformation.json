@@ -1,0 +1,21 @@
+{
+    "heading": {
+        "content": "Regulatory Information"
+    },
+    "body": {
+        "content": [
+            {
+                "type": "p",
+                "content":[
+                    "FXGuard Limited is authorised and regulated by the Financial Conduct Authority (FCA) under the Payment Services Regulations 2017 (FRN 918221) for the provision of payment services.",
+                    "FXGuard Limited is also registered with Her Majesty’s Revenue & Customs (HMRC) as a Money Services Business – Registration Number XFML00000163557. As a Money Services Business, we abide by the Money Laundering Regulations and follow strict compliance processes. ",
+                    "As required by the Payment Services Regulations 2017, our clients’ funds are permanently held in segregated client bank accounts in leading banks and cannot be claimed by creditors. Client funds are always protected, as they are completely independent of FXGuard’s business accounts and assets.",
+                    "Please note that FXGuard is not providing any regulatory, financial, accounting or any other advice in regards to FX Risk Management and Payments. FX Risk Management analytics and guidance and anything on FXGuard website and portal should not be used as a substitute for advice from suitably qualified, and regulated advisory or accounting professionals or firms.",
+                    "FXGuard never speculates in the currency markets and operates as a matched brokerage. When our clients enter into a transaction with us, we enter into a matching irrevocable covering deal with our counterparties.",
+                    "For additional information regarding regulations please contact:  support@fxguard.co.uk"
+                ],
+                "classes": "groupSubtext"
+            }
+        ]
+    }
+}

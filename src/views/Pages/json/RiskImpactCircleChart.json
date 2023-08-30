@@ -1,0 +1,111 @@
+{
+    "circles":[
+       
+        {
+            "radius":10,
+            "color":"green",
+            "name":"hedging middle",
+            "X":200,
+            "Y":200
+        },
+        {
+            "radius":20,
+            "color":"red",
+            "name":"unhedged exposed outer",
+            "X":100,
+            "Y":110
+        },
+        {
+            "radius":20,
+            "color":"green",
+            "name":"unhedged exposed outer",
+            "X":150,
+            "Y":150
+        },
+        {
+            "radius":20,
+            "color":"red",
+            "name":"unhedged exposed outer",
+            "X":70,
+            "Y":200
+        },
+        {
+            "radius":20,
+            "color":"green",
+            "name":"unhedged exposed outer",
+            "X":130,
+            "Y":200
+        },
+        {
+            "radius":20,
+            "color":"red",
+            "name":"unhedged exposed outer",
+            "X":120,
+            "Y":310
+        },
+
+        
+        
+        {
+            "radius":20,
+            "color":"green",
+            "name":"unhedged exposed outer",
+            "X":160,
+            "Y":260
+        },
+
+        
+        {
+            "radius":20,
+            "color":"red",
+            "name":"unhedged exposed outer",
+            "X":280,
+            "Y":300
+        },
+        
+        
+        {
+            "radius":20,
+            "color":"green",
+            "name":"unhedged exposed outer",
+            "X":240,
+            "Y":260
+        },
+        {
+            "radius":20,
+            "color":"red",
+            "name":"unhedged exposed outer",
+            "X":300,
+            "Y":110
+        },
+       
+        {
+            "radius":20,
+            "color":"green",
+            "name":"unhedged exposed outer",
+            "X":250,
+            "Y":150
+        },
+        {
+            "radius":20,
+            "color":"red",
+            "name":"unhedged exposed outer",
+            "X":330,
+            "Y":200
+        },
+        {
+            "radius":20,
+            "color":"green",
+            "name":"unhedged exposed outer",
+            "X":270,
+            "Y":200
+        }
+    ],
+    "main":{
+        "radius":150,
+        "color":"black",
+        "X":200,
+        "Y":200
+    }
+
+}

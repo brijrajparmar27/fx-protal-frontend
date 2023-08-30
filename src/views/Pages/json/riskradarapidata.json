@@ -1,0 +1,104 @@
+{
+    "functionalCurrency": "GBP",
+    "profit": {
+      "amount": 0,
+      "name": "",
+      "convertedAmount": 0,
+      "fwdDealsConvertedValue": 0,
+      "hedgingPercentage": 0
+    },
+    "senstitivityPercentage": 10,
+    "hedgingPercentage": 0,
+    "existingAssets": {
+      "riskRadarCategory": {
+        "hedgingPercentage": 0,
+        "currencyDetails": [],
+        "convertedValue": 0,
+        "futureConvertedValue": 0,
+        "fwdDealsConvertedValue": 0
+      },
+      "totalAmtWithSensitivePercentage": 0,
+      "sensitiveAmt": 0,
+      "hedgeAmt": 0,
+      "riskAmt": 0
+    },
+    "existingLiabilities": {
+        "riskRadarCategory": {
+            "hedgingPercentage": 0,
+            "currencyDetails": [],
+            "convertedValue": 0,
+            "futureConvertedValue": 0,
+            "fwdDealsConvertedValue": 0
+        },
+        "totalAmtWithSensitivePercentage": 0,
+        "sensitiveAmt": 0,
+        "hedgeAmt": 0,
+        "riskAmt": 0
+    },
+    "payables": {
+        "riskRadarCategory": {
+            "hedgingPercentage": 0,
+            "currencyDetails": [],
+            "convertedValue": 0,
+            "futureConvertedValue": 0,
+            "fwdDealsConvertedValue": 0
+        },
+        "totalAmtWithSensitivePercentage": 0,
+        "sensitiveAmt": 0,
+        "hedgeAmt": 0,
+        "riskAmt": 0
+    },
+    "receivables": {
+        "riskRadarCategory": {
+            "hedgingPercentage": 0,
+            "currencyDetails": [],
+            "convertedValue": 0,
+            "futureConvertedValue": 0,
+            "fwdDealsConvertedValue": 0
+        },
+        "totalAmtWithSensitivePercentage": 0,
+        "sensitiveAmt": 0,
+        "hedgeAmt": 0,
+        "riskAmt": 0
+    },
+    "forecastedRevenues": {
+        "riskRadarCategory": {
+            "hedgingPercentage": 0,
+            "currencyDetails": [],
+            "convertedValue": 0,
+            "futureConvertedValue": 0,
+            "fwdDealsConvertedValue": 0
+        },
+        "totalAmtWithSensitivePercentage": 0,
+        "sensitiveAmt": 0,
+        "hedgeAmt": 0,
+        "riskAmt": 0
+    },
+    "forecastedCosts": {
+        "riskRadarCategory": {
+            "hedgingPercentage": 0,
+            "currencyDetails": [],
+            "convertedValue": 0,
+            "futureConvertedValue": 0,
+            "fwdDealsConvertedValue": 0
+        },
+        "totalAmtWithSensitivePercentage": 0,
+        "sensitiveAmt": 0,
+        "hedgeAmt": 0,
+        "riskAmt": 0
+    },
+    "existingHedges": {
+      "riskRadarCategory": {
+        "hedgingPercentage": 0,
+        "currencyDetails": [],
+        "convertedValue": 0,
+        "futureConvertedValue": 0,
+        "fwdDealsConvertedValue": 0
+      },
+      "totalAmtWithSensitivePercentage": 0,
+      "sensitiveAmt": 0,
+      "hedgeAmt": 0,
+      "riskAmt": 0
+    },
+    "totalRiskAmt": 0
+  }

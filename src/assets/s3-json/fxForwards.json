@@ -1,0 +1,21 @@
+{
+    "heading": {
+        "content": "FX Forward"
+    },
+    "body": {
+        "content": [
+            {
+                "type": "p",
+                "content": ["Forward Contracts lock in exchange rates and protect you against volatility in foreign currency markets. This allows you to fix exchange rates for the purchase of currency at a future date, or over a range of dates, up to 12 months into the future. A margin deposit may be required, depending on many factors including credit risk of your company, currency pair involved, maturity of contract, and market volatility."]
+            },
+            {
+                "type": "p",
+                "content": ["The agreed upon forward rate in foreign exchange contracts is usually linked to interest rate differentials between the currencies involved. The so-called Forward curve (which is expectation of a future Forward rate for different tenors) can be upward or downward sloping. For example, there are cases where the 12-month forward rate would be better than the current spot rate (this would mean benefit) and there are cases where the 12-month forward rate would be worse (this would mean cost)."]
+            },
+            {
+                "type": "p",
+                "content": ["A Forward contract is a simple hedging instrument that could be suited when there is a certainty about the date and amounts of future expected payments, or receivables in foreign currency. The Forward contract can be entered into without any up-front costs (margin deposits may apply). The disadvantage of FX Forward is potential opportunity cost in case of a favourable movement in the currency pair in the future."]
+            }
+        ]
+    }
+}

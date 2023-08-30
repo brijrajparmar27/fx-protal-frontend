@@ -1,0 +1,111 @@
+[
+    {
+        "id":0,
+        "question":"We want to hedge future receipt of foreign currency. How do we hedge?",
+        "answer":{
+            "content":[
+                "You can hedge this FX exposure by doing a FX Forward contract in which you would sell the amount of foreign currency you are expecting to receive in exchange for your functional currency at an exchange rate agreed at the time you do this using a Forward contract. This Forward contract is a binding contract and you will be required to sell this foreign currency (and purchase agreed amount of functional currency).",
+                "If you are not able to deliver this foreign currency for any reasons on the agreed future settlement date, the Forward contract you have entered will be cash settled at its market value. This market value will depend on the prevailing exchange rate market at the time of settlement and can be a payment from you, or a payment received by you."        
+            ]
+        }
+        
+    },
+
+    {
+        "id":1,
+        "question":"We want to hedge future payment of foreign currency. How do we hedge?",
+        "answer":{
+            "content":[
+                "You can hedge this FX exposure by doing a FX Forward contract in which you would buy the amount of foreign currency you have to pay in future in exchange for your functional currency at an exchange rate agreed at the time you do this Forward contract. This Forward contract is a binding contract and you will be required to buy this foreign currency (and sell agreed amount of functional currency).",
+                "If you are not able to deliver the agreed amount of functional currency for any reasons on the agreed future settlement date, the Forward contract you have entered will be cash settled at its market value. This market value will depend on the prevailing exchange rate market at the time of settlement and can be a payment from you, or a payment received by you."
+            ]
+        }
+        
+    },
+    {
+        "id":2,
+        "question":"We want to hedge future foreign currency revenues. How do we hedge?",
+        "answer":{
+            "content":[
+                "You can hedge this FX exposure by doing a FX Forward contract in which you would sell the amount of foreign currency you are expecting to receive in exchange for your functional currency at an exchange rate agreed at the time you do this using a Forward contract. This Forward contract is a binding contract and you will be required to sell this foreign currency.",
+                "If you are not able to deliver this foreign currency for any reasons (such as for example if you did not realise the foreign currency revenue) on the agreed future settlement date, the Forward contract you have entered will be cash settled at its market value. This market value will depend on the prevailing exchange rate market at the time of settlement and can be a payment from you, or a payment received by you.",
+                "If foreign currency revenues are uncertain from timing perspective, you may need to restructure or adjust the hedge for new timings, and this may entail additional costs. If the amount is uncertain, then you may not have the right amount of foreign currency for which you agreed the Forward contract, or you may be underhedged. A Forward contract may not be a suitable instrument for hedging such uncertain receipts of foreign currency revenues in future. As an alternative, if you are uncertain about your potential realised foreign currency revenues in future, you may only hedge a part of expected future foreign currency and not the 100% of expected revenues.  However, the timing uncertainty in regards to the future receipt of foreign currency would still need to be dealt with by adjusting the Forward contract dates or by entering into a new Forward contract (which may result in additional costs)"
+            ]
+        }
+        
+    },
+    {
+        "id":3,
+        "question":"We want to hedge future foreign currency costs. How do we hedge?",
+        "answer":{
+            "content":[
+                "You can hedge this FX exposure by doing a FX Forward contract in which you would buy the amount of foreign currency you are expecting to pay in exchange for your functional currency at an exchange rate agreed at the time you do this using a Forward contract. This Forward contract is a binding contract and you will be required to buy this foreign currency (in exchange for the agreed amount of functional currency).",
+                "If you are not able to buy this foreign currency for any reasons (such as for example if you do not any more need to incur those expenses in foreign currency) on the agreed future settlement date, the Forward contract you have entered will be cash settled at its market value. This market value will depend on the prevailing exchange rate market at the time of settlement, and can be a payment from you, or a payment received by you.",
+                "If foreign currency costs are uncertain from timing perspective, you may need to restructure or adjust the hedge for new timings and this may entail additional costs. If the amount of foreign currency costs is uncertain, then you will be forced to buy the amount of foreign currency you agreed on the Forward contract, or you may be underhedged. A Forward contract may not be a suitable instrument for hedging such uncertain costs of foreign currency at a future date. As an alternative, you could buy only a part of expected future foreign currency costs (and not 100%) if the amount of foreign currency costs to be incurred in future is uncertain. However, the timing uncertainty in regards to the future costs of foreign currency would still need to be dealt with by adjusting the Forward contract dates or by entering into a new Forward contract (which may result in additional costs)."
+            ]
+        }
+        
+    },
+    {
+        "id":4,
+        "question":"We want to hedge a foreign currency asset (such as for example an Investment in fixed asset, or listed, or unlisted securities). How do we hedge?",
+        "answer":{
+            "content":[
+                "If you have a foreign currency asset, its value in your functional currency changes as the exchange rates move. However, the value of the asset may also be subject to change due to a variety of factors other than exchange rate movements. Once you have determined the foreign currency value of the asset you would like to hedge, you would need to assess for how long you would like to hedge this foreign currency asset. This would depend on the expected time duration when you want to sell this asset. Once you have an estimate of both the amount of foreign currency value of asset and tenor you want to hedge, you can use the Forward contract to hedge this FX exposure. Under the Forward contract hedge, you can sell the expected realised value of foreign currency from the asset sale (or a part of this), in exchange for your functional currency for a future date when you expect to sell the asset, in order to lock-in the exchange rate.",
+                "If at the time of maturity of the Forward contract, you still have not sold the asset, and do not have the required foreign currency to settle your obligation on the Forward contract, you will have to cash settle the Forward contract and realise gain or losses depending on the foreign exchange rate market at the time in the currency pair you bought and sold. This could result into cashflow for you, or may require availability of funding in case you are liable to pay. Simultaneously, you can enter into another forward contract (at a new prevailing exchange rate) for a new maturity date when you expect the asset sale now to happen.",
+                "If the amount of foreign currency that can be realised from the asset sale is uncertain, then you should be careful in entering into a Forward contract hedge as you will be obliged to sell the amount of foreign currency you agreed in the Forward contract which you may not have, or you may be underhedged. A Forward contract may not be a suitable instrument for hedging such uncertain value of foreign currency receipt through an asset sale at a future date. As an alternative, you may only hedge a part of expected future foreign currency sale value if the amount of foreign currency realisable through the asset sale is uncertain."
+            ]
+        }
+        
+    },
+    {
+        "id":5,
+        "question":"We want to hedge a foreign currency loan. How do we hedge?",
+        "answer":{
+            "content":[
+                "A foreign currency loan for longer than 1-year tenor which involves both interest and principal payment can be best hedged using a Cross currency swap. However, a Forward contract (or a series of Forward contracts can also be used to hedge the corresponding expected foreign currency payments under the loan for both interest and principal payments at a future date.",
+                "For example, if you have a EUR loan of 10 million for 1 year maturity, in which you are expected to make an interest payment of EUR 1.25 million every six month, and if your functional currency is GBP, you can do two Forward contracts to hedge the FX risk on your EUR loan; one where you buy EUR 1.25 million for 6 months to cover interest rate payments, and the other where you would buy EUR 11.25 million for 12 months for interest and principal payment in exchange for payment of known GBP amounts for each of these two Forward contracts.",
+                "The GBPEUR exchange rate for each of these contract (one for 6 months, and the other for 12 month), will be different but known at the time of dealing in each of these two Forward contracts. In the above example, interest payments were known after six month and 12 months. When the loan is linked to a floating interest rates, such as Euribor, or Libor, interest payments may not be known in advance, and this may present difficulty in determining the value of currency purchase that needs to be made to hedge the FX risk. One can deal with this by estimating the interest payment amount and hedging a lower amount to be conservative (with risk that some amount may remain unhedged). Alternatively, only the principal payment (in above case EUR 10 million) which is the majority of the risk can be hedged. However, this will leave interest payments in EUR unhedged. To hedge floating rate foreign currency loans of 1 year and longer, you can also explore using cross currency swaps, which may offer a more perfect hedge."
+            ]
+        }
+
+        
+    },
+    {
+        "id":6,
+        "question":"We want to hedge my holdings in a foreign subsidiary or JV. How do we hedge?",
+        "answer":{
+            "content":[
+                "A foreign currency holding in subsidiary or JV presents a Translation foreign exchange risk as it does have an impact on your financial statements. However, if you have made an investment in subsidiary or JV for strategic purposes, you would need to assess whether hedging such a translation FX risk is worthwhile or not for you and is supported by your stakeholders.",
+                "If you are in a process of disposing off your holdings in a foreign subsidiary or JV, and are concerned about foreign exchange rate movements affecting the value of sale in your functional currency, you can hedge this exposure by using a Forward contract. However, if the amount and timing of such sale is not known, then hedging by using Forward contract may require balancing, rolling over, or restructuring this hedge often until the sale of such holding is achieved at a time in the future. Such a balancing, rolling over, or restructuring of Forward contract can be expensive depending on the currency pair involved (the foreign currency related to you holding, and your functional currency) and its feasibility needs to be further assessed before undertaking hedging through a Forward contract."
+            ]
+        }
+        
+    },
+    {
+        "id":7,
+        "question":"We are in a process of doing an M&A (Mergers & Acquisition) transaction, and this would result in paying a foreign currency consideration. How do we hedge it?",
+        "answer":{
+            "content":[
+                "If you know that this transaction is certain to happen, and what the required foreign currency amount is, and when this amount is required, you can hedge this exposure by doing a Forward contract transaction. Under the Forward contract, you can buy the required foreign currency for a future date in exchange for your functional currency at a pre-agreed known exchange rate in the future.",
+                "However, all M&A transactions go through various levels of uncertainty before they become certain and amounts and timings are known. Until then, hedging using Forward contracts presents a challenge of hedge rebalancing, rolling over, or restructuring with related potential adverse cost consequences. If this be the case, you could also explore FX options contracts to hedge the risk of currency fluctuations. However, depending on the level of protection requirement, FX Options can be expensive, and may require up-front payment (or payment over agreed time period if agreed with your hedge provider).",
+                "Certain Investment banks and hedge providers also provide so called “Contingent FX Forward Contract” which protect you from adverse FX changes even if your M&A transaction does not materialise due to some specific reasons such as lack of regulatory approval, or lack of shareholders approvals even though the deal would have been agreed between the acquiring and acquired parties. These contingent hedges can be suitable in certain specific situations, and require very careful assessment of suitability and appropriateness for your own specific situation. To evaluate this, you may benefit from your internal resources, and external advisors including legal advisors."
+            ]
+        }
+        
+    },
+    {
+        "id":8,
+        "question":"Our future date of payment or receipt of foreign currency is not fixed and can vary. Can we still do Forward contract hedge?",
+        "answer":{
+            "content":[
+                "You can still do the forward hedge to protect you against the foreign exchange rate fluctuations. However, you will need to consider the following:",
+                "If the hedge matures earlier than the payment or receipt of foreign currency:",
+                "In this case you will have to cash settle the existing Forward contract at maturity date and depending on the market at the time, this may entail a payment to you or a payment from you. If it is a payment from you, this would require the availability of funding with you to be able to pay this amount. You can then at the same time enter into a new Forward hedge for the new maturity when you are now expecting to pay or receive the foreign currency. Both the unwinding of the existing Forward hedge, and entering into a new Forward hedge for the new maturity can be done at the same time to avoid any loss or gain due to FX spot price movement. On doing the new Forward contract for additional period, you may have to pay the cost (or you may benefit) from forward points for the additional period. In summary, the adjustment required due to changes in expected date of receipt or payment on original Forward contract may result in additional costs for you and the requirement of funds at the time of settlement of original Forward contract.",
+                "If the hedge matures later than the payment or receipt of foreign currency: In this case you have two options:",
+                "a) If you are receiving the foreign currency on your underlying deal, then you can keep that foreign currency in your foreign currency bank account and wait for the maturity of the Forward hedge, when you can deliver the foreign currency amount to take the delivery of your functional currency. However, this would require waiting for the functional currency when you actually may need these funds right now for some expenses in your functional currency.  Also, the deposit of your foreign currency in the meantime may not give you any interest rate depending upon the bank account and the currency in which the money is deposited. Therefore, this may not be a preferable alternative for you. Alternatively, you can sell this foreign currency on spot market to realise the functional currency, and at the same time unwind or cancel the existing Forward contract. The unwinding or cancelling the Forward contract would result into a payment to you or a payment from you depending on the exchange rate market at the time. However, if you pay an amount on the cancellation of Forward hedge, you would have made gains in your spot conversion deal, and if you receive payments on the cancellation of Forward hedge, you would have had higher costs on spot conversion deal. The combination of this, i.e., spot deal and simultaneous cancellation of Forward contract would provide you hedging from FX risks.",
+                "b) If you have to pay the foreign currency instead, then you can do a spot deal by buying the required foreign currency in the spot market by selling your functional currency. At the same time, you can cancel or unwind your existing Forward contract which will result in payment from you or payment to you in the Forward contract depending on the prevailing FX market.  The combination of this, i.e., spot deal and simultaneous cancellation of Forward contract would provide you hedging from FX risks."
+            ]
+        }
+    }
+]

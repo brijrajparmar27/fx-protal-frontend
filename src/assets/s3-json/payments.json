@@ -1,0 +1,17 @@
+{
+    "heading": {
+        "content": "Payments"
+    },
+    "body": {
+        "content": [
+            {
+                "type": "p",
+                "content": ["We can send major currencies anywhere in the world where the beneficiary has a receiving account in that currency. You can use ACH or SEPA for relatively less urgent, or smaller payments. You can access SWIFT through us for faster pay-out. You will pay only one known charge for sending money with no hidden fees."]
+            },
+            {
+                "type": "p",
+                "content": ["More information on payments to countries, various options and costs will be added soon."]
+            }
+        ]
+    }
+}

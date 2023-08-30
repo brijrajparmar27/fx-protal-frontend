@@ -1,0 +1,87 @@
+{
+  "heading": {
+    "content": "Our Clients"
+  },
+  "body": {
+    "content": [
+      {
+        "type": "p",
+        "content": ["We welcome any corporations and institutions which are interested to manage foreign exchange risks in their businesses."]
+      },
+      {
+        "type": "p",
+        "classes": "mb3",
+        "content": ["All of our customers are on-boarded after appropriate Know Your Clients (KYC) / Know Your Business (KYB) checks are performed."]
+      },
+      {
+        "heading": "Clients we do not do business with currently",
+        "type": "p",
+        "content": [
+          {
+            "type": "inline",
+            "content": [
+              {
+                "type": "p",
+                "content": "We do not on-board individuals nor corporate customers in the following sectors. In case of any questions or clarifications in this regard, please get in touch with our support team at"
+              },
+              {
+                "type": "a",
+                "link": "mailto:support@fxguard.co.uk",
+                "linkText": " support@fxguard.co.uk"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ul",
+        "content": [
+          {
+            "type": "p",
+            "content": ["Currency exchange or MSB business"]
+          },
+          {
+            "type": "p",
+            "content": ["Defence or weapons"]
+          },
+          {
+            "type": "p",
+            "content": ["Gambling or betting"]
+          },
+          {
+            "type": "p",
+            "content": ["Consumer credit or money lending"]
+          },
+          {
+            "type": "p",
+            "content": ["Unregulated charities"]
+          },
+          {
+            "type": "p",
+            "content": ["Dealing in art, precious metals or stones"]
+          },
+          {
+            "type": "p",
+            "content": ["Dating or escort services"]
+          },
+          {
+            "type": "p",
+            "content": ["Sale of used vehicles"]
+          },
+          {
+            "type": "p",
+            "content": ["Adult entertainment"]
+          },
+          {
+            "type": "p",
+            "content": ["Distribution of no licensed drugs"]
+          },
+          {
+            "type": "p",
+            "content": ["No sanctioned country client will be serviced"]
+          }
+        ]
+      }
+    ]
+  }
+}

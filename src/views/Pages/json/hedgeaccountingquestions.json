@@ -1,0 +1,107 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Q1. For the purpose of mitigating this exposure, has the nature of risk been identified as foreign exchange risk?",
+      "noMessage": "Further Hedge Accounting assessment not supported by FXGuard",
+      "noAction": "reset",
+      "yesAction": "proceed",
+      "yesNextQuestionId": 2,
+      "prevQuestionId": -1,
+      "response": ""
+    },
+    {
+      "id": 2,
+      "question": "Q2. Has the firm defined its Risk management objective and strategy? This could include why the proposed hedging objective is consistent with the firm’s risk management strategy for undertaking hedges",
+      "noMessage": "Risk management objective and strategy’ must be created prior to seeking Hedge accounting. Please look in the section “Sample FX Policy and Hedge Template",
+      "noAction": "proceedWithMessage",
+      "yesAction": "proceed",
+      "yesNextQuestionId": 3,
+      "noNextQuestionId": 3,
+      "prevQuestionId": 1,
+      "response": ""
+    },
+    {
+      "id": 3,
+      "question": "Q3. Is there an economic relationship (inverse/opposite) between the hedged item and hedging instrument?",
+      "noMessage": "You cannot achieve “Hedge Accounting”",
+      "noAction": "reset",
+      "yesAction": "proceed",
+      "yesNextQuestionId": 4,
+      "prevQuestionId": 2,
+      "response": ""
+    },
+    {
+      "id": 4,
+      "question": "Q4. Does credit risk dominate the value changes within the economic relationship?",
+      "yesMessage": "You cannot achieve “Hedge Accounting”",
+      "noAction": "proceed",
+      "yesAction": "reset",
+      "noNextQuestionId": 5,
+      "prevQuestionId": 3,
+      "response": ""
+    },
+    {
+      "id": 5,
+      "question": "Q5. Does the hedge relate to an intragroup transaction for a subsidiary?",
+      "yesMessage": "You cannot achieve “Hedge Accounting”",
+      "noAction": "proceed",
+      "yesAction": "reset",
+      "noNextQuestionId": 6,
+      "prevQuestionId": 4,
+      "response": ""
+    },
+    {
+      "id": 6,
+      "question": "Q6. Is the item to be hedged an existing asset or liability?",
+      "noAction": "proceed",
+      "yesAction": "proceed",
+      "yesNextQuestionId": 7,
+      "noNextQuestionId": 8,
+      "prevQuestionId": 5,
+      "response": ""
+    },
+    {
+      "id": 7,
+      "question": "Q7. Does the hedge relate to a net investment in a foreign operation?",
+      "noMessage": "You can achieve either “Fair Value” or “Cash Flow” Hedge Accounting",
+      "yesMessage": "You can achieve Net Investment Hedge Accounting",
+      "noAction": "reset",
+      "yesAction": "reset",
+      "prevQuestionId": 6,
+      "response": "",
+      "last": true
+    },
+    {
+      "id": 8,
+      "question": "Q8. Is the item to be hedged an unrecognised firm commitment?",
+      "yesMessage": "You can achieve “Fair Value Hedge Accounting”",
+      "noAction": "proceed",
+      "yesAction": "reset",
+      "noNextQuestionId": 9,
+      "prevQuestionId": 6,
+      "response": ""
+    },
+    {
+      "id": 9,
+      "question": "Q9. Is the item to be hedged a highly probable forecast transaction?",
+      "noMessage": "You cannot achieve “Hedge Accounting”",
+      "noAction": "reset",
+      "yesAction": "proceed",
+      "yesNextQuestionId": 10,
+      "prevQuestionId": 8,
+      "response": ""
+    },
+    {
+      "id": 10,
+      "question": "Q10. Is there an expected timeline for forecast transaction to take place?",
+      "noMessage": "You cannot achieve “Hedge Accounting”",
+      "yesMessage": "You can achieve “Cashflow Hedge Accounting”",
+      "noAction": "reset",
+      "yesAction": "reset",
+      "prevQuestionId": 9,
+      "response": "",
+      "last": true
+    }
+  ]
+}

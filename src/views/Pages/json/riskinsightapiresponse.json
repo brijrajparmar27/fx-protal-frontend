@@ -1,0 +1,798 @@
+[
+    {
+    "questionId": "1",
+    "nextQuestionId": "2",
+    "prevQuestionId": "",
+    "question": "",
+    "message": "",
+    "startNode": true,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "BUTTON",
+    "answerOptions": [
+    {
+    "name": "I am a Corporate",
+    "nextQuestionId": "2",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "I am an Investment Manager",
+    "nextQuestionId": "2",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": {
+    "name": "I am a Corporate"
+    },
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "2",
+    "nextQuestionId": "",
+    "prevQuestionId": "1",
+    "question": "Are your sales income in foreign currencies too?",
+    "message": "You have not input this information; more details you give, better insight you will get.",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "2.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "3",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": {
+    "name": "Yes"
+    },
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "2.1",
+    "nextQuestionId": "2.2",
+    "prevQuestionId": "2",
+    "question": "Annual Income in foreign currency",
+    "message": "You have not input both currency and amount, or currency, or amount; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "SELL",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": {
+    "currencyAmounts": [
+    {
+    "amount": 1000000.0,
+    "currencyCode": "EUR"
+    },
+    {
+    "amount": 1000000.0,
+    "currencyCode": "CAD"
+    }
+    ]
+    },
+    "currencyPerformance": [
+    {
+    "baseCurrency": "GBP",
+    "currencyCode": "EUR",
+    "currencyPair": "GBPEUR",
+    "closePriceBefore": 1.106495,
+    "closePriceNow": 1.16913,
+    "appreciatePerformancePercentage": 5.66,
+    "closeRateLow": 1.0801,
+    "closeRateHigh": 1.177496,
+    "appreciatePerformancePercentageWithHighLow": 9.02,
+    "hedgingCostPercentage": 0.73,
+    "forwardRate": 0.86162,
+    "spotRate": 0.85534
+    },
+    {
+    "baseCurrency": "GBP",
+    "currencyCode": "CAD",
+    "currencyPair": "GBPCAD",
+    "closePriceBefore": 1.69548,
+    "closePriceNow": 1.7175,
+    "appreciatePerformancePercentage": 1.3,
+    "closeRateLow": 1.68031,
+    "closeRateHigh": 1.77709,
+    "appreciatePerformancePercentageWithHighLow": 5.76,
+    "hedgingCostPercentage": -0.08,
+    "forwardRate": 0.58178,
+    "spotRate": 0.58225
+    }
+    ]
+    },
+    {
+    "questionId": "2.2",
+    "nextQuestionId": "2.3",
+    "prevQuestionId": "2.1",
+    "question": "Can you predict your foreign currency sales income with certainty? Please rank in scale 0% to 100% certainty.",
+    "message": "You have not input this information; more details you give, better insight you will get.",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "SLIDER",
+    "answerOptions": [],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "2.3",
+    "nextQuestionId": "",
+    "prevQuestionId": "2.2",
+    "question": "Do you offer your products and services in foreign currencies at fixed prices for certain durations ?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "2.4",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "3",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "2.4",
+    "nextQuestionId": "3",
+    "prevQuestionId": "2.3",
+    "question": "How long is usually price list valid for?",
+    "message": "You have not input the information on validity of price list; more details you give, better insight you will get.",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "BUTTON",
+    "answerOptions": [
+    {
+    "name": "Less than 3 month",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "3 to 6 months",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "6m to 12 month",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "longer than 12 month",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "3",
+    "nextQuestionId": "",
+    "prevQuestionId": "2.4",
+    "question": "Are your costs of sales in foreign currencies too?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "3.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "4",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "3.1",
+    "nextQuestionId": "3.2",
+    "prevQuestionId": "3",
+    "question": "Annual Costs in foreign currency",
+    "message": "You have not input both currency and amount, or currency or amount; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "BUY",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "3.2",
+    "nextQuestionId": "4",
+    "prevQuestionId": "3.1",
+    "question": "Can you predict your foreign currency costs with certainty? Please rank in scale 0% to 100% certainty.",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "SLIDER",
+    "answerOptions": [],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "4",
+    "nextQuestionId": "",
+    "prevQuestionId": "3.2",
+    "question": "Do you receive dividends in foreign currencies from our subsidiaries, or affiliates abroad?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "4.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "5",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "4.1",
+    "nextQuestionId": "4.2",
+    "prevQuestionId": "4",
+    "question": "Annual Dividends in foreign currency",
+    "message": "You have not input both currency and amount, or currency or amount; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "SELL",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "4.2",
+    "nextQuestionId": "5",
+    "prevQuestionId": "4.1",
+    "question": "Can you predict your foreign currency dividends with certainty? Please rank in scale 0% to 100% certainty.",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "SLIDER",
+    "answerOptions": [],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "5",
+    "nextQuestionId": "",
+    "prevQuestionId": "4.2",
+    "question": "Do you have foreign currency loans?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "5.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "6",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "5.1",
+    "nextQuestionId": "5.2",
+    "prevQuestionId": "5",
+    "question": "Loan tenor",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "BUTTON",
+    "answerOptions": [
+    {
+    "name": "Less than 1 Year",
+    "nextQuestionId": "5.2",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "More than 1 Year",
+    "nextQuestionId": "5.2",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "5.2",
+    "nextQuestionId": "6",
+    "prevQuestionId": "5.1",
+    "question": "Annual Interest and repayment in foreign currency",
+    "message": "You have not input both currency and amount, or currency or amount; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "BUY",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "6",
+    "nextQuestionId": "7",
+    "prevQuestionId": "5.2",
+    "question": "Do you have foreign subsidiaries or affiliates that you consolidate in your company accounts?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "7",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "7",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "7",
+    "nextQuestionId": "",
+    "prevQuestionId": "6",
+    "question": "Do you have foreign currency investments other than in subsidiaries or affiliates (such as in cash deposits, securities, etc.)",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "7.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "8",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "7.1",
+    "nextQuestionId": "8",
+    "prevQuestionId": "7",
+    "question": "Investment in foreign currency",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "SELL",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "8",
+    "nextQuestionId": "",
+    "prevQuestionId": "7.1",
+    "question": "Are you planning to sell any of the investments within next 12 months (investment in subsidiaries, Affiliates, or other investments)?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "8.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "9",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "8.1",
+    "nextQuestionId": "9",
+    "prevQuestionId": "8",
+    "question": "Estimated realisable value in foreign currency",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "SELL",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "9",
+    "nextQuestionId": "",
+    "prevQuestionId": "8.1",
+    "question": "Are you going to do an M&A deal and would pay in foreign currency to make an acquisition in next 12 months?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "9.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "10",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "9.1",
+    "nextQuestionId": "9.2",
+    "prevQuestionId": "9",
+    "question": "Estimated cost in foreign currency",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "BUY",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "9.2",
+    "nextQuestionId": "10",
+    "prevQuestionId": "9.1",
+    "question": "How likely are these M&A deals to happen? Please rank in scale 0% to 100% certainty.",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "SLIDER",
+    "answerOptions": [],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "10",
+    "nextQuestionId": "11",
+    "prevQuestionId": "9.2",
+    "question": "Do you have direct competitors of your products and services in your country and other countries where your reporting currency is the currency in that country?",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "11",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "11",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "11",
+    "nextQuestionId": "12",
+    "prevQuestionId": "10",
+    "question": "Do you have competitors of your products and services in foreign countries?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "12",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "12",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "12",
+    "nextQuestionId": "",
+    "prevQuestionId": "11",
+    "question": "Do you have any hidden or embedded Foreign currency risks in contracts (such as procurement, sale, payroll etc.)?",
+    "message": "",
+    "startNode": false,
+    "endNode": false,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "CHECKBOX",
+    "answerOptions": [
+    {
+    "name": "Yes",
+    "nextQuestionId": "12.1",
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "No",
+    "nextQuestionId": "13",
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "12.1",
+    "nextQuestionId": "13",
+    "prevQuestionId": "12",
+    "question": "How much",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "BUY",
+    "showFunctionalCurrency": false,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "13",
+    "nextQuestionId": "14",
+    "prevQuestionId": "12.1",
+    "question": "What is your expected total annual income or turnover in next 12 months?",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "SELL",
+    "showFunctionalCurrency": true,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "14",
+    "nextQuestionId": "15",
+    "prevQuestionId": "13",
+    "question": "What is your total costs before tax and depreciation in next 12 months?",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": false,
+    "side": "BUY",
+    "showFunctionalCurrency": true,
+    "optionType": "MULTIADD",
+    "answerOptions": [
+    {
+    "name": null,
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": ""
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    },
+    {
+    "questionId": "15",
+    "nextQuestionId": "",
+    "prevQuestionId": "14",
+    "question": "What is your company's attitude to Foreign Exchange Risk in your business?",
+    "message": "You have not input this information; more details you give, better insight you will get",
+    "startNode": false,
+    "endNode": true,
+    "side": null,
+    "showFunctionalCurrency": false,
+    "optionType": "BUTTON",
+    "answerOptions": [
+    {
+    "name": "Do not know",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "Low tolerance",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "Medium tolerance",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    },
+    {
+    "name": "High tolerance",
+    "nextQuestionId": null,
+    "amount": null,
+    "currencyCode": null
+    }
+    ],
+    "answer": null,
+    "currencyPerformance": []
+    }
+    ]

@@ -1,0 +1,151 @@
+{
+  "seo": {
+    "title": "Industries We Serve | Our Clients | Fxguard",
+    "description": "We welcome any corporations, particularly SMEs which are interested in managing foreign exchange risks in their businesses",
+    "name": "FXGuard - Industries We Serve",
+    "type": "Our Clients page"
+},
+
+  "heading": {
+    "content": "Our Clients"
+  },
+  "body": {
+    "content": [
+      {
+        "type": "p",
+        "content": ["We welcome any corporations, particularly SMEs which are interested in managing foreign exchange risks in their businesses"]
+      },
+      {
+        "type": "p",
+        "content": ["Our FX Risk Management offering is available to customers all over the world as it does not involve any FX deals and payments and, therefore, is not constrained by any regulations. Our customers come from many industries which include the below."]
+      },
+      {
+        "type": "ul",
+        "content": [
+          {
+            "type": "p",
+            "content": ["Pharmaceutical"]
+          },
+          {
+            "type": "p",
+            "content": ["Food"]
+          },
+          {
+            "type": "p",
+            "content": ["Chemicals"]
+          },
+          {
+            "type": "p",
+            "content": ["Logistics"]
+          },
+          {
+            "type": "p",
+            "content": ["Technology (Software / Hardware)"]
+          },
+          {
+            "type": "p",
+            "content": ["Entertainment and Media"]
+          },
+          {
+            "type": "p",
+            "content": ["Travel"]
+          },
+          {
+            "type": "p",
+            "content": ["Importers / Exporters"]
+          },
+          {
+            "type": "p",
+            "content": ["Online Sellers / Businesses"]
+          },
+          {
+            "type": "p",
+            "content": ["Automotive"]
+          },
+          {
+            "type": "p",
+            "content": ["FinTech"]
+          },
+          {
+            "type": "p",
+            "content": ["Any industry having export or import contents"]
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "classes": "mb3",
+        "content": ["All of our FX Deals and Payments customers are on-boarded after appropriate Know Your Clients (KYC) / Know Your Business (KYB) checks are performed."]
+      },
+      {
+        "heading": "Clients we do not do business with currently (applicable only for FX Deals and Payments)",
+        "type": "p",
+        "content": [
+          {
+            "type": "inline",
+            "content": [
+              {
+                "type": "p",
+                "content": "We do not on-board individuals or corporate customers in the following sectors. In case of any questions or clarifications in this regard, please get in touch with our support team at "
+              },
+              {
+                "type": "a",
+                "link": "mailto:support@fxguard.co.uk",
+                "linkText": " support@fxguard.co.uk"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ul",
+        "content": [
+          {
+            "type": "p",
+            "content": ["Currency exchange or MSB business"]
+          },
+          {
+            "type": "p",
+            "content": ["Defence or weapons"]
+          },
+          {
+            "type": "p",
+            "content": ["Gambling or betting"]
+          },
+          {
+            "type": "p",
+            "content": ["Consumer credit or money lending"]
+          },
+          {
+            "type": "p",
+            "content": ["Unregulated charities"]
+          },
+          {
+            "type": "p",
+            "content": ["Dealing in art, precious metals or stones"]
+          },
+          {
+            "type": "p",
+            "content": ["Dating or escort services"]
+          },
+          {
+            "type": "p",
+            "content": ["Sale of used vehicles"]
+          },
+          {
+            "type": "p",
+            "content": ["Adult entertainment"]
+          },
+          {
+            "type": "p",
+            "content": ["Distribution of no licensed drugs"]
+          },
+          {
+            "type": "p",
+            "content": ["No sanctioned country client will be serviced"]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+.BlogPageMain{
+    /* margin-left: 300px;
+    margin-right: 300px; */
+ }
+ .BlogHeading{
+  margin-top: 0;
+  font-size: 25px;;
+ }
+ .ModalHeading{
+  margin-top: 0;
+  margin-bottom: 1px;
+  text-align: center;
+ }
+ 
+ @media screen and (max-width: 900px) {
+     .BlogPageMain{
+       margin-left: 10px;
+       margin-right: 10px;
+     }
+ }
+ 
+ .InputsFiled{
+   width: 50%;
+   border: 0;
+   border-bottom: 2px solid gray;
+   outline: 0;
+   font-size: 1.3rem;
+   
+   padding: 17px 0;
+   margin: 10px;
+ }
+ 
+ .FormsBlogs{
+   margin: 50px;
+ }

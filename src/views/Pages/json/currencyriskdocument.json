@@ -1,0 +1,91 @@
+{
+    "fields": [
+        {
+            "heading": "Company Name",
+            "value": "XYZ Company",
+            "editable":false,
+            "isVisible": true,
+            "name":"companyName"
+        },
+        {
+            "heading": "Background",
+            "value": "The company’s current business activities expose it to exchange rate fluctuations on its foreign currency payments and receipts (including dividends from its foreign subsidiaries). The impact of these fluctuations on the Company’s profitability and financial statement can be material. It is, therefore, important that the Company manages and mitigates its risk and accordingly develop a Currency Risk Management Policy Document which will provide the necessary guidelines to manage this risk.",
+            "name":"background",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Objectives",
+            "value": "The Company will identify, assess, monitor, and manage the foreign exchange risk in its business, consistent with its overall objectives.  This will be done to reduce cash flow uncertainties, and improve financial decision making.\n\nIn particular, the Company will minimize the impact of foreign exchange fluctuations on its committed and highly forecastable receipts, dividends, and payments, in foreign currencies while minimizing the cost of such protection.",
+            "name":"objectives",
+            "editable":true,
+            "isVisible": true
+
+        },
+        {
+            "heading": "Hedging guidelines",
+            "value": "The Company shall never over hedge (>100%) on an overall basis. The overall hedge ratio for its identified and hedged foreign exchange can be decided from time to time based on its risk tolerance, volatility in currency markets, cost of hedging, and any relevant internal or external factors including competition behavior, macro-economic environment.\n\nThe tenor of the hedging transactions shall be decided considering the tenor of the underlying foreign currency risk and will not exceed 2 years for the firm and highly forecastable payments, receipts.  For foreign currency loan hedging, the hedging transaction would not exceed the tenor of the loan.",
+            "name":"hedgingGuidelines",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Permitted Hedging Instruments",
+            "value": "The Company is permitted to use FX Forwards, Non-Deliverable Forwards, Vanilla FX Options, FX Swaps and Foreign Exchange Collars to manage its foreign exchange risk. The Company cannot take a net Options sale position when using FX Options. Cross Currency Swap can be used to hedge foreign currency borrowings.",
+            "name":"permittedHedgingInstruments",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Authority under this Policy",
+            "value": "Day-to-day decisions regarding foreign exchange within this Policy for hedging, hedge restructuring, or hedge unwinding will be made and executed by a designated dealer (or its nominee) with the approval of the Treasury Manager (or its designated nominee). In absence of the Treasury Manager, the Finance Director (or its designated nominee) would approve the above transactions. In absence of the Finance Director, the above transactions would need to be approved by the CFO (or its designated nominee).",
+            "name":"authorityUnderPolicy",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Segregation of Duties",
+            "value": "The designated person or persons of treasury operations will maintain a detailed database of all hedges and hedged items and independently monitor the positions executed by the dealers. They will also ensure that hedges are executed in line with this FX Policy.",
+            "name":"segregationOfDuties",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Reporting",
+            "value": "The details of all open exposures, foreign currency hedges, hedged items, hedge ration, details of hedging program undertaken, and performances of hedges in comparison to both budget (if any), and updated market valuations of hedges, gains, and losses from hedges that were terminated early or de-designated, will be reported from time to time (but at least quarterly) to Finance Director, CFO, and other relevant Management.\n\nPeriodical audit of the foreign exchange hedging transactions would be done by the internal auditors of the Company and reported to the Management. This will allow management to check that procedures are being followed according to the established rules and limits, so any errors can be detected on time to reduce the risk of undue or inappropriate trading activities.",
+            "name":"reporting",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Review",
+            "value": "This FX Policy will be reviewed every two years (or earlier if deemed necessary) to assess its effectiveness and if any changes are made, they would need to be approved by the CFO and CEO of the Company and if deemed appropriate, presented to the Board of Directors for approval.",
+            "name":"review",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Customised",
+            "value": "",
+            "name":"customized",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Exception Management",
+            "value": "All exceptions to this Policy will need to be approved by the CFO, and CEO of the Company.",
+            "name":"exceptionManagement",
+            "editable":true,
+            "isVisible": true
+        },
+        {
+            "heading": "Approval",
+            "value": "This FX Policy has been proposed by the Treasury Manager (or Finance Director), seconded by the CFO, and approved by the CEO (or the Board of Directors if deemed appropriate).",
+            "name":"approval",
+            "editable":true,
+            "isVisible": true
+        }
+    ],
+    "approvalDate": null,
+    "approvedByInfo": [{"signedBy":"","aprrovedBy":"","designation":""}]
+}

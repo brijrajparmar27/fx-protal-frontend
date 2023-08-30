@@ -1,0 +1,155 @@
+{
+  "seo": {
+    "title": "Effective Foreign Exchange Hedging Solutions | Fxguard",
+    "description": "FXGuard's risk management tool offers effective foreign exchange hedging solutions. Protect your business from currency fluctuations with real-time monitoring and customized plans.",
+    "name": "FXGuard - Foreign Exchange Hedging ",
+    "type": "FX Risk Management Pricing Plan page"
+},
+
+    "heading": {
+      "content": "Our Plan Information"
+    },
+    "body": {
+      "content": [
+        {
+          "type": "p",
+          "content": [" FXGuard's risk management tool offers effective foreign exchange hedging solutions. Protect your business from currency fluctuations with real-time monitoring and customized plans. Our foreign exchange hedging solutions can help companies minimize their exposure to market volatility and ensure greater stability in their financial planning."]
+        }, 
+        {      
+          "heading": "FX Risk Management Pricing Plan",
+          "type": "p",
+          "content": [" "]
+        }, 
+        {
+          "type": "ul",
+          "content": [
+            {
+              "type": "p",
+              "content": ["Risk Insight"]
+            },
+            {
+              "type": "p",
+              "content": ["FX Exposure Calculator"]
+            },
+            {
+              "type": "p",
+              "content": ["Risk Radar"]
+            },
+            {
+              "type": "p",
+              "content": ["Customisable FX Risk Policy"]
+            },
+            {
+              "type": "p",
+              "content": ["Hedging Guidance"]
+            },
+            {
+              "type": "p",
+              "content": ["Hedge Accounting"]
+            },
+            {
+              "type": "p",
+              "content": ["Live Reference Price Check – Spot and Forward"]
+            },
+            {
+              "type": "p",
+              "content": ["Market Intelligence"]
+            },
+            {
+              "type": "p",
+              "content": ["Historical FX Data Download"]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "classes": "mb3",
+          "content": [
+            {
+              "type": "tr",
+              "content": [
+                {
+                  "type": "p",
+                  "content": ["1 User"],
+                  "classes": "tableTextHeader"
+                },
+                {
+                  "type": "p",
+                  "content": ["Up to 3 Users"],
+                  "classes": "tableTextHeader"
+                },
+                {
+                  "type": "p",
+                  "content": ["Up to 10 Users"],
+                  "classes": "tableTextHeader"
+                },
+                {
+                  "type": "p",
+                  "content": ["More than 10 Users"],
+                  "classes": "tableTextHeader"
+                }
+              ]
+            },
+            {
+              "type": "tr",
+              "content": [
+                {
+                  "type": "p",
+                  "content": ["£25 per month plus VAT if applicable"],
+                  "classes": "tableText"
+                },
+                {
+                  "type": "p",
+                  "content": ["£50 per month plus VAT if applicable"],
+                  "classes": "tableText"
+                },
+                {
+                  "type": "p",
+                  "content": ["£100 per month plus VAT if applicable"],
+                  "classes": "tableText"
+                },
+                {
+                  "type": "p",
+                  "content": ["Please Call or email Customer Service"],
+                  "classes": "tableText"
+                }
+              ]
+            },
+            {
+              "type": "tr",
+              "content": [
+                {
+                  "type": "p",
+                  "content": ["First Month Free*"],
+                  "classes": "tableText"
+                },
+                {
+                  "type": "p",
+                  "content": ["First Month Free*"],
+                  "classes": "tableText"
+                },
+                {
+                  "type": "p",
+                  "content": ["First Month Free*"],
+                  "classes": "tableText"
+                },
+                {
+                  "type": "p",
+                  "content": [""],
+                  "classes": "tableText"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "content": [
+            "*Your first month is free. During the trial, if you decide to continue the subscription after the free trial, you can simply provide (add) the payment information on Manage Account section of the web-portal. After the expiry of the trial, if you wish to continue, you will have to resubscribe your chosen plan.",
+            "After you subscribe to the paid plan, you will be charged as per your selected plan. The plan will automatically renew each month until cancelled. To avoid charges for the next month, please cancel before the renewal date. Also, you can always upgrade your plan (or cancel the plan) anytime by going to Manage Plan page."
+          ]
+        }
+      ]
+    }
+  }
+  

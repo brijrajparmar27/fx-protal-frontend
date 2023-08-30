@@ -1,0 +1,307 @@
+{
+  "heading": {
+    "content": "Our Plan Information"
+  },
+  "body": {
+    "content": [
+      {
+        "heading": "FX Risk Management Pricing Plan",
+        "type": "p",
+        "content": [" "]
+      }, 
+      {
+        "type": "ul",
+        "content": [
+          {
+            "type": "p",
+            "content": ["Risk Insight"]
+          },
+          {
+            "type": "p",
+            "content": ["FX Exposure Calculator"]
+          },
+          {
+            "type": "p",
+            "content": ["Risk Radar"]
+          },
+          {
+            "type": "p",
+            "content": ["Customisable FX Risk Policy"]
+          },
+          {
+            "type": "p",
+            "content": ["Hedging Guidance"]
+          },
+          {
+            "type": "p",
+            "content": ["Hedge Accounting"]
+          },
+          {
+            "type": "p",
+            "content": ["Live Reference Price Check – Spot and Forward"]
+          },
+          {
+            "type": "p",
+            "content": ["Market Intelligence"]
+          },
+          {
+            "type": "p",
+            "content": ["Historical FX Data Download"]
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "classes": "mb3",
+        "content": [
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["1 User"],
+                "classes": "tableTextHeader"
+              },
+              {
+                "type": "p",
+                "content": ["Up to 3 Users"],
+                "classes": "tableTextHeader"
+              },
+              {
+                "type": "p",
+                "content": ["Up to 10 Users"],
+                "classes": "tableTextHeader"
+              },
+              {
+                "type": "p",
+                "content": ["More than 10 Users"],
+                "classes": "tableTextHeader"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["£25 per month plus VAT if applicable"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["£50 per month plus VAT if applicable"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["£100 per month plus VAT if applicable"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["Please Call or email Customer Service"],
+                "classes": "tableText"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["First Month Free*"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["First Month Free*"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["First Month Free*"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": [""],
+                "classes": "tableText"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          "*Your first month is free. During the trial, if you decide to continue the subscription after the free trial, you can simply provide (add) the payment information on Manage Account section of the web-portal. After the expiry of the trial, if you wish to continue, you will have to resubscribe your chosen plan.",
+          "After you subscribe to the paid plan, you will be charged as per your selected plan. The plan will automatically renew each month until cancelled. To avoid charges for the next month, please cancel before the renewal date. Also, you can always upgrade your plan (or cancel the plan) anytime by going to Manage Plan page."
+        ]
+      },
+      {
+        "heading": "FX Deals and Payments Pricing Plan (Launching Soon!)",
+        "type": "p",
+        "content": [
+          "From £50 per month; may be suitable if you trade regularly.",
+          "You can select the following tiers of plan depending on the expected FX Volumes in a year during your subscription:",
+          "All figures are in GBP"
+        ]
+      },
+      {
+        "type": "table",
+        "content": [
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["Aggregate traded Notional of FX Spot, and FX Forward per year"],
+                "classes": "tableTextHeader"
+              },
+              {
+                "type": "p",
+                "content": ["Fee per month"],
+                "classes": "tableTextHeader"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["1,000,000"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["50"],
+                "classes": "tableText"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["5,000,000"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["150"],
+                "classes": "tableText"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["10,000,000"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["300"],
+                "classes": "tableText"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["20,000,000"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["500"],
+                "classes": "tableText"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["50,000,000"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["1,000"],
+                "classes": "tableText"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["100,000,000"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["2,000"],
+                "classes": "tableText"
+              }
+            ]
+          },
+          {
+            "type": "tr",
+            "content": [
+              {
+                "type": "p",
+                "content": ["> 100,000,000"],
+                "classes": "tableText"
+              },
+              {
+                "type": "p",
+                "content": ["2,500"],
+                "classes": "tableText"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          "In  case  you  exceed  the  volume  of  FX  of  your  selected  subscription  plan  during  the year, you can either pay a one-off charge as per the Standard Account Plan below, or upgrade to a higher tier."
+        ]
+      },
+      {
+        "heading": "Standard Account",
+        "type": "p",
+        "content": ["0.10% fixed fee per transaction, this plan may be suitable for you if you trade infrequently."]
+      },
+      {
+        "type": "p",
+        "content": ["Please Note:"]
+      },
+      {
+        "type": "text",
+        "content": "Third Party payment charges are extra, and depend on the destination of payment, and payment method/urgency of payment",
+        "classes": "privacyPolicyList"
+      },
+      {
+        "type": "text",
+        "content": "In cases where FXGuard agrees to trade FX Forwards without margins, an additional fee for each FX Forward transaction would also be applicable (to be agreed with the customer individually and bilaterally)",
+        "classes": "privacyPolicyList"
+      },
+      {
+        "type": "text",
+        "content": "Terms & Conditions apply – Please refer to our terms of business",
+        "classes": "privacyPolicyList"
+      }
+    ]
+  }
+}
