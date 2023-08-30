@@ -131,6 +131,8 @@ const SignupPage = (props) => {
   const { classes } = props;
   const location = useLocation();
   const history = useHistory();
+  
+  const [{ authenticated }, dispatch] = useStateValue(false);
 
     let initialState = {
         signUpModal: true,
@@ -187,7 +189,8 @@ const SignupPage = (props) => {
         passwordConfirmationPristine: true,
         passwordConfirmationErrorMsg: [],
         countries: [],
-        callInProgress: false,
+        // callInProgress: true,
+        // ProgressMSG:"Processing",
         showVerifyOTPModal: false,
         emailOTPCode: '',
         emailOTPCodeState: '',
@@ -198,6 +201,9 @@ const SignupPage = (props) => {
         isAutoLogin: false,
       };
       const [initial, setIntial] = useState(initialState);
+
+      const [ProgressBar,setProgressBar] = useState(false);
+      const [ProgressBarMSG,setProgressBarMSG] = useState("Processing...");
 
   const error = {
     firstNameErrorMsg: {
@@ -305,15 +311,18 @@ const SignupPage = (props) => {
       notProspectDemoUser: location.state != null ? location.state.notProspectDemoUser : false,
     };
     console.log("Submit Data - ", user);
-    setState({ callInProgress: true });
+    // setState({ callInProgress: true, ProgressMSG: "Signing you In..." });
+    setProgressBar(true);
+    setProgressBarMSG("Signing you In...")
     const res = await axios.post(endpoint.BASE_URL_STAGING_AXIOS + endpoint.USER_SIGNUP, user);
     const data = res.data;
     // const data = {
     //   status: "message"
     // }
     if (data.errorCode) {
+      setProgressBar(false)
       await setState({
-        callInProgress: false,
+        // callInProgress: false,
         signUpModal: false,
         noticeModal: true,
         noticeModalErrMsg: data.userDesc,
@@ -323,7 +332,7 @@ const SignupPage = (props) => {
       });
     } else {
       await setState({
-        callInProgress: false,
+        // callInProgress: false,
         signUpModal: false,
         noticeModal: true,
         noticeModalErrMsg: '',
@@ -331,7 +340,7 @@ const SignupPage = (props) => {
         showVerifyOTPModal: false,
         isOTPDialog: false,
       });
-      // handleLoginSubmit();
+      handleLoginSubmit();
     }
   };
   const getAlpha2Code = (code) => {
@@ -447,6 +456,7 @@ const SignupPage = (props) => {
       password: initial.password,
       skipmfa: "true",
     };
+    // setState({ callInProgress: true });
     const response = await axios.post(endpoint.BASE_URL_STAGING_AXIOS + endpoint.LOGIN_OAUTH, data);
     // const response = await apiHandler({
     //   method: 'POST',
@@ -456,16 +466,31 @@ const SignupPage = (props) => {
     // });
     console.log('LOGIN - ', response);
     if (response.data.error && response.data.error !== 'mfa_required') {
+      setProgressBar(false)
       setState({
+        // callInProgress: false,
         noticeModal: true,
         noticeModalErrMsg: response.data.error_description,
+        showVerifyOTPModal: false
       });
     } else if (response.data.access_token) {
+      setProgressBar(false)
       // Users to bypass token mechanism
+      setState({ 
+        //  callInProgress: false,
+         noticeModal: false,
+         showVerifyOTPModal: false,
+         isOTPDialog: false,
+         signUpModal:false });
       await updateStorageAfterLogin(response.data);
     } else {
       // NEED A MESSAGE TO SHOW ERROR
+      setProgressBar(false)
       setState({
+        // callInProgress: false,
+        showVerifyOTPModal: false,
+        isOTPDialog: false,
+        signUpModal: false,
         noticeModal: true,
         noticeModalErrMsg: "Please login into system",
       });
@@ -494,15 +519,16 @@ const SignupPage = (props) => {
     }
     sessionStorage.setItem('status', status);
 
-    // dispatch({
-    //   type: 'changeAuthenticated',
-    //   authenticated: true,
-    // });
+    dispatch({
+      type: 'changeAuthenticated',
+      authenticated: true,
+    });
     // Check logged in user role access
     await getUserAppsAccess(data);
   };
   const getUserAppsAccess = async (data) => {
     console.log('getUserAppsAccess - ', data);
+    // setState({callInProgress: true})
     const response = await apiHandler({
       method: 'GET',
       url: endpoint.LOGIN_SUBSCRIBED_APPS,
@@ -510,11 +536,15 @@ const SignupPage = (props) => {
     });
     console.log('getUserAppsAccess Signup - ', response.data);
     if (response.data.error) {
+      setProgressBar(false)
       setState({
+        // callInProgress: false,
         noticeModal: true,
         noticeModalErrMsg: "Please check your Email for Valid OTP code",
       });
     } else {
+      // setState({callInProgress: false})
+      setProgressBar(false)
       if (data.is_user_admin) props.history.push(`/auth/admin/admin-dashboard`);
       else {
         const linkRes = await apiHandler({ url: endpoint.APP_LINK });
@@ -601,14 +631,17 @@ const SignupPage = (props) => {
   const getEmailOTP = async () => {
     if (initial.email !== '') {
       const data = { source: initial.email, type: 'EMAIL' };
-      setState({ callInProgress: true });
+      setProgressBar(true);
+      setProgressBarMSG("Processing...");
+      // setState({ callInProgress: true, ProgressMSG:"Processing..." });
       const res = await axios.post(endpoint.BASE_URL_STAGING_AXIOS + endpoint.USER_EMAIL_SEND_OTP, data);
       // const res = await apiHandler({
       //   method: "POST",
       //   url: endpoint.USER_EMAIL_SEND_OTP,
       //   data: data
       // });
-      setState({ callInProgress: false });
+      setProgressBar(false);
+      // setState({ callInProgress: false });
       if (res.data.errorCode) {
         setState({
           noticeModal: true,
@@ -629,7 +662,9 @@ const SignupPage = (props) => {
   };
   const verifyOTP = async () => {
     const data = { source: initial.email, otp: initial.emailOTPCode };
-    setState({ callInProgress: true });
+    setProgressBar(true)
+    setProgressBarMSG("Verifying OTP...")
+    // setState({ callInProgress: true, ProgressMSG:"Verifying OTP..." });
     const res = await axios.post(endpoint.BASE_URL_STAGING_AXIOS + endpoint.USER_EMAIL_VERIFY_OTP, data);
     // const res = await apiHandler({
     //   method: "POST",
@@ -637,8 +672,9 @@ const SignupPage = (props) => {
     //   data: data
     // });
     if (res.data.errorCode) {
+      setProgressBar(false);
       setState({
-        callInProgress: false,
+        // callInProgress: false,
         noticeModal: true,
         noticeModalErrMsg: res.data.userDesc,
       });
@@ -656,18 +692,22 @@ const SignupPage = (props) => {
   };
   const resetOTP = async () => {
     const data = { source: initial.email, type: 'EMAIL' };
-    setState({ callInProgress: true });
+    // setState({ callInProgress: true });
+    setProgressBar(true)
     const response = await axios.post(endpoint.BASE_URL_STAGING_AXIOS + endpoint.USER_EMAIL_SEND_OTP, data);
-    setState({ callInProgress: false });
+    // setState({ callInProgress: false });
+    setProgressBar(false)
     if (response.data.error) {
+      setProgressBar(false)
       setState({
-        callInProgress: false,
+        // callInProgress: false,
         noticeModal: true,
         noticeModalErrMsg: response.data.error_description,
       });
     } else {
+      setProgressBar(false)
       setState({
-        callInProgress: false,
+        // callInProgress: false,
         noticeModal: true,
         noticeModalErrMsg: 'Please check your Email for new OTP code.',
       });
@@ -731,8 +771,8 @@ const SignupPage = (props) => {
     <div className={cx(classes.container, classes.cardSignup)}>
       {initial.isOTPDialog ? (
         <>
-          {initial.callInProgress ? (
-            <CircularProgresss callInProgress={initial.callInProgress} />
+          {ProgressBar ? (
+            <CircularProgresss callInProgress={ProgressBar} text={ProgressBarMSG} />
           ) : (
             <>
               {/* OTP screen */}
@@ -802,8 +842,8 @@ const SignupPage = (props) => {
         </>
       ) : (
         <>
-          {initial.callInProgress ? (
-            <CircularProgresss callInProgress={initial.callInProgress} />
+          {ProgressBar ? (
+            <CircularProgresss callInProgress={ProgressBar} text={ProgressBarMSG}/> //initial.ProgressMSG
           ) : (
             <>
               <Dialog
