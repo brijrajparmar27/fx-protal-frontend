@@ -98,6 +98,14 @@ const HomePage = (props) => {
     return () => clearInterval(interval);
   });
 
+  useEffect(()=>{
+    const token = sessionStorage.getItem("token");
+    if(token)
+    {
+      history.push("/auth/risk-subscription");
+    }
+  },[])
+
   const componentDidUpdate = () => {
     if (sessionStorage.getItem("logout") === "timeout") {
       setNoticeModal(true);
@@ -228,7 +236,7 @@ const HomePage = (props) => {
         <meta property="og:description" content={description} />
         {/* End Facebook tags */}
         {/* Twitter tags */}
-        <meta name="twitter:creator" content={name} />}
+        <meta name="twitter:creator" content={name} />
         <meta name="twitter:card" content={type} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
