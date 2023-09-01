@@ -57,6 +57,7 @@
     "react-to-print": "^2.6.3",
     "react-zoom-pan-pinch": "^1.6.1",
     "sass": "^1.63.6",
+    "serve": "^14.2.1",
     "xlsx": "^0.18.5"
   },
   "scripts": {
