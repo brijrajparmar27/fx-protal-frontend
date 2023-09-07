@@ -21,6 +21,7 @@ function CustomInput({ ...props }) {
     labelText,
     id,
     inputRef,
+    type,
     labelProps,
     inputProps,
     error,
@@ -81,6 +82,7 @@ function CustomInput({ ...props }) {
           disabled: classes.disabled,
           underline: underlineClasses
         }}
+        type={type || "text"}
         id={id}
         ref={inputRef}
         value={props.value}
