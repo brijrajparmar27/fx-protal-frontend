@@ -438,7 +438,7 @@ const HomePage = (props) => {
           /> */}
           <video
             src={
-              "https://fxguard-cms.s3.eu-west-2.amazonaws.com/cms/public/images/FXG+Movie+2.mp4"
+              "https://fxguard-cms.s3.eu-west-2.amazonaws.com/cms/public/videos/The+Digital+Foreign+Exchange+Risk+Manager.mp4"
             }
             alt={"corporateValues"}
             controls
