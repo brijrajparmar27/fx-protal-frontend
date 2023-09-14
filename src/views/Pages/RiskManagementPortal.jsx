@@ -529,7 +529,7 @@ const RiskManagementPortal = (props) => {
               showModal={getStartedModal}
               closeModal={closeGetStartedModal}
               title={'GET STARTED VIDEO'}
-              videoLink={'https://fxguard-cms.s3.eu-west-2.amazonaws.com/cms/public/images/Get-Started-Video-FXGuard.mp4'}
+              videoLink={'https://fxguard-cms.s3.eu-west-2.amazonaws.com/cms/public/videos/How+to+Navigate.mp4'}
             />
           )}
         </div>
