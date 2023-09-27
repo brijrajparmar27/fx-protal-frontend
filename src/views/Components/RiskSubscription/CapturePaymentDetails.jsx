@@ -1,39 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import Slide from '@material-ui/core/Slide';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import CustomNumberFormat from 'components/CustomNumberFormat/CustomNumberFormat.jsx';
-import NumberFormat from 'react-number-format';
+import withStyles from "@material-ui/core/styles/withStyles";
+import Slide from "@material-ui/core/Slide";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import CustomNumberFormat from "components/CustomNumberFormat/CustomNumberFormat.jsx";
+import NumberFormat from "react-number-format";
 
-import cx from 'classnames';
+import cx from "classnames";
 
 // @material-ui/icons
-import DescriptionIcon from '@material-ui/icons/Description';
+import DescriptionIcon from "@material-ui/icons/Description";
 // import LockOutline from "@material-ui/icons/LockOutline";
 
-import { validate } from 'utils/Validator';
+import { validate } from "utils/Validator";
 // core components
-import GridContainer from 'components/Grid/GridContainer.jsx';
-import GridItem from 'components/Grid/GridItem.jsx';
-import CustomInput from 'components/CustomInput/CustomInput.jsx';
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
+import CustomInput from "components/CustomInput/CustomInput.jsx";
 
-import customSelectStyle from 'assets/jss/material-dashboard-pro-react/customSelectStyle.jsx';
-import signupPageStyle from 'assets/jss/material-dashboard-pro-react/views/signupPageStyle';
-import customInputStyle from 'assets/jss/material-dashboard-pro-react/components/customInputStyle.jsx';
+import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
+import signupPageStyle from "assets/jss/material-dashboard-pro-react/views/signupPageStyle";
+import customInputStyle from "assets/jss/material-dashboard-pro-react/components/customInputStyle.jsx";
 
 const style = (theme) => ({
   ...signupPageStyle,
   ...customSelectStyle,
   ...customInputStyle,
   subTitle: {
-    float: 'left',
+    float: "left",
     paddingTop: 30,
   },
   select: {
@@ -41,12 +41,12 @@ const style = (theme) => ({
     fontSize: 14,
   },
   filledSelect: {
-    textAlign: 'left',
-    margin: '0 12px',
+    textAlign: "left",
+    margin: "0 12px",
   },
   termsText: {
     fontSize: 12,
-    color: 'darkslategrey',
+    color: "darkslategrey",
   },
   mt10neg: {
     marginTop: -10,
@@ -55,7 +55,7 @@ const style = (theme) => ({
     marginTop: -35,
   },
   selectFormControl: {
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       marginTop: -15,
     },
   },
@@ -64,35 +64,35 @@ const style = (theme) => ({
   },
   expiryField: {
     paddingTop: 0,
-    width: '30%',
-    margin: '0 5px',
+    width: "30%",
+    margin: "0 5px",
   },
   selectLabel: {
     marginTop: 8,
     marginLeft: 9,
-    color: '#AAAAAA !important',
+    color: "#AAAAAA !important",
     fontSize: 14,
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     fontWeight: 400,
     lineHeight: 1.42857,
-    transform: 'translate(0, 1.5px) scale(0.75)',
-    transformOrigin: 'top left',
+    transform: "translate(0, 1.5px) scale(0.75)",
+    transformOrigin: "top left",
   },
   modalCloseButton: {
-    float: 'right',
+    float: "right",
   },
   loginMaxWidth: {
     maxWidth: 650,
   },
   closeButton: {
-    position: 'absolute',
+    position: "absolute",
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500],
   },
   emptyIcon: {
-    [theme.breakpoints.up('lg')]: {
-      display: 'none',
+    [theme.breakpoints.up("lg")]: {
+      display: "none",
     },
   },
 });
@@ -100,46 +100,46 @@ const style = (theme) => ({
 class CapturePaymentDetails extends React.Component {
   error = {
     cardNumberErrorMsg: {
-      required: 'Card Number is required',
+      required: "Card Number is required",
     },
     cardNameErrorMsg: {
-      required: 'Card Name is required',
+      required: "Card Name is required",
     },
     cardValidUptoMMErrorMsg: {
-      required: 'Invalid',
-      range: 'Invalid',
+      required: "Invalid",
+      range: "Invalid",
     },
     cardValidUptoYYErrorMsg: {
-      required: 'Invalid',
-      range: 'Invalid',
+      required: "Invalid",
+      range: "Invalid",
     },
     cvvErrorMsg: {
-      required: 'CVV Missing',
-      range: 'Invalid',
+      required: "CVV Missing",
+      range: "Invalid",
     },
   };
 
   initialState = {
     noticeModal: false,
-    noticeModalErrMsg: '',
-    cardNumber: '',
-    cardNumberState: '',
+    noticeModalErrMsg: "",
+    cardNumber: "",
+    cardNumberState: "",
     cardNumberPristine: true,
     cardNumberErrorMsg: [],
-    cardName: '',
-    cardNameState: '',
+    cardName: "",
+    cardNameState: "",
     cardNamePristine: true,
     cardNameErrorMsg: [],
-    cvv: '',
-    cvvState: '',
+    cvv: "",
+    cvvState: "",
     cvvPristine: true,
     cvvErrorMsg: [],
-    cardValidUptoMM: '',
-    cardValidUptoMMState: '',
+    cardValidUptoMM: "",
+    cardValidUptoMMState: "",
     cardValidUptoMMPristine: true,
     cardValidUptoMMErrorMsg: [],
-    cardValidUptoYY: '',
-    cardValidUptoYYState: '',
+    cardValidUptoYY: "",
+    cardValidUptoYYState: "",
     cardValidUptoYYPristine: true,
     cardValidUptoYYErrorMsg: [],
     callInProgress: false,
@@ -156,9 +156,10 @@ class CapturePaymentDetails extends React.Component {
     // if (stateName === "cvv" && this.state.cardType === "Amex") {
     //   rules.push({ type: "validAmex" });
     // }
+    console.log(event, stateName, rules, "brijraj");
     let value = event.target.value;
-    if (stateName === 'cardNumber') {
-      value = value.replace(/-/g, '').trim();
+    if (stateName === "cardNumber") {
+      value = value.replace(/-/g, "").trim();
     }
     this.setState(validate(value, stateName, this.state, rules, this.error));
     this.props.change(event, stateName, rules);
@@ -166,7 +167,7 @@ class CapturePaymentDetails extends React.Component {
   handleChange = (name, event) => {
     this.setState({ [name]: event.target.value });
     this.props.handleChange(name, event);
-    if (name === 'cardValidUptoMM' && event.target.value.length > 1) {
+    if (name === "cardValidUptoMM" && event.target.value.length > 1) {
       if (this.yyInputRef && this.yyInputRef.current) this.yyInputRef.focus();
     }
   };
@@ -175,7 +176,8 @@ class CapturePaymentDetails extends React.Component {
   };
   initalizeState = () => {
     this.setState(this.initialState);
-    if (this.fileUploadComponent && this.fileUploadComponent.current) this.fileUploadComponent.current.handleRemove();
+    if (this.fileUploadComponent && this.fileUploadComponent.current)
+      this.fileUploadComponent.current.handleRemove();
   };
   componentWillUnmount() {
     this.initalizeState();
@@ -183,7 +185,7 @@ class CapturePaymentDetails extends React.Component {
   handleNextInput = (e, name, id) => {
     console.log(this.state.cardNumber, this.state.cardNumber.length);
     switch (name) {
-      case "cardNumber": 
+      case "cardNumber":
         if (this.state.cardNumber.length > 15) {
           document.getElementById("uusp_cvv").focus();
         }
@@ -209,29 +211,40 @@ class CapturePaymentDetails extends React.Component {
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={12} lg={12}>
               <GridContainer spacing={1} alignItems="center">
-                <GridItem className={classes.customText} xs={11} sm={11} md={11} lg={11}>
+                <GridItem
+                  className={classes.customText}
+                  xs={11}
+                  sm={11}
+                  md={11}
+                  lg={11}
+                >
                   <CustomInput
-                    success={this.state.cardNameState === 'success'}
-                    error={this.state.cardNameState === 'error'}
-                    helpText={this.state.cardNameState === 'error' && this.state.cardNameErrorMsg[0]}
+                    success={this.state.cardNameState === "success"}
+                    error={this.state.cardNameState === "error"}
+                    helpText={
+                      this.state.cardNameState === "error" &&
+                      this.state.cardNameErrorMsg[0]
+                    }
                     labelText="Name on Card*"
                     id="uusp_cardName"
                     inputProps={{
                       value: this.state.cardName,
                       disabled: cardChecked,
-                      onChange: (event) => this.handleChange('cardName', event),
+                      onChange: (event) => this.handleChange("cardName", event),
                     }}
                     formControlProps={{
                       fullWidth: true,
                       className: classes.customFormControlClasses,
                       onBlur: (event) => {
                         this.setState({ cardNamePristine: false });
-                        this.change(event, 'cardName', [{ type: 'required' }]);
+                        this.change(event, "cardName", [{ type: "required" }]);
                       },
                       onChange: (event) => {
                         if (!this.state.cardNamePristine) {
                           this.setState({ cardNamePristine: false });
-                          this.change(event, 'cardName', [{ type: 'required' }]);
+                          this.change(event, "cardName", [
+                            { type: "required" },
+                          ]);
                         }
                       },
                     }}
@@ -241,9 +254,22 @@ class CapturePaymentDetails extends React.Component {
             </GridItem>
             <GridItem xs={12} sm={12} md={12} lg={12}>
               <GridContainer spacing={1} alignItems="center">
-                <GridItem className={classes.customText} xs={11} sm={11} md={11} lg={11} style={{marginLeft: 10}}>
+                <GridItem
+                  className={classes.customText}
+                  xs={11}
+                  sm={11}
+                  md={11}
+                  lg={11}
+                  style={{ marginLeft: 10 }}
+                >
                   <GridContainer alignItems="center">
-                    <GridItem className={classes.customText} xs={8} sm={8} md={5} lg={5}>
+                    <GridItem
+                      className={classes.customText}
+                      xs={8}
+                      sm={8}
+                      md={5}
+                      lg={5}
+                    >
                       {/* <CustomInput
                     success={this.state.cardNumberState === 'success'}
                     error={this.state.cardNumberState === 'error'}
@@ -272,58 +298,82 @@ class CapturePaymentDetails extends React.Component {
                       {/* <FormControl fullWidth className={classes.selectFormControl}> */}
                       <FormHelperText
                         className={classes.selectLabel}
-                        success={this.state.cardNumberState === 'success'}
-                        error={this.state.cardNumberState === 'error'}
-                        helptext={this.state.cardNumberState === 'error' && this.state.cardNumberErrorMsg[0]}
+                        success={this.state.cardNumberState === "success"}
+                        error={this.state.cardNumberState === "error"}
+                        helptext={
+                          this.state.cardNumberState === "error" &&
+                          this.state.cardNumberErrorMsg[0]
+                        }
                       >
                         Card Number*
                       </FormHelperText>
                       <CustomNumberFormat
                         helpText={this.state.cardNumberErrorMsg}
                         id="uusp_cardNumber"
-                        value={this.state.cardNumber}
+                        // value={this.state.cardNumber}
                         format="#### #### #### ####"
                         cardFormat="card"
                         className={classes.input}
                         disabled={cardChecked}
                         formControlProps={{
                           fullWidth: true,
-                          className: cx(classes.customFormControlClasses, classes.mt10neg),
-                          onBlur: (event) => {
-                            this.setState({ cardNumberPristine: false });
-                            this.change(event, 'cardNumber', [{ type: 'required' }]);
-                          },
+                          className: cx(
+                            classes.customFormControlClasses,
+                            classes.mt10neg
+                          ),
+                          // onBlur: (event) => {
+                          //   this.setState({ cardNumberPristine: false });
+                          //   this.change(event, 'cardNumber', [{ type: 'required' }]);
+                          // },
                           onChange: (event) => {
-                            if (!this.state.cardNumberPristine) {
-                              this.setState({ cardNumberPristine: false });
-                              this.change(event, 'cardNumber', [{ type: 'required' }]);
-                            }
+                            // if (!this.state.cardNumberPristine) {
+                            this.setState({ cardNumberPristine: false });
+                            // this.change(event, 'cardNumber', [{ type: 'required' }]);
+                            // }
                           },
-                          onKeyUp: (e)=>this.handleNextInput(e, "cardNumber", "uusp_cvv"),
+                          onKeyUp: (event, value)=>{
+                            console.log(value);
+                            this.props.setCardInfo((prev) => {
+                              return {
+                                ...prev,
+                                cardNumber: event.target.value.replaceAll("-","").trim(),
+                              };
+                            });
+                          }
+                          // onKeyUp: (e)=>this.handleNextInput(e, "cardNumber", "uusp_cvv"),
                         }}
                       />
                     </GridItem>
-                    <GridItem className={classes.customText} xs={4} sm={4} md={3} lg={3}>
+                    <GridItem
+                      className={classes.customText}
+                      xs={4}
+                      sm={4}
+                      md={3}
+                      lg={3}
+                    >
                       <CustomInput
-                        success={this.state.cvvState === 'success'}
-                        error={this.state.cvvState === 'error'}
-                        helpText={this.state.cvvState === 'error' && this.state.cvvErrorMsg[0]}
+                        success={this.state.cvvState === "success"}
+                        error={this.state.cvvState === "error"}
+                        helpText={
+                          this.state.cvvState === "error" &&
+                          this.state.cvvErrorMsg[0]
+                        }
                         labelText="CVV Number*"
                         id="uusp_cvv"
                         inputProps={{
                           value: this.state.cvv,
                           disabled: cardChecked,
-                          onChange: (event) => this.handleChange('cvv', event),
+                          onChange: (event) => this.handleChange("cvv", event),
                         }}
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
                           onBlur: (event) => {
                             this.setState({ cvvPristine: false });
-                            this.change(event, 'cvv', [
-                              { type: 'required' },
+                            this.change(event, "cvv", [
+                              { type: "required" },
                               {
-                                type: 'length',
+                                type: "length",
                                 params: {
                                   min: 3,
                                   max: 4,
@@ -334,10 +384,10 @@ class CapturePaymentDetails extends React.Component {
                           onChange: (event) => {
                             if (!this.state.cvvPristine) {
                               this.setState({ cvvPristine: false });
-                              this.change(event, 'cvv', [
-                                { type: 'required' },
+                              this.change(event, "cvv", [
+                                { type: "required" },
                                 {
-                                  type: 'length',
+                                  type: "length",
                                   params: {
                                     min: 3,
                                     max: 4,
@@ -346,54 +396,79 @@ class CapturePaymentDetails extends React.Component {
                               ]);
                             }
                           },
-                          onKeyUp: (e)=>this.handleNextInput(e, "cvv", "uusp_cardValidUptoMM"),
+                          onKeyUp: (e) =>
+                            this.handleNextInput(
+                              e,
+                              "cvv",
+                              "uusp_cardValidUptoMM"
+                            ),
                         }}
                       />
                     </GridItem>
-                    <GridItem className={classes.customText} xs={3} sm={3} md={3} lg={3} style={{ margin: '4px 0px 0px 10px' }}>
+                    <GridItem
+                      className={classes.customText}
+                      xs={3}
+                      sm={3}
+                      md={3}
+                      lg={3}
+                      style={{ margin: "4px 0px 0px 10px" }}
+                    >
                       <FormHelperText
                         style={{
                           top: 10,
-                          color: '#AAAAAA !important',
+                          color: "#AAAAAA !important",
                           fontSize: 14,
-                          fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+                          fontFamily:
+                            "'Roboto', 'Helvetica', 'Arial', sans-serif",
                           fontWeight: 400,
                           lineHeight: 1.42857,
-                          transform: 'translate(0, 1.5px) scale(0.75)',
-                          transformOrigin: 'top left',
+                          transform: "translate(0, 1.5px) scale(0.75)",
+                          transformOrigin: "top left",
                           paddingLeft: 25,
                         }}
-                        success={this.state.cardValidUptoMMState === 'success'}
-                        error={this.state.cardValidUptoMMState === 'error'}
-                        helpText={this.state.cardValidUptoMMState === 'error' && this.state.cardValidUptoMMErrorMsg[0]}
+                        success={this.state.cardValidUptoMMState === "success"}
+                        error={this.state.cardValidUptoMMState === "error"}
+                        helpText={
+                          this.state.cardValidUptoMMState === "error" &&
+                          this.state.cardValidUptoMMErrorMsg[0]
+                        }
                       >
                         Expiry Date*
                       </FormHelperText>
-                      <div style={{ display: 'inline-block' }}>
+                      <div style={{ display: "inline-block" }}>
                         <CustomInput
-                          success={this.state.cardValidUptoMMState === 'success'}
-                          error={this.state.cardValidUptoMMState === 'error'}
-                          helpText={this.state.cardValidUptoMMState === 'error' && this.state.cardValidUptoMMErrorMsg[0]}
+                          success={
+                            this.state.cardValidUptoMMState === "success"
+                          }
+                          error={this.state.cardValidUptoMMState === "error"}
+                          helpText={
+                            this.state.cardValidUptoMMState === "error" &&
+                            this.state.cardValidUptoMMErrorMsg[0]
+                          }
                           // labelText='Card Number*'
                           id="uusp_cardValidUptoMM"
                           inputProps={{
                             value: this.state.cardValidUptoMM,
                             disabled: cardChecked,
                             style: { paddingLeft: 0 },
-                            placeholder: 'MM',
-                            onChange: (event) => this.handleChange('cardValidUptoMM', event),
+                            placeholder: "MM",
+                            onChange: (event) =>
+                              this.handleChange("cardValidUptoMM", event),
                           }}
                           formControlProps={{
                             // fullWidth: true,
-                            className: cx(classes.customFormControlClasses, classes.expiryField),
+                            className: cx(
+                              classes.customFormControlClasses,
+                              classes.expiryField
+                            ),
                             onBlur: (event) => {
                               this.setState({
                                 cardValidUptoMMPristine: false,
                               });
-                              this.change(event, 'cardValidUptoMM', [
-                                { type: 'required' },
+                              this.change(event, "cardValidUptoMM", [
+                                { type: "required" },
                                 {
-                                  type: 'range',
+                                  type: "range",
                                   params: {
                                     min: 1,
                                     max: 12,
@@ -406,10 +481,10 @@ class CapturePaymentDetails extends React.Component {
                                 this.setState({
                                   cardValidUptoMMPristine: false,
                                 });
-                                this.change(event, 'cardValidUptoMM', [
-                                  { type: 'required' },
+                                this.change(event, "cardValidUptoMM", [
+                                  { type: "required" },
                                   {
-                                    type: 'range',
+                                    type: "range",
                                     params: {
                                       min: 1,
                                       max: 12,
@@ -418,7 +493,12 @@ class CapturePaymentDetails extends React.Component {
                                 ]);
                               }
                             },
-                            onKeyUp: (e)=>this.handleNextInput(e, "cardValidUptoMM", "uusp_cardValidUptoYY"),
+                            onKeyUp: (e) =>
+                              this.handleNextInput(
+                                e,
+                                "cardValidUptoMM",
+                                "uusp_cardValidUptoYY"
+                              ),
                           }}
                         />
                         {/* </GridItem> */}
@@ -431,28 +511,37 @@ class CapturePaymentDetails extends React.Component {
                           lg={1}
                         > */}
                         <CustomInput
-                          success={this.state.cardValidUptoYYState === 'success'}
-                          error={this.state.cardValidUptoYYState === 'error'}
-                          helpText={this.state.cardValidUptoYYState === 'error' && this.state.cardValidUptoYYErrorMsg[0]}
+                          success={
+                            this.state.cardValidUptoYYState === "success"
+                          }
+                          error={this.state.cardValidUptoYYState === "error"}
+                          helpText={
+                            this.state.cardValidUptoYYState === "error" &&
+                            this.state.cardValidUptoYYErrorMsg[0]
+                          }
                           // labelText='Card Number*'
                           id="uusp_cardValidUptoYY"
                           inputRef={(ref) => (this.yyInputRef = ref)}
                           inputProps={{
                             value: this.state.cardValidUptoYY,
                             disabled: cardChecked,
-                            placeholder: 'YY',
-                            onChange: (event) => this.handleChange('cardValidUptoYY', event),
+                            placeholder: "YY",
+                            onChange: (event) =>
+                              this.handleChange("cardValidUptoYY", event),
                           }}
                           formControlProps={{
                             // fullWidth: true,
-                            className: cx(classes.customFormControlClasses, classes.expiryField),
+                            className: cx(
+                              classes.customFormControlClasses,
+                              classes.expiryField
+                            ),
                             onBlur: (event) => {
                               this.setState({
                                 cardValidUptoYYPristine: false,
                               });
-                              this.change(event, 'cardValidUptoYY', [
+                              this.change(event, "cardValidUptoYY", [
                                 {
-                                  type: 'length',
+                                  type: "length",
                                   params: {
                                     min: 2,
                                     max: 2,
@@ -465,9 +554,9 @@ class CapturePaymentDetails extends React.Component {
                                 this.setState({
                                   cardValidUptoYYPristine: false,
                                 });
-                                this.change(event, 'cardValidUptoYY', [
+                                this.change(event, "cardValidUptoYY", [
                                   {
-                                    type: 'length',
+                                    type: "length",
                                     params: {
                                       min: 2,
                                       max: 2,

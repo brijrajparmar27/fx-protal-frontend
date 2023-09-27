@@ -159,8 +159,8 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
     const OnSubmitOrder = async (event) => {
         event.preventDefault();
         event.stopPropagation();
-
-        if (isValidated()) {
+        console.log(cardInfo);
+        if (true) {
             setCallInProgress(true);
             // RISK SUBSCRIPTION PAYMENT SETUP
             console.log(cardInfo);
@@ -170,8 +170,8 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
                 authToken: sessionStorage.getItem('token'),
                 data: {
                     nameOnCard: cardInfo.cardName,
-                    //cardNumber: cardInfo.cardNumber,
-                    cardNumber: "4242-4242-4242-4242",
+                    cardNumber: cardInfo.cardNumber,
+                    // cardNumber: "4242-4242-4242-4242",
                     cvc: cardInfo.cvv,
                     expMonth: cardInfo.cardValidUptoMM,
                     expYear: cardInfo.cardValidUptoYY,
@@ -346,7 +346,7 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
                                             <div style={{ marginLeft: 28 }}> Please share your Credit Card information which can be used to deduct subscription money from next month. </div>
                                         </GridItem>
                                         <GridItem xs={12} sm={12} md={12} lg={12}>
-                                            <CapturePaymentDetails handleChange={handleChange} change={change} />
+                                            <CapturePaymentDetails handleChange={handleChange} change={change} setCardInfo={setCardInfo}/>
                                         </GridItem>
                                     </GridContainer>
                                 </GridItem>
