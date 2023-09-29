@@ -20,6 +20,9 @@ const BlogHtmlFileUpload = ({updateLink}) => {
       url: endpoint.UPLOAD_BLOG_FILE,
       data: data,
       authToken: sessionStorage.getItem("token"),
+      headers:{
+        "Content-Type":"multipart/form-data"
+      }
     });
     if (res.data.errorCode) {
     } else {
