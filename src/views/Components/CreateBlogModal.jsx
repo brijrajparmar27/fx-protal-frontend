@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "@material-ui/core/Modal";
 import { TextField } from "@material-ui/core";
 import Button from "../../components/CustomButtons/Button";
@@ -53,7 +53,12 @@ const CreateBlogModal = ({
   const [description, setDescription] = useState(
     record && record.description ? record.description : ""
   );
-  const [link, setLink] = useState(record && record.link ? record.link : "");
+  // const [link, setLink] = useState(record && record.link ? record.link : "");
+  const [link,setLink] = useState("");
+
+  useEffect(()=>{
+    console.log(link);
+  },[link])
 
   const saveData = () => {
     // check for link in Description
@@ -153,7 +158,7 @@ const CreateBlogModal = ({
                 value={link}
                 onChange={(e) => setLink(e.target.value)}
               />
-              <BlogHtmlFileUpload updateLink={setLink}/>
+              <BlogHtmlFileUpload setLink={setLink}/>
               </div>
               <br />
               <Button
