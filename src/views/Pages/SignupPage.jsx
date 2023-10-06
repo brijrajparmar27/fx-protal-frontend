@@ -321,7 +321,7 @@ const SignupPage = (props) => {
     console.log("Submit Data - ", user);
     // setState({ callInProgress: true, ProgressMSG: "Signing you In..." });
     setProgressBar(true);
-    setProgressBarMSG("Signing you In...");
+    setProgressBarMSG("You have successfully signed up. You can now proceed to select a risk plan to have full access to FX Risk Management.");
     const res = await axios.post(
       endpoint.BASE_URL_STAGING_AXIOS + endpoint.USER_SIGNUP,
       user
@@ -384,8 +384,8 @@ const SignupPage = (props) => {
   const ValidateExistingEmailId = async (email) => {
     const res = await axios.get(
       endpoint.BASE_URL_STAGING_AXIOS +
-        endpoint.VALIDATE_EMAIL +
-        encodeURIComponent(email)
+      endpoint.VALIDATE_EMAIL +
+      encodeURIComponent(email)
     );
     console.log(res.data);
     if (res.data) {
@@ -452,6 +452,7 @@ const SignupPage = (props) => {
     setState(x);
   };
   const handleClose = (modal, isSignup) => {
+    history.goBack();
     var x = {};
     x[modal] = false;
     if (initial.checked && modal === "noticeModal") {
@@ -885,8 +886,7 @@ const SignupPage = (props) => {
                               formControlProps={{
                                 fullWidth: false,
                                 onChange: (event) => {
-                                  if(event.target.value.trim())
-                                  {
+                                  if (event.target.value.trim()) {
                                     change(event, 'emailOTPCode', [{ type: 'required' }]);
                                   }
                                 },
@@ -1684,7 +1684,7 @@ const SignupPage = (props) => {
                                   }
                                   helpText={
                                     initial.passwordConfirmationState ===
-                                      "error" &&
+                                    "error" &&
                                     initial.passwordConfirmationErrorMsg[0]
                                   }
                                   labelText="Password Confirmation*"
@@ -1843,7 +1843,7 @@ const SignupPage = (props) => {
           )}
         </>
       )}
-      <Dialog
+      {/* <Dialog
         classes={{
           root: classes.center + " " + classes.modalRoot,
           paper: classes.modal,
@@ -1895,7 +1895,7 @@ const SignupPage = (props) => {
             OK
           </Button>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </div>
   );
 };

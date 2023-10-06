@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from "../../components/CustomButtons/Button";
 import FileViewer from "react-file-viewer";
 
@@ -42,7 +42,7 @@ const BlogFileUploadPage = () => {
           SELECT A FILE
         </h2>
       </div>
-      
+
       <input
         type="file"
         name="file"
@@ -61,7 +61,7 @@ const BlogFileUploadPage = () => {
             </p>
           </div>
           <b>Click On Submit To Upload</b>
-          <FileViewer fileType="docx" filePath= {fileDataURL} onError={onError} />
+          <FileViewer fileType="docx" filePath={fileDataURL} onError={onError} />
           <div>
             <Button
               variant="contained"
@@ -75,7 +75,7 @@ const BlogFileUploadPage = () => {
         </>
       ) : (
         <p>Select a file to show details</p>
-      )}  
+      )}
     </div>
   );
 };

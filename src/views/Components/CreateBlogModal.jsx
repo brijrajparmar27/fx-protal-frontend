@@ -54,11 +54,11 @@ const CreateBlogModal = ({
     record && record.description ? record.description : ""
   );
   // const [link, setLink] = useState(record && record.link ? record.link : "");
-  const [link,setLink] = useState("");
+  const [link, setLink] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(link);
-  },[link])
+  }, [link])
 
   const saveData = () => {
     // check for link in Description
@@ -66,7 +66,7 @@ const CreateBlogModal = ({
     let strArray = lineDescription.split('<link>');
     let str = strArray[0];
     if (strArray.length > 1) { // link is embedded
-      for (let i=1; i < strArray.length; i++) {
+      for (let i = 1; i < strArray.length; i++) {
         let linkArr = strArray[i].split('</link>');
         // str = str + `<a onClick={()=> window.open(${linkArr[0]}, "_blank")} class="BlogLink" style={{cursor: 'pointer'}}>${linkArr[0]}</a>`
         str = str + ` <a target="_blank" href="${linkArr[0]}">${linkArr[0]}</a>`
@@ -108,35 +108,35 @@ const CreateBlogModal = ({
           <div style={modalStyle} className={classes.paper}>
             <h2 className="ModalHeading">Blog Submission Details</h2>
             <div style={{ display: "grid" }}>
-            <div style={{ display: "flex"}}>
-              <CustomDateSelector
-                id="rr_date"
-                style={{ width: '70%' }}
-                inputProps={{
-                  format: "dd MMM yyyy",
-                  label: "Date",
-                  value: date,
-                  onChange: (date) => setDate(date),
-                  keyboardbuttonprops: {
-                    "aria-label": "change date",
-                  },
-                }}
-                formControlProps={
-                  {
-                    // fullWidth: true,
+              <div style={{ display: "flex" }}>
+                <CustomDateSelector
+                  id="rr_date"
+                  style={{ width: '70%' }}
+                  inputProps={{
+                    format: "dd MMM yyyy",
+                    label: "Date",
+                    value: date,
+                    onChange: (date) => setDate(date),
+                    keyboardbuttonprops: {
+                      "aria-label": "change date",
+                    },
+                  }}
+                  formControlProps={
+                    {
+                      // fullWidth: true,
+                    }
                   }
-                }
-              />
-              <TextField
-                style={{ marginBottom: 15, marginTop: 24, marginLeft: 15, width: '100%' }}
-                id="standard-basic"
-                label="Heading"
-                multiline
-                name="heading"
-                value={heading}
-                onChange={(e) => setHeading(e.target.value)}
-              />
-                </div>
+                />
+                <TextField
+                  style={{ marginBottom: 15, marginTop: 24, marginLeft: 15, width: '100%' }}
+                  id="standard-basic"
+                  label="Heading"
+                  multiline
+                  name="heading"
+                  value={heading}
+                  onChange={(e) => setHeading(e.target.value)}
+                />
+              </div>
               <TextField
                 style={{ marginBottom: 15 }}
                 id="standard-multiline-static"
@@ -148,17 +148,17 @@ const CreateBlogModal = ({
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
-              <div style={{ display: "flex", justifyContent:"space-between"}}>
-              <TextField
-                style={{ marginBottom: 15 }}
-                id="standard-basic"
-                label="Link"
-                multiline
-                name="link"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-              />
-              <BlogHtmlFileUpload setLink={setLink}/>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <TextField
+                  style={{ marginBottom: 15 }}
+                  id="standard-basic"
+                  label="Link"
+                  multiline
+                  name="link"
+                  value={link}
+                  onChange={(e) => setLink(e.target.value)}
+                />
+                <BlogHtmlFileUpload setLink={setLink} />
               </div>
               <br />
               <Button

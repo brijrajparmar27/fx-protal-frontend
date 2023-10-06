@@ -73,8 +73,7 @@
     "ajv": "^6.12.6",
     "prettier": "1.16.4"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "resolutions": {
     "**/fsevents": "^2.2.1"
   },

@@ -27,7 +27,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
+const PlanSubscriptionModal = ({ showModal, closeModal, details }) => {
     const classes = useStyles();
     const history = useHistory();
     const [nextPlanDate, setnextPlanDate] = useState('');
@@ -108,6 +108,10 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
     };
     const change = (event, stateName, rules) => {
         let value = event.target.value;
+        if (stateName === 'cardNumber') {
+            value = value.replace(/-/g, '').trim();
+        }
+        setCardInfo({ ...cardInfo, [stateName]: value });
         setCardInfoState({
             ...cardInfoState,
             ...validate(value, stateName, cardInfoState, rules, error),
@@ -159,8 +163,8 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
     const OnSubmitOrder = async (event) => {
         event.preventDefault();
         event.stopPropagation();
-        console.log(cardInfo);
-        if (true) {
+
+        if (isValidated()) {
             setCallInProgress(true);
             // RISK SUBSCRIPTION PAYMENT SETUP
             console.log(cardInfo);
@@ -171,11 +175,10 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
                 data: {
                     nameOnCard: cardInfo.cardName,
                     cardNumber: cardInfo.cardNumber,
-                    // cardNumber: "4242-4242-4242-4242",
                     cvc: cardInfo.cvv,
                     expMonth: cardInfo.cardValidUptoMM,
                     expYear: cardInfo.cardValidUptoYY,
-                    returnUrl: 'https://devui.fxguard.co.uk/#/auth/risk-payment-status',
+                    returnUrl: origin + '/#/auth/risk-payment-status',
                     riskSubscriptionPlanId: details.id,
                 },
             });
@@ -333,7 +336,7 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
                                                 borderBottom: '1px solid #6a6a6a',
                                             }}
                                         >
-                                            <div>{`£${formatMoney(calculateVAT(details.amount)+details.amount)}`}</div>
+                                            <div>{`£${formatMoney(calculateVAT(details.amount) + details.amount)}`}</div>
                                         </GridItem>
                                     </GridContainer>
                                 </GridItem>
@@ -346,7 +349,7 @@ const PlanSubscriptionModal = ({ showModal, closeModal,   details }) => {
                                             <div style={{ marginLeft: 28 }}> Please share your Credit Card information which can be used to deduct subscription money from next month. </div>
                                         </GridItem>
                                         <GridItem xs={12} sm={12} md={12} lg={12}>
-                                            <CapturePaymentDetails handleChange={handleChange} change={change} setCardInfo={setCardInfo}/>
+                                            <CapturePaymentDetails handleChange={handleChange} change={change} />
                                         </GridItem>
                                     </GridContainer>
                                 </GridItem>

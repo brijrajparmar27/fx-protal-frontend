@@ -6,110 +6,110 @@ import Logout from "views/Components/logout.jsx";
 import { endpoint } from "./endpoint";
 
 async function createRequest({ headers, params, authToken }) {
-    console.log(headers, "headers");
-    return axios.create({
-        responseType: "json",
-        crossdomain: true,
-        baseURL: endpoint.BASE_URL_STAGING,
-        headers: {
-            "Content-Type": headers ? headers["Content-Type"] || "application/json" : "application/json",
-            Accept: "application/json",
-            Authorization: "Bearer " + authToken,
-            ...headers,
-        },
-        params,
-    });
+  console.log(headers, "headers");
+  return axios.create({
+    responseType: "json",
+    crossdomain: true,
+    baseURL: endpoint.BASE_URL_STAGING,
+    headers: {
+      "Content-Type": headers ? headers["Content-Type"] || "application/json" : "application/json",
+      Accept: "application/json",
+      Authorization: "Bearer " + authToken,
+      ...headers,
+    },
+    params,
+  });
 }
 
 export const handleCatchBlock = () => {
-    console.log("Something went wrong fetching apis");
-    return <Logout />;
+  console.log("Something went wrong fetching apis");
+  return <Logout />;
 };
 
 export const apiHandler = async ({
+  url,
+  method,
+  headers: reqHeaders,
+  data: jsonData,
+  params,
+  authToken,
+  retryNo,
+}) => {
+  const callAPI = async ({ url, method, reqHeaders, jsonData, params, authToken, retryNo }) => {
+    try {
+      const request = await createRequest({ headers: reqHeaders, params, authToken });
+      let result = [];
+      switch (method) {
+        case "POST":
+          result = await request.post(url, jsonData);
+          break;
+        case "DELETE":
+          result = await request.delete(url);
+          break;
+        case "PUT":
+          result = await request.put(url, jsonData);
+          break;
+        default:
+          result = await request.get(url);
+      }
+      if (result) {
+        const { data, headers } = result;
+        if (retryNo) console.log("Retry Num - ", url, retryNo);
+        if (data.errorCode && data.errorCode === 401) {
+          if (!retryNo) retryNo = 0;
+          if (retryNo < 4) {
+            let newToken = sessionStorage.getItem("token");
+            await callAPI({
+              url,
+              method,
+              reqHeaders,
+              jsonData,
+              params,
+              newToken,
+              retryNo: retryNo + 1,
+            });
+            // return;
+          } else {
+            if (retryNo && retryNo > 0) {
+              console.log("DATA WITH ERROR - ", retryNo, data);
+              return { data: data };
+            }
+            return result;
+          }
+          // Logout();
+          // browserHistory.push("/logout");
+          // return;
+        } else {
+          if (retryNo && retryNo > 0) {
+            console.log("DATA AFTER RETRY - ", retryNo, data);
+          }
+          return { data, headers };
+        }
+      } else {
+        // Logout();
+        console.log("UNKNOWN - ", retryNo);
+        return { data: { errorCode: 500, userDesc: "System Error" } };
+      }
+    } catch (error) {
+      return handleCatchBlock();
+      // if (error && error.response) {
+      //   const { data, headers } = error.response;
+      //   return { data, headers };
+      // }
+    }
+  };
+
+  let result = await callAPI({
     url,
     method,
-    headers: reqHeaders,
-    data: jsonData,
+    reqHeaders,
+    jsonData,
     params,
     authToken,
-    retryNo,
-}) => {
-    const callAPI = async ({ url, method, reqHeaders, jsonData, params, authToken, retryNo }) => {
-        try {
-            const request = await createRequest({ headers: reqHeaders, params, authToken });
-            let result = [];
-            switch (method) {
-                case "POST":
-                    result = await request.post(url, jsonData);
-                    break;
-                case "DELETE":
-                    result = await request.delete(url);
-                    break;
-                case "PUT":
-                    result = await request.put(url, jsonData);
-                    break;
-                default:
-                    result = await request.get(url);
-            }
-            if (result) {
-                const { data, headers } = result;
-                if (retryNo) console.log("Retry Num - ", url, retryNo);
-                if (data.errorCode && data.errorCode === 401) {
-                    if (!retryNo) retryNo = 0;
-                    if (retryNo < 4) {
-                        let newToken = sessionStorage.getItem("token");
-                        await callAPI({
-                            url,
-                            method,
-                            reqHeaders,
-                            jsonData,
-                            params,
-                            newToken,
-                            retryNo: retryNo + 1,
-                        });
-                        // return;
-                    } else {
-                        if (retryNo && retryNo > 0) {
-                            console.log("DATA WITH ERROR - ", retryNo, data);
-                            return { data: data };
-                        }
-                        return result;
-                    }
-                    // Logout();
-                    // browserHistory.push("/logout");
-                    // return;
-                } else {
-                    if (retryNo && retryNo > 0) {
-                        console.log("DATA AFTER RETRY - ", retryNo, data);
-                    }
-                    return { data, headers };
-                }
-            } else {
-                // Logout();
-                console.log("UNKNOWN - ", retryNo);
-                return { data: { errorCode: 500, userDesc: "System Error" } };
-            }
-        } catch (error) {
-            return handleCatchBlock();
-            // if (error && error.response) {
-            //   const { data, headers } = error.response;
-            //   return { data, headers };
-            // }
-        }
-    };
-
-    let result = await callAPI({
-        url,
-        method,
-        reqHeaders,
-        jsonData,
-        params,
-        authToken,
-        retryNo: 0,
-    });
-    // console.log('RESULT - ', result);
-    return result;
+    retryNo: 0,
+  });
+  // console.log('RESULT - ', result);
+  return result;
 };
 
 // const INITIAL_DELAY = 2000

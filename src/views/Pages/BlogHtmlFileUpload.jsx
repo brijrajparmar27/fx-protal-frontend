@@ -3,14 +3,14 @@ import { endpoint } from "../../api/endpoint";
 import Button from "../../components/CustomButtons/Button";
 import { apiHandler } from "api";
 
-const BlogHtmlFileUpload = ({setLink}) => {
+const BlogHtmlFileUpload = ({ setLink }) => {
   const [file, setFile] = useState(null);
   const [uploadBlog, setUploadBlog] = useState();
   const [tempFileLink, setTempFileLink] = useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     tempFileLink && setLink(tempFileLink);
-  },[tempFileLink])
+  }, [tempFileLink])
 
   const changeHandler = (event) => {
     setFile(event.target.files[0]);
@@ -25,8 +25,8 @@ const BlogHtmlFileUpload = ({setLink}) => {
       url: endpoint.UPLOAD_BLOG_FILE,
       data: data,
       authToken: sessionStorage.getItem("token"),
-      headers:{
-        "Content-Type":"multipart/form-data"
+      headers: {
+        "Content-Type": "multipart/form-data"
       }
     });
     if (res.data.errorCode) {
