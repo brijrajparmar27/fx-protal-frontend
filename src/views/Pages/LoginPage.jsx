@@ -353,6 +353,16 @@ const LoginPage = (props) => {
     return false;
   };
 
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    // console.log(submit);
+    handleLoginSubmit();
+  }
+
+  const handleOTPSubmit = (e)=>{
+    e.preventDefault();
+    handleAccess();
+  }
   return (
     <div className={cx(classes.container)}>
       <Dialog
@@ -373,7 +383,7 @@ const LoginPage = (props) => {
         <DialogContent id="classic-modal-slide-description" className={cx(classes.modalBody, classes.loginMaxWidth)}>
           <GridContainer justify="center">
             <GridItem xs={12} sm={10} md={10}>
-              <form>
+              <form onSubmit={(e)=>{handleSubmit(e)}}>
                 <CustomInput
                   success={emailState === 'success'}
                   error={emailState === 'error'}
@@ -416,7 +426,7 @@ const LoginPage = (props) => {
                   }}
                 />
                 <div className={classes.center}>
-                  <Button round={false} color="info" size="lg" onClick={() => handleLoginSubmit()}>
+                  <Button type="submit" round={false} color="info" size="lg">
                     Submit
                   </Button>
                 </div>
@@ -457,7 +467,7 @@ const LoginPage = (props) => {
         <DialogContent id="classic-modal-slide-description" className={cx(classes.modalBody, classes.loginMaxWidth)}>
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={12}>
-              <form>
+              <form onSubmit={(e)=>{handleOTPSubmit(e)}}>
                 <GridContainer justify="center">
                   <Icon className={classes.inputAdornmentIcon} style={{ marginTop: 30 }}>
                     lock_outline
@@ -479,7 +489,8 @@ const LoginPage = (props) => {
                   </GridItem>
                 </GridContainer>
                 <div className={classes.center}>
-                  <Button size="lg" style={{ backgroundColor: primaryColor[5] }} disabled={loginButtonDisabled} onClick={() => handleAccess()}>
+                  <Button size="lg" type="submit" style={{ backgroundColor: primaryColor[5] }} disabled={loginButtonDisabled} >
+                  {/* onClick={() => handleAccess()} */}
                     ACCESS
                   </Button>
                 </div>

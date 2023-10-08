@@ -821,6 +821,19 @@ const SignupPage = (props) => {
   //     initial.callingCodeState === "success" &&
   //     !(initial.callingCodeState === "error")
   // });
+
+  const onSignupSubmit = (e)=>{
+    e.preventDefault();
+    submit();
+    console.log("signup submit");
+  }
+
+  const otpsubmit = (e)=>{
+    e.preventDefault();
+    console.log("otp submit");
+    verifyOTP();
+  }
+
   const module = sessionStorage.getItem("module");
   return (
     <div className={cx(classes.container, classes.cardSignup)}>
@@ -871,7 +884,7 @@ const SignupPage = (props) => {
                 <DialogContent id="classic-modal-slide-description" className={cx(classes.otpModalBody, classes.loginMaxWidth)}>
                   <GridContainer justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <form>
+                      <form onSubmit={e=>{otpsubmit(e)}}>
                         <GridContainer justify="center">
                           <Icon className={classes.inputAdornmentIcon} style={{ marginTop: 30 }}>
                             lock_outline
@@ -895,7 +908,7 @@ const SignupPage = (props) => {
                           </GridItem>
                         </GridContainer>
                         <div className={classes.center}>
-                          <Button size="lg" style={{ backgroundColor: primaryColor[5] }} onClick={() => verifyOTP()}>
+                          <Button size="lg" type="submit" style={{ backgroundColor: primaryColor[5] }} onClick={() => verifyOTP()}>
                             VERIFY
                           </Button>
                         </div>
@@ -983,7 +996,7 @@ const SignupPage = (props) => {
                   id="classic-modal-slide-description"
                   className={classes.modalBody}
                 >
-                  <form className={classes.form}>
+                  <form className={classes.form} onSubmit={e=>{onSignupSubmit(e)}}>
                     <GridContainer justify="center">
                       <GridItem xs={12} sm={12} md={12} lg={12}>
                         <GridContainer spacing={1} alignItems="center">
@@ -1813,6 +1826,7 @@ const SignupPage = (props) => {
                                 color="info"
                                 size="lg"
                                 onClick={submit}
+                                type="submit"
                               >
                                 SUBMIT
                               </Button>
