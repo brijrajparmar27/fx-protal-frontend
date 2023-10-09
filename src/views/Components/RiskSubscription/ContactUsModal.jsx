@@ -710,7 +710,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             }
                             id="cu_phoneNumber"
                             // value={contactInfo.phoneNumber}
-                            format="###-###-####"
+                            // format="###-###-####"
                             value={contactInfo.phoneNumber}
                             onChange={event =>
                               handleChange("phoneNumber", event)
@@ -729,7 +729,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                 });
                                 change(event, "phoneNumber", [
                                   { type: "required" },
-                                  { type: "phone" }
+                                  // { type: "phone" }
                                 ]);
                               },
                               onChange: event => {
@@ -740,7 +740,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                   });
                                   change(event, "phoneNumber", [
                                     { type: "required" },
-                                    { type: "phoneNumber" }
+                                    // { type: "phoneNumber" }
                                   ]);
                                 }
                               }

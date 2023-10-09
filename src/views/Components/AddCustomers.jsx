@@ -598,8 +598,8 @@ class AddCustomers extends React.Component {
                     <CustomNumberFormat
                       helpText={this.state.phoneNumberHelpMsg}
                       id="phoneNumber"
-                      value={this.state.phoneNumber}
-                      format="###-###-####"
+                      // value={this.state.phoneNumber}
+                      // format="###-###-####"
                       formControlProps={{
                         fullWidth: true,
                         className: cx(
@@ -610,7 +610,7 @@ class AddCustomers extends React.Component {
                           this.setState({ phoneNumberPristine: false });
                           this.change(event, "phoneNumber", [
                             { type: "required" },
-                            { type: "phone" }
+                            // { type: "phone" }
                           ]);
                         },
                         onChange: event => {
@@ -618,7 +618,7 @@ class AddCustomers extends React.Component {
                             this.setState({ phoneNumberPristine: false });
                             this.change(event, "phoneNumber", [
                               { type: "required" },
-                              { type: "phoneNumber" }
+                              // { type: "phoneNumber" }
                             ]);
                           }
                         }

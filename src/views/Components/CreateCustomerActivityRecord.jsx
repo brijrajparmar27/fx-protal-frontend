@@ -180,7 +180,10 @@ class CreateCustomerActivityRecord extends React.Component {
       const res = await apiHandler({
         method: "POST",
         url: endpoint.UPLOAD_FILE,
-        data: formData
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
       });
       if (res.data.errorCode) {
         this.setState({

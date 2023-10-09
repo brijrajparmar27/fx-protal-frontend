@@ -625,9 +625,9 @@ class CreateAdminUser extends React.Component {
                             : this.state.phoneNumberHelpMsg
                         }
                         id="cau_phoneNumber"
-                        value={this.state.phoneNumber}
+                        // value={this.state.phoneNumber}
                         // labelText="Phone Number*"
-                        format="###-###-####"
+                        // format="###-###-####"
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
@@ -635,7 +635,7 @@ class CreateAdminUser extends React.Component {
                             this.setState({ phoneNumberPristine: false });
                             this.change(event, "phoneNumber", [
                               { type: "required" },
-                              { type: "phone" }
+                              // { type: "phone" }
                             ]);
                           },
                           onChange: event => {
@@ -643,7 +643,7 @@ class CreateAdminUser extends React.Component {
                               this.setState({ phoneNumberPristine: false });
                               this.change(event, "phoneNumber", [
                                 { type: "required" },
-                                { type: "phoneNumber" }
+                                // { type: "phoneNumber" }
                               ]);
                             }
                           }

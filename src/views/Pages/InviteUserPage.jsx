@@ -640,7 +640,7 @@ class InviteUserPage extends React.Component {
                                 selected: classes.selectMenuItemSelected
                               }}
                               value={item.callingCodes[0]}
-                              value={item}
+                              // value={item}
                               key={item.countryCode}
                             >
                               {item.countryName +
@@ -684,8 +684,8 @@ class InviteUserPage extends React.Component {
                                 : this.state.phoneNumberHelpMsg
                             }
                             id="iup_phoneNumber"
-                            value={this.state.phoneNumber}
-                            format="###-###-####"
+                            // value={this.state.phoneNumber}
+                            // format="###-###-####"
                             formControlProps={{
                               fullWidth: true,
                               className: cx(
@@ -696,7 +696,7 @@ class InviteUserPage extends React.Component {
                                 this.setState({ phoneNumberPristine: false });
                                 this.change(event, "phoneNumber", [
                                   { type: "required" },
-                                  { type: "phone" }
+                                  // { type: "phone" }
                                 ]);
                               },
                               onChange: event => {
@@ -704,7 +704,7 @@ class InviteUserPage extends React.Component {
                                   this.setState({ phoneNumberPristine: false });
                                   this.change(event, "phoneNumber", [
                                     { type: "required" },
-                                    { type: "phoneNumber" }
+                                    // { type: "phoneNumber" }
                                   ]);
                                 }
                               }

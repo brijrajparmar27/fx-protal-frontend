@@ -673,9 +673,9 @@ class RegisterYourInterest extends React.Component {
                             : this.state.phoneNumberHelpMsg
                         }
                         id="sp_phoneNumber"
-                        value={this.state.phoneNumber}
+                        // value={this.state.phoneNumber}
                         // labelText="Phone Number*"
-                        format="###-###-####"
+                        // format="###-###-####"
                         formControlProps={{
                           fullWidth: true,
                           className: cx(
@@ -685,14 +685,14 @@ class RegisterYourInterest extends React.Component {
                           onBlur: event => {
                             this.setState({ phoneNumberPristine: false });
                             this.change(event, "phoneNumber", [
-                              { type: "phone" }
+                              // { type: "phone" }
                             ]);
                           },
                           onChange: event => {
                             if (!this.state.phoneNumberPristine) {
                               this.setState({ phoneNumberPristine: false });
                               this.change(event, "phoneNumber", [
-                                { type: "phoneNumber" }
+                                // { type: "phoneNumber" }
                               ]);
                             }
                           }

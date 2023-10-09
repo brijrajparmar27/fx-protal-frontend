@@ -1536,6 +1536,7 @@ class ManageAccount extends React.Component {
 
   render() {
     const { classes } = this.props;
+    let phonenumber = this.state.phoneNumber
     return (
       <>
         <GridContainer justify="center">
@@ -1794,27 +1795,33 @@ class ManageAccount extends React.Component {
                             </FormControl>
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4} lg={4}>
-                            <CustomNumberFormat
+                            <CustomInput
                               success={this.state.phoneNumberState === 'success'}
                               error={this.state.phoneNumberState === 'error'}
                               helpText={this.state.phoneNumberState === 'error' && this.state.phoneNumberErrorMsg[0]}
                               id="ma_phoneNumber"
                               labelText="Phone Number*"
-                              format="###-###-####"
-                              value={this.state.phoneNumber}
+                              // format="##########"
+                              // value={phonenumber}
                               formControlProps={{
                                 fullWidth: true,
                                 className: classes.customFormControlClasses,
                                 onBlur: (event) => {
                                   this.setState({ phoneNumberPristine: false });
-                                  this.change(event, 'phoneNumber', [{ type: 'required' }, { type: 'phone' }]);
+                                  this.change(event, 'phoneNumber', [{ type: 'required' }]);
                                 },
                                 onChange: (event) => {
+                                  if(!/^[0-9]*$/.test(event.target.value))
+                                  {
+                                    event.target.value = event.target.value.replace(/\D/g, '');
+                                  }
                                   if (!this.state.phoneNumberPristine) {
+                                    console.log("changed");
                                     this.setState({
                                       phoneNumberPristine: false,
+                                      phoneNumber: event.target.value
                                     });
-                                    this.change(event, 'phoneNumber', [{ type: 'required' }, { type: 'phoneNumber' }]);
+                                    this.change(event, 'phoneNumber', [{ type: 'required' }]);
                                   }
                                 },
                               }}
