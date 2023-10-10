@@ -48,62 +48,62 @@ import customInputStyle from "assets/jss/material-dashboard-pro-react/components
 const yourInterestOptions = [
   { key: "Customer", name: "Customer" },
   { key: "Investor", name: "Investor" },
-  { key: "Others", name: "Others" }
+  { key: "Others", name: "Others" },
 ];
 
-const style = theme => ({
+const style = (theme) => ({
   ...signupPageStyle,
   ...customSelectStyle,
   ...customInputStyle,
   selectLabel: {
     fontSize: 14,
     textTransform: "none",
-    color: "#AAAAAA !important"
+    color: "#AAAAAA !important",
     //top: 7
   },
   select: {
     padding: "4px 24px",
-    fontSize: 14
+    fontSize: 14,
   },
   selectFormControl: {
     [theme.breakpoints.up("lg")]: {
-      marginTop: -15
-    }
+      marginTop: -15,
+    },
   },
   selectFormHelperText: {
     backgroundColor: "white",
     paddingTop: 5,
     marginTop: 0,
-    textAlign: "left"
+    textAlign: "left",
   },
   footer: {
     fontSize: "x-small",
     alignSelf: "flex-end",
-    marginTop: 5
+    marginTop: 5,
   },
   countryFormControl: {
-    marginTop: 5
+    marginTop: 5,
   },
   phoneFormControl: {
-    paddingTop: 0
+    paddingTop: 0,
   },
   modalCloseButton: {
-    float: "right"
+    float: "right",
   },
   loginMaxWidth: {
-    maxWidth: 650
+    maxWidth: 650,
   },
   closeButton: {
     position: "absolute",
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500]
+    color: theme.palette.grey[500],
   },
   emptyIcon: {
     [theme.breakpoints.up("lg")]: {
-      display: "none"
-    }
-  }
+      display: "none",
+    },
+  },
 });
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -114,27 +114,27 @@ class RegisterYourInterest extends React.Component {
   error = {
     nameErrorMsg: {
       required: "Name is required",
-      range: "Name should be 1 to 100 characters"
+      range: "Name should be 1 to 100 characters",
     },
 
     emailErrorMsg: {
       required: "Email is required",
       company: "Please enter a company email",
-      valid: "Please enter a valid email"
+      valid: "Please enter a valid email",
     },
     callingCodeErrorMsg: {
-      required: "Country Code is required"
+      required: "Country Code is required",
     },
     phoneNumberErrorMsg: {
       required: "Phone number is required",
-      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)"
+      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)",
     },
     yourInterestErrorMsg: {
-      required: "Your Interest is required"
+      required: "Your Interest is required",
     },
     otherInterestErrorMsg: {
-      required: "Other Interest is required"
-    }
+      required: "Other Interest is required",
+    },
   };
 
   constructor(props) {
@@ -173,7 +173,7 @@ class RegisterYourInterest extends React.Component {
       callInProgress: false,
       noticeModal: false,
       noticeModalHeader: "",
-      noticeModalErrMsg: ""
+      noticeModalErrMsg: "",
     };
     this.handleToggle = this.handleToggle.bind(this);
   }
@@ -188,8 +188,8 @@ class RegisterYourInterest extends React.Component {
     }
     this.setState(validate(value, stateName, this.state, rules, this.error));
   };
-  getAlpha2Code = code => {
-    let alpha2 = this.state.countries.filter(item => {
+  getAlpha2Code = (code) => {
+    let alpha2 = this.state.countries.filter((item) => {
       return item.countryCode === code;
     })[0];
     return alpha2;
@@ -210,45 +210,51 @@ class RegisterYourInterest extends React.Component {
         query:
           state.yourInterest === "Others"
             ? state.otherInterest
-            : state.yourInterest
+            : state.yourInterest,
       };
       const header = {
         headers: {
-          Authorization: "Bearer " + sessionStorage.getItem("token")
-        }
+          Authorization: "Bearer " + sessionStorage.getItem("token"),
+        },
       };
       this.setState({ callInProgress: true });
-      axios.post(endpoint.BASE_URL_STAGING_AXIOS + "fx-crm/public/contactus", contactInfoData, header).then(
-        res => {
-          if (res.data.indexOf("errorCode") !== -1) {
-            const data = JSON.parse(res.data);
+      axios
+        .post(
+          endpoint.BASE_URL_STAGING_AXIOS + "fx-crm/public/contactus",
+          contactInfoData,
+          header
+        )
+        .then(
+          (res) => {
+            if (res.data.indexOf("errorCode") !== -1) {
+              const data = JSON.parse(res.data);
+              this.setState({
+                callInProgress: false,
+                signUpModal: false,
+                noticeModal: true,
+                noticeModalHeader: "Error",
+                noticeModalErrMsg: data.userDesc,
+              });
+            } else {
+              this.setState({
+                callInProgress: false,
+                signUpModal: false,
+                noticeModal: true,
+                noticeModalHeader: "Thank You",
+                noticeModalErrMsg:
+                  "We have noted your interest and will be in touch with you shortly.",
+              });
+            }
+          },
+          (error) => {
             this.setState({
               callInProgress: false,
               signUpModal: false,
-              noticeModal: true,
-              noticeModalHeader: "Error",
-              noticeModalErrMsg: data.userDesc
-            });
-          } else {
-            this.setState({
-              callInProgress: false,
-              signUpModal: false,
-              noticeModal: true,
-              noticeModalHeader: "Thank You",
-              noticeModalErrMsg:
-                "We have noted your interest and will be in touch with you shortly."
+              // noticeModal: true,
+              // noticeModalErrMsg: error.data.userDesc,
             });
           }
-        },
-        error => {
-          this.setState({
-            callInProgress: false,
-            signUpModal: false
-            // noticeModal: true,
-            // noticeModalErrMsg: error.data.userDesc,
-          });
-        }
-      );
+        );
     }
   };
 
@@ -305,18 +311,18 @@ class RegisterYourInterest extends React.Component {
     this.setState({
       noticeModal: false,
       noticeModalHeader: "",
-      noticeModalErrMsg: ""
+      noticeModalErrMsg: "",
     });
   };
   handleLoginSubmit() {
     this.setState({
-      signUpModal: false
+      signUpModal: false,
     });
   }
-  handleEmailChange = event => {
+  handleEmailChange = (event) => {
     this.setState({ email: event.target.value });
   };
-  handleSimple = event => {
+  handleSimple = (event) => {
     this.setState(
       validate(
         event.target.value,
@@ -327,7 +333,7 @@ class RegisterYourInterest extends React.Component {
       )
     );
   };
-  handleCallingCode = event => {
+  handleCallingCode = (event) => {
     const value = event.target.value;
     this.setState({ selectedCallingCode: value });
     this.setState(
@@ -343,7 +349,7 @@ class RegisterYourInterest extends React.Component {
 
   handleToggle() {
     this.setState({
-      checked: !this.state.checked
+      checked: !this.state.checked,
     });
   }
 
@@ -353,46 +359,48 @@ class RegisterYourInterest extends React.Component {
       this.setState({ email: match.params.emailId, preRegisteredUser: true });
     }
 
-    axios.get(endpoint.BASE_URL_STAGING_AXIOS + "fx-crm/public/countriesMetaData").then(
-      res => {
-        let countries = res.data.countryMetaData;
+    axios
+      .get(endpoint.BASE_URL_STAGING_AXIOS + "fx-crm/public/countriesMetaData")
+      .then(
+        (res) => {
+          let countries = res.data.countryMetaData;
 
-        // Setting up UK as default country on Top
-        const countryCode = "GB";
-        let index = -1;
-        let currentCountry = countries.find((country, i) => {
-          if (country.alpha2Code === countryCode) {
-            index = i;
-            return true;
+          // Setting up UK as default country on Top
+          const countryCode = "GB";
+          let index = -1;
+          let currentCountry = countries.find((country, i) => {
+            if (country.alpha2Code === countryCode) {
+              index = i;
+              return true;
+            }
+          });
+          if (currentCountry && index !== -1) {
+            countries.splice(index, 1);
+            countries.unshift(currentCountry);
           }
-        });
-        if (currentCountry && index !== -1) {
-          countries.splice(index, 1);
-          countries.unshift(currentCountry);
-        }
 
-        // // Get country http://ip-api.com/json
-        // axios.get('http://ip-api.com/json').then(
-        //   (response) => {
-        //     const countryCode = response.data.countryCode;
-        //     let index = -1;
-        //     let currentCountry = countries.find((country, i) => {
-        //       if (country.alpha2Code === countryCode) {
-        //         index = i;
-        //         return true;
-        //       }
-        //     });
-        //     if (currentCountry && index !== -1) {
-        //       countries.splice(index, 1);
-        //       countries.unshift(currentCountry);
-        //     }
-        this.setState({ countries: countries });
-        //   },
-        //   () => {}
-        // );
-      },
-      () => {}
-    );
+          // // Get country http://ip-api.com/json
+          // axios.get('http://ip-api.com/json').then(
+          //   (response) => {
+          //     const countryCode = response.data.countryCode;
+          //     let index = -1;
+          //     let currentCountry = countries.find((country, i) => {
+          //       if (country.alpha2Code === countryCode) {
+          //         index = i;
+          //         return true;
+          //       }
+          //     });
+          //     if (currentCountry && index !== -1) {
+          //       countries.splice(index, 1);
+          //       countries.unshift(currentCountry);
+          //     }
+          this.setState({ countries: countries });
+          //   },
+          //   () => {}
+          // );
+        },
+        () => {}
+      );
   };
 
   componentDidUpdate(e) {
@@ -414,7 +422,7 @@ class RegisterYourInterest extends React.Component {
         <Dialog
           classes={{
             root: classes.center + " " + classes.modalRoot,
-            paper: classes.modal + " " + classes.loginMaxWidth
+            paper: classes.modal + " " + classes.loginMaxWidth,
           }}
           open={this.state.signUpModal}
           disableBackdropClick
@@ -479,7 +487,7 @@ class RegisterYourInterest extends React.Component {
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ namePristine: false });
                             this.change(event, "name", [
                               //  { type: 'required' },
@@ -487,12 +495,12 @@ class RegisterYourInterest extends React.Component {
                                 type: "length",
                                 params: {
                                   min: 1,
-                                  max: 100
-                                }
-                              }
+                                  max: 100,
+                                },
+                              },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.namePristine) {
                               this.setState({ namePristine: false });
                               this.change(event, "name", [
@@ -501,12 +509,12 @@ class RegisterYourInterest extends React.Component {
                                   type: "length",
                                   params: {
                                     min: 1,
-                                    max: 100
-                                  }
-                                }
+                                    max: 100,
+                                  },
+                                },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -542,27 +550,27 @@ class RegisterYourInterest extends React.Component {
                         inputProps={{
                           value: this.state.email,
                           disabled: this.state.preRegisteredUser,
-                          onChange: event => this.handleEmailChange(event)
+                          onChange: (event) => this.handleEmailChange(event),
                         }}
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ emailPristine: false });
                             this.change(event, "email", [
                               { type: "required" },
-                              { type: "email" }
+                              { type: "email" },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.emailPristine) {
                               this.setState({ emailPristine: false });
                               this.change(event, "email", [
                                 { type: "required" },
-                                { type: "email" }
+                                { type: "email" },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -600,31 +608,31 @@ class RegisterYourInterest extends React.Component {
 
                         <Select
                           MenuProps={{
-                            className: classes.selectMenu
+                            className: classes.selectMenu,
                           }}
                           classes={{
-                            select: classes.select
+                            select: classes.select,
                           }}
                           value={this.state.selectedCallingCode}
                           onChange={this.handleCallingCode}
                           inputProps={{
                             name: "callingCode",
-                            id: "callingCode"
+                            id: "callingCode",
                           }}
                         >
                           <MenuItem
                             disabled
                             classes={{
-                              root: classes.selectMenuItem
+                              root: classes.selectMenuItem,
                             }}
                           >
                             Choose Code
                           </MenuItem>
-                          {this.state.countries.map(item => (
+                          {this.state.countries.map((item) => (
                             <MenuItem
                               classes={{
                                 root: classes.selectMenuItem,
-                                selected: classes.selectMenuItemSelected
+                                selected: classes.selectMenuItemSelected,
                               }}
                               value={item}
                               key={item.countryCode}
@@ -657,14 +665,14 @@ class RegisterYourInterest extends React.Component {
                           backgroundColor: "white",
                           paddingTop: 3,
                           margin: "5px 12px 0px 12px",
-                          textAlign: "left"
+                          textAlign: "left",
                         }}
                         success={this.state.phoneNumberState === "success"}
                         error={this.state.phoneNumberState === "error"}
                       >
                         Phone Number
                       </FormHelperText>
-                      <CustomNumberFormat
+                      <CustomInput
                         success={this.state.phoneNumberState === "success"}
                         error={this.state.phoneNumberState === "error"}
                         helpText={
@@ -682,20 +690,26 @@ class RegisterYourInterest extends React.Component {
                             classes.customFormControlClasses,
                             classes.phoneFormControl
                           ),
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ phoneNumberPristine: false });
                             this.change(event, "phoneNumber", [
                               // { type: "phone" }
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
+                            if (!/^[0-9]*$/.test(event.target.value)) {
+                              event.target.value = event.target.value.replace(
+                                /\D/g,
+                                ""
+                              );
+                            }
                             if (!this.state.phoneNumberPristine) {
                               this.setState({ phoneNumberPristine: false });
                               this.change(event, "phoneNumber", [
                                 // { type: "phoneNumber" }
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -730,31 +744,31 @@ class RegisterYourInterest extends React.Component {
 
                         <Select
                           MenuProps={{
-                            className: classes.selectMenu
+                            className: classes.selectMenu,
                           }}
                           classes={{
-                            select: classes.select
+                            select: classes.select,
                           }}
                           value={this.state.yourInterest}
                           onChange={this.handleSimple}
                           inputProps={{
                             name: "yourInterest",
-                            id: "yourInterest"
+                            id: "yourInterest",
                           }}
                         >
                           <MenuItem
                             disabled
                             classes={{
-                              root: classes.selectMenuItem
+                              root: classes.selectMenuItem,
                             }}
                           >
                             Choose Option
                           </MenuItem>
-                          {yourInterestOptions.map(item => (
+                          {yourInterestOptions.map((item) => (
                             <MenuItem
                               classes={{
                                 root: classes.selectMenuItem,
-                                selected: classes.selectMenuItemSelected
+                                selected: classes.selectMenuItemSelected,
                               }}
                               value={item.key}
                               key={item.name}
@@ -783,7 +797,7 @@ class RegisterYourInterest extends React.Component {
                         visibility:
                           this.state.yourInterest === "Others"
                             ? "visible"
-                            : "hidden"
+                            : "hidden",
                       }}
                     >
                       <CustomInput
@@ -798,20 +812,20 @@ class RegisterYourInterest extends React.Component {
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ otherInterestPristine: false });
                             this.change(event, "otherInterest", [
                               // { type: 'required' }
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.otherInterestPristine) {
                               this.setState({ otherInterestPristine: false });
                               this.change(event, "otherInterest", [
                                 // { type: 'required' }
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -879,7 +893,7 @@ class RegisterYourInterest extends React.Component {
 
 RegisterYourInterest.propTypes = {
   classes: PropTypes.object.isRequired,
-  match: PropTypes.object
+  match: PropTypes.object,
 };
 
 export default withStyles(style)(RegisterYourInterest);

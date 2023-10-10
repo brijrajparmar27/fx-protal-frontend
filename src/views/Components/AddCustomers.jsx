@@ -42,33 +42,33 @@ function Transition(props) {
 class AddCustomers extends React.Component {
   error = {
     companyNameErrorMsg: {
-      required: "Company name is required"
+      required: "Company name is required",
     },
     companyDescErrorMsg: {
-      required: "Company Description is required"
+      required: "Company Description is required",
     },
     incorporationNumberErrorMsg: {
-      required: "Incorporation Number is required"
+      required: "Incorporation Number is required",
     },
     phoneNumberErrorMsg: {
       required: "Phone number is required",
-      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)"
+      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)",
     },
     addressErrorMsg: {
-      required: "Address is required"
+      required: "Address is required",
     },
     companyEmailErrorMsg: {
-      valid: "Please enter a valid email"
+      valid: "Please enter a valid email",
     },
     cityErrorMsg: {
-      required: "City is required"
+      required: "City is required",
     },
     postalCodeErrorMsg: {
-      required: "Postal code is required"
+      required: "Postal code is required",
     },
     countryCodeErrorMsg: {
-      required: "Country is required"
-    }
+      required: "Country is required",
+    },
   };
 
   initialState = {};
@@ -133,7 +133,7 @@ class AddCustomers extends React.Component {
       countries: [],
       noticeModal: false,
       noticeModalHeader: "",
-      noticeModalErrMsg: ""
+      noticeModalErrMsg: "",
     };
 
     this.state = this.initialState;
@@ -143,7 +143,7 @@ class AddCustomers extends React.Component {
     this.setState({
       noticeModal: false,
       noticeModalHeader: "",
-      noticeModalErrMsg: ""
+      noticeModalErrMsg: "",
     });
   };
   componentDidMount = () => {
@@ -164,7 +164,7 @@ class AddCustomers extends React.Component {
     }
     const res = await apiHandler({
       url: endpoint.COUNTRIES,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
@@ -177,7 +177,7 @@ class AddCustomers extends React.Component {
         this.setState({
           noticeModal: true,
           noticeModalHeader: "Error",
-          noticeModalErrMsg: res.data.userDesc
+          noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
@@ -244,8 +244,8 @@ class AddCustomers extends React.Component {
     this.props.handleClose();
   }
 
-  getAlpha2Code = code => {
-    let alpha2 = this.state.countries.filter(item => {
+  getAlpha2Code = (code) => {
+    let alpha2 = this.state.countries.filter((item) => {
       return item.countryCode === code;
     })[0];
     return alpha2;
@@ -268,8 +268,8 @@ class AddCustomers extends React.Component {
           address: this.state.address,
           city: this.state.city,
           postalCode: this.state.postalCode,
-          countryCode: alpha2.alpha2Code
-        }
+          countryCode: alpha2.alpha2Code,
+        },
       });
       this.initializeData();
     }
@@ -296,8 +296,8 @@ class AddCustomers extends React.Component {
           address: this.state.address,
           city: this.state.city,
           postalCode: this.state.postalCode,
-          countryCode: alpha2.alpha2Code
-        }
+          countryCode: alpha2.alpha2Code,
+        },
       });
       this.initializeData();
     }
@@ -311,7 +311,7 @@ class AddCustomers extends React.Component {
         customer = AddCustomers.initialState;
         if (props.editCustomer) {
           customer = { ...customer, ...props.editCustomer };
-          let country = state.countries.filter(item => {
+          let country = state.countries.filter((item) => {
             return item.alpha2Code === customer.countryCode;
           })[0];
           customer.countryCode = country.countryCode;
@@ -324,7 +324,7 @@ class AddCustomers extends React.Component {
             addressState: "success",
             cityState: "success",
             postalCodeState: "success",
-            countryCodeState: "success"
+            countryCodeState: "success",
           };
         }
       }
@@ -332,7 +332,7 @@ class AddCustomers extends React.Component {
       return {
         showModal: props.showModal,
         ...customer,
-        ...pristineState
+        ...pristineState,
       };
     }
     return null;
@@ -341,7 +341,7 @@ class AddCustomers extends React.Component {
     this.setState({ [name]: event.target.value });
   };
 
-  handleSimple = event => {
+  handleSimple = (event) => {
     this.setState(
       validate(
         event.target.value,
@@ -366,7 +366,7 @@ class AddCustomers extends React.Component {
         <div className={cx(classes.container)}>
           <Dialog
             classes={{
-              root: classes.center + " " + classes.modalRoot
+              root: classes.center + " " + classes.modalRoot,
             }}
             maxWidth="md"
             open={this.state.showModal}
@@ -413,26 +413,26 @@ class AddCustomers extends React.Component {
                       id="ac_companyName"
                       inputProps={{
                         value: this.state.companyName,
-                        onChange: event =>
-                          this.handleChange("companyName", event)
+                        onChange: (event) =>
+                          this.handleChange("companyName", event),
                       }}
                       formControlProps={{
                         fullWidth: true,
                         className: classes.customFormControlClasses,
-                        onBlur: event => {
+                        onBlur: (event) => {
                           this.setState({ companyNamePristine: false });
                           this.change(event, "companyName", [
-                            { type: "required" }
+                            { type: "required" },
                           ]);
                         },
-                        onChange: event => {
+                        onChange: (event) => {
                           if (!this.state.companyNamePristine) {
                             this.setState({ companyNamePristine: false });
                             this.change(event, "companyName", [
-                              { type: "required" }
+                              { type: "required" },
                             ]);
                           }
-                        }
+                        },
                       }}
                     />
                   </GridItem>
@@ -450,28 +450,28 @@ class AddCustomers extends React.Component {
                       id="ac_incorporationNumber"
                       inputProps={{
                         value: this.state.incorporationNumber,
-                        onChange: event =>
-                          this.handleChange("incorporationNumber", event)
+                        onChange: (event) =>
+                          this.handleChange("incorporationNumber", event),
                       }}
                       formControlProps={{
                         fullWidth: true,
                         className: classes.customFormControlClasses,
-                        onBlur: event => {
+                        onBlur: (event) => {
                           this.setState({ incorporationNumberPristine: false });
                           this.change(event, "incorporationNumber", [
-                            { type: "required" }
+                            { type: "required" },
                           ]);
                         },
-                        onChange: event => {
+                        onChange: (event) => {
                           if (!this.state.incorporationNumberPristine) {
                             this.setState({
-                              incorporationNumberPristine: false
+                              incorporationNumberPristine: false,
                             });
                             this.change(event, "incorporationNumber", [
-                              { type: "required" }
+                              { type: "required" },
                             ]);
                           }
-                        }
+                        },
                       }}
                     />
                   </GridItem>
@@ -487,13 +487,13 @@ class AddCustomers extends React.Component {
                       id="s3_companyDescription"
                       inputProps={{
                         value: this.state.companyDesc,
-                        onChange: event =>
-                          this.handleChange("companyDesc", event)
+                        onChange: (event) =>
+                          this.handleChange("companyDesc", event),
                       }}
                       formControlProps={{
                         fullWidth: true,
                         className: classes.customFormControlClasses,
-                        onBlur: event => {
+                        onBlur: (event) => {
                           this.setState({ companyDescPristine: false });
                           this.change(event, "companyDesc", [
                             { type: "required" },
@@ -501,12 +501,12 @@ class AddCustomers extends React.Component {
                               type: "length",
                               params: {
                                 min: 1,
-                                max: 100
-                              }
-                            }
+                                max: 100,
+                              },
+                            },
                           ]);
                         },
-                        onChange: event => {
+                        onChange: (event) => {
                           if (!this.state.companyDescPristine) {
                             this.setState({ companyDescPristine: false });
                             this.change(event, "companyDesc", [
@@ -515,12 +515,12 @@ class AddCustomers extends React.Component {
                                 type: "length",
                                 params: {
                                   min: 1,
-                                  max: 100
-                                }
-                              }
+                                  max: 100,
+                                },
+                              },
                             ]);
                           }
-                        }
+                        },
                       }}
                     />
                   </GridItem>
@@ -540,31 +540,31 @@ class AddCustomers extends React.Component {
                       </FormHelperText>
                       <Select
                         MenuProps={{
-                          className: classes.selectMenu
+                          className: classes.selectMenu,
                         }}
                         classes={{
-                          select: classes.select
+                          select: classes.select,
                         }}
                         value={this.state.callingCode}
                         onChange={this.handleSimple}
                         inputProps={{
                           name: "callingCode",
-                          id: "ac_callingCode"
+                          id: "ac_callingCode",
                         }}
                       >
                         <MenuItem
                           disabled
                           classes={{
-                            root: classes.selectMenuItem
+                            root: classes.selectMenuItem,
                           }}
                         >
                           Choose Code
                         </MenuItem>
-                        {this.state.countries.map(item => (
+                        {this.state.countries.map((item) => (
                           <MenuItem
                             classes={{
                               root: classes.selectMenuItem,
-                              selected: classes.selectMenuItemSelected
+                              selected: classes.selectMenuItemSelected,
                             }}
                             value={item.callingCodes[0]}
                             key={item.countryCode}
@@ -590,12 +590,12 @@ class AddCustomers extends React.Component {
                         backgroundColor: "white",
                         paddingTop: 10,
                         margin: "5px 12px 0px 12px",
-                        textAlign: "left"
+                        textAlign: "left",
                       }}
                     >
                       Phone Number
                     </FormHelperText>
-                    <CustomNumberFormat
+                    <CustomInput
                       helpText={this.state.phoneNumberHelpMsg}
                       id="phoneNumber"
                       // value={this.state.phoneNumber}
@@ -606,14 +606,20 @@ class AddCustomers extends React.Component {
                           classes.customFormControlClasses,
                           classes.phoneFormControl
                         ),
-                        onBlur: event => {
+                        onBlur: (event) => {
                           this.setState({ phoneNumberPristine: false });
                           this.change(event, "phoneNumber", [
                             { type: "required" },
                             // { type: "phone" }
                           ]);
                         },
-                        onChange: event => {
+                        onChange: (event) => {
+                          if (!/^[0-9]*$/.test(event.target.value)) {
+                            event.target.value = event.target.value.replace(
+                              /\D/g,
+                              ""
+                            );
+                          }
                           if (!this.state.phoneNumberPristine) {
                             this.setState({ phoneNumberPristine: false });
                             this.change(event, "phoneNumber", [
@@ -621,7 +627,7 @@ class AddCustomers extends React.Component {
                               // { type: "phoneNumber" }
                             ]);
                           }
-                        }
+                        },
                       }}
                     />
                   </GridItem>
@@ -648,23 +654,24 @@ class AddCustomers extends React.Component {
                       id="ac_address"
                       inputProps={{
                         value: this.state.address,
-                        onChange: event => this.handleChange("address", event)
+                        onChange: (event) =>
+                          this.handleChange("address", event),
                       }}
                       formControlProps={{
                         fullWidth: true,
                         className: classes.customFormControlClasses,
-                        onBlur: event => {
+                        onBlur: (event) => {
                           this.setState({ addressPristine: false });
                           this.change(event, "address", [{ type: "required" }]);
                         },
-                        onChange: event => {
+                        onChange: (event) => {
                           if (!this.state.addressPristine) {
                             this.setState({ addressPristine: false });
                             this.change(event, "address", [
-                              { type: "required" }
+                              { type: "required" },
                             ]);
                           }
-                        }
+                        },
                       }}
                     />
                   </GridItem>
@@ -680,26 +687,26 @@ class AddCustomers extends React.Component {
                       id="ac_companyEmail"
                       inputProps={{
                         value: this.state.companyEmail,
-                        onChange: event =>
-                          this.handleChange("companyEmail", event)
+                        onChange: (event) =>
+                          this.handleChange("companyEmail", event),
                       }}
                       formControlProps={{
                         fullWidth: true,
                         className: classes.customFormControlClasses,
-                        onBlur: event => {
+                        onBlur: (event) => {
                           this.setState({ companyEmailPristine: false });
                           this.change(event, "companyEmail", [
-                            { type: "email" }
+                            { type: "email" },
                           ]);
                         },
-                        onChange: event => {
+                        onChange: (event) => {
                           if (!this.state.companyEmailPristine) {
                             this.setState({ companyEmailPristine: false });
                             this.change(event, "companyEmail", [
-                              { type: "email" }
+                              { type: "email" },
                             ]);
                           }
-                        }
+                        },
                       }}
                     />
                   </GridItem>
@@ -723,25 +730,26 @@ class AddCustomers extends React.Component {
                           id="ac_city"
                           inputProps={{
                             value: this.state.city,
-                            onChange: event => this.handleChange("city", event)
+                            onChange: (event) =>
+                              this.handleChange("city", event),
                           }}
                           formControlProps={{
                             fullWidth: true,
                             className: classes.customFormControlClasses,
-                            onBlur: event => {
+                            onBlur: (event) => {
                               this.setState({ cityPristine: false });
                               this.change(event, "city", [
-                                { type: "required" }
+                                { type: "required" },
                               ]);
                             },
-                            onChange: event => {
+                            onChange: (event) => {
                               if (!this.state.cityPristine) {
                                 this.setState({ cityPristine: false });
                                 this.change(event, "city", [
-                                  { type: "required" }
+                                  { type: "required" },
                                 ]);
                               }
-                            }
+                            },
                           }}
                         />
                       </GridItem>
@@ -757,26 +765,26 @@ class AddCustomers extends React.Component {
                           id="ac_postalCode"
                           inputProps={{
                             value: this.state.postalCode,
-                            onChange: event =>
-                              this.handleChange("postalCode", event)
+                            onChange: (event) =>
+                              this.handleChange("postalCode", event),
                           }}
                           formControlProps={{
                             fullWidth: true,
                             className: classes.customFormControlClasses,
-                            onBlur: event => {
+                            onBlur: (event) => {
                               this.setState({ postalCodePristine: false });
                               this.change(event, "postalCode", [
-                                { type: "required" }
+                                { type: "required" },
                               ]);
                             },
-                            onChange: event => {
+                            onChange: (event) => {
                               if (!this.state.postalCodePristine) {
                                 this.setState({ postalCodePristine: false });
                                 this.change(event, "postalCode", [
-                                  { type: "required" }
+                                  { type: "required" },
                                 ]);
                               }
-                            }
+                            },
                           }}
                         />
                       </GridItem>
@@ -793,31 +801,31 @@ class AddCustomers extends React.Component {
                           </InputLabel>
                           <Select
                             MenuProps={{
-                              className: classes.selectMenu
+                              className: classes.selectMenu,
                             }}
                             classes={{
-                              select: classes.select
+                              select: classes.select,
                             }}
                             value={this.state.countryCode}
                             onChange={this.handleSimple}
                             inputProps={{
                               name: "countryCode",
-                              id: "countryCode"
+                              id: "countryCode",
                             }}
                           >
                             <MenuItem
                               disabled
                               classes={{
-                                root: classes.selectMenuItem
+                                root: classes.selectMenuItem,
                               }}
                             >
                               Choose Country
                             </MenuItem>
-                            {this.state.countries.map(item => (
+                            {this.state.countries.map((item) => (
                               <MenuItem
                                 classes={{
                                   root: classes.selectMenuItem,
-                                  selected: classes.selectMenuItemSelected
+                                  selected: classes.selectMenuItemSelected,
                                 }}
                                 value={item.countryCode}
                                 key={item.countryCode}
@@ -848,22 +856,22 @@ class AddCustomers extends React.Component {
                           </InputLabel>
                           <Select
                             MenuProps={{
-                              className: classes.selectMenu
+                              className: classes.selectMenu,
                             }}
                             classes={{
-                              select: classes.select
+                              select: classes.select,
                             }}
                             value={this.state.ownershipType}
                             onChange={this.handleSimple}
                             inputProps={{
                               name: "ownershipType",
-                              id: "ownershipType"
+                              id: "ownershipType",
                             }}
                           >
                             <MenuItem
                               disabled
                               classes={{
-                                root: classes.selectMenuItem
+                                root: classes.selectMenuItem,
                               }}
                             >
                               Choose Type
@@ -871,7 +879,7 @@ class AddCustomers extends React.Component {
                             <MenuItem
                               classes={{
                                 root: classes.selectMenuItem,
-                                selected: classes.selectMenuItemSelected
+                                selected: classes.selectMenuItemSelected,
                               }}
                               value="Private"
                             >
@@ -880,7 +888,7 @@ class AddCustomers extends React.Component {
                             <MenuItem
                               classes={{
                                 root: classes.selectMenuItem,
-                                selected: classes.selectMenuItemSelected
+                                selected: classes.selectMenuItemSelected,
                               }}
                               value="Public"
                             >
@@ -908,13 +916,13 @@ class AddCustomers extends React.Component {
                           id="ac_mainStockMarket"
                           inputProps={{
                             value: this.state.mainStockMarket,
-                            onChange: event =>
-                              this.handleChange("mainStockMarket", event)
+                            onChange: (event) =>
+                              this.handleChange("mainStockMarket", event),
                           }}
                           formControlProps={{
                             fullWidth: true,
                             className: classes.customFormControlClasses,
-                            onBlur: event => {
+                            onBlur: (event) => {
                               this.setState({ mainStockMarketPristine: false });
                               this.change(event, "mainStockMarket", [
                                 { type: "required" },
@@ -922,15 +930,15 @@ class AddCustomers extends React.Component {
                                   type: "length",
                                   params: {
                                     min: 1,
-                                    max: 100
-                                  }
-                                }
+                                    max: 100,
+                                  },
+                                },
                               ]);
                             },
-                            onChange: event => {
+                            onChange: (event) => {
                               if (!this.state.mainStockMarketPristine) {
                                 this.setState({
-                                  mainStockMarketPristine: false
+                                  mainStockMarketPristine: false,
                                 });
                                 this.change(event, "mainStockMarket", [
                                   { type: "required" },
@@ -938,12 +946,12 @@ class AddCustomers extends React.Component {
                                     type: "length",
                                     params: {
                                       min: 1,
-                                      max: 100
-                                    }
-                                  }
+                                      max: 100,
+                                    },
+                                  },
                                 ]);
                               }
-                            }
+                            },
                           }}
                         />
                       </GridItem>
@@ -974,26 +982,26 @@ class AddCustomers extends React.Component {
                           id="ac_secondaryStockMarket"
                           inputProps={{
                             value: this.state.secondaryStockMarket,
-                            onChange: event =>
-                              this.handleChange("secondaryStockMarket", event)
+                            onChange: (event) =>
+                              this.handleChange("secondaryStockMarket", event),
                           }}
                           formControlProps={{
                             fullWidth: true,
                             className: classes.customFormControlClasses,
-                            onBlur: event => {
+                            onBlur: (event) => {
                               this.setState({
-                                secondaryStockMarketPristine: false
+                                secondaryStockMarketPristine: false,
                               });
                               this.change(event, "secondaryStockMarket", []);
                             },
-                            onChange: event => {
+                            onChange: (event) => {
                               if (!this.state.secondaryStockMarketPristine) {
                                 this.setState({
-                                  secondaryStockMarketPristine: false
+                                  secondaryStockMarketPristine: false,
                                 });
                                 this.change(event, "secondaryStockMarket", []);
                               }
-                            }
+                            },
                           }}
                         />
                       </GridItem>
@@ -1167,7 +1175,7 @@ AddCustomers.propTypes = {
   editCustomer: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   addCustomer: PropTypes.func,
-  updateCustomer: PropTypes.func
+  updateCustomer: PropTypes.func,
 };
 
 export default withRouter(withStyles(addCustomersStyle)(AddCustomers));

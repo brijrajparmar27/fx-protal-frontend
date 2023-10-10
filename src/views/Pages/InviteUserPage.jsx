@@ -17,12 +17,12 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { module } from 'assets/config';
+import { module } from "assets/config";
 
 import cx from "classnames";
 import { apiHandler } from "api";
 import { endpoint } from "api/endpoint";
-import axios from 'axios';
+import axios from "axios";
 
 // @material-ui/icons
 import IconButton from "@material-ui/core/IconButton";
@@ -45,34 +45,34 @@ import CustomNumberFormat from "components/CustomNumberFormat/CustomNumberFormat
 import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
 import signupPageStyle from "assets/jss/material-dashboard-pro-react/views/signupPageStyle";
 
-const style = theme => ({
+const style = (theme) => ({
   ...signupPageStyle,
   ...customSelectStyle,
   selectLabel: {
     fontSize: 14,
     textTransform: "none",
-    color: "#AAAAAA !important"
+    color: "#AAAAAA !important",
     //top: 7
   },
   select: {
     paddingBottom: 10,
-    fontSize: 14
+    fontSize: 14,
   },
   selectFormControl: {
-    marginTop: 5
+    marginTop: 5,
   },
   modalCloseButton: {
-    float: "right"
+    float: "right",
   },
   closeButton: {
     position: "absolute",
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500]
+    color: theme.palette.grey[500],
   },
   emptyIcon: {
-    paddingLeft: "40px !important"
-  }
+    paddingLeft: "40px !important",
+  },
 });
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -83,40 +83,40 @@ class InviteUserPage extends React.Component {
   error = {
     firstNameErrorMsg: {
       required: "First name is required",
-      range: "First name should be 1 to 100 characters"
+      range: "First name should be 1 to 100 characters",
     },
     lastNameErrorMsg: {
       required: "Last name is required",
-      range: "Last name should be 1 to 100 characters"
+      range: "Last name should be 1 to 100 characters",
     },
     emailErrorMsg: {
       required: "Email is required",
       company: "Please enter a company email",
-      valid: "Please enter a valid email"
+      valid: "Please enter a valid email",
     },
     callingCodeErrorMsg: {
-      required: "Country Code is required"
+      required: "Country Code is required",
     },
     phoneNumberErrorMsg: {
       required: "Phone number is required",
-      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)"
+      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)",
     },
     inviteCodeErrorMsg: {
-      required: "Invite Code is required"
+      required: "Invite Code is required",
     },
     passwordErrorMsg: {
       required: "New Password is required",
       range: "Password should be 8 to 16 characters",
       password:
-        "Match contain Capital, Alphanumeric character, number and special characters( ~!@#$%^&*()_+)"
+        "Match contain Capital, Alphanumeric character, number and special characters( ~!@#$%^&*()_+)",
     },
     passwordConfirmationErrorMsg: {
       required: "Password confirmation is required",
       range: "Password should be 8 to 16 characters",
       password:
         "Match contain Capital, Alphanumeric character, number and special characters( ~!@#$%^&*()_+)",
-      matchPassword: "Confirm Password should match Password"
-    }
+      matchPassword: "Confirm Password should match Password",
+    },
   };
 
   constructor(props) {
@@ -160,7 +160,7 @@ class InviteUserPage extends React.Component {
       passwordConfirmationPristine: true,
       passwordConfirmationErrorMsg: [],
       countries: [],
-      callInProgress: false
+      callInProgress: false,
     };
     this.handleToggle = this.handleToggle.bind(this);
   }
@@ -181,7 +181,7 @@ class InviteUserPage extends React.Component {
     if (!state.checked) {
       this.setState({
         noticeModal: true,
-        noticeModalErrMsg: "Please click the 'terms and conditions' checkbox"
+        noticeModalErrMsg: "Please click the 'terms and conditions' checkbox",
       });
 
       return;
@@ -195,28 +195,31 @@ class InviteUserPage extends React.Component {
         phoneNumber:
           this.state.callingCode + this.state.phoneNumber.replace(/-/g, ""),
         inviteCode: this.state.inviteCode,
-        password: this.state.password
+        password: this.state.password,
       };
-      if (module === 'RISKS') {
-        user.prospect = true
+      if (module === "RISKS") {
+        user.prospect = true;
       }
       this.setState({ callInProgress: true });
       //  UPDATE_USER_DETAIL
-      const res = await axios.post(endpoint.BASE_URL_STAGING_AXIOS + endpoint.UPDATE_USER_DETAIL, user);
+      const res = await axios.post(
+        endpoint.BASE_URL_STAGING_AXIOS + endpoint.UPDATE_USER_DETAIL,
+        user
+      );
       const data = res.data;
       if (data.errorCode) {
         this.setState({
           callInProgress: false,
           inviteModal: false,
           noticeModal: true,
-          noticeModalErrMsg: data.userDesc
+          noticeModalErrMsg: data.userDesc,
         });
       } else {
         this.setState({
           callInProgress: false,
           inviteModal: false,
           noticeModal: true,
-          noticeModalErrMsg: ""
+          noticeModalErrMsg: "",
         });
       }
     }
@@ -283,10 +286,10 @@ class InviteUserPage extends React.Component {
     }
     this.setState(x);
   }
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
     this.setState({ [name]: event.target.value });
   };
-  handleSimple = event => {
+  handleSimple = (event) => {
     //this.setState({ [event.target.name]: event.target.value });
     this.setState(
       validate(
@@ -298,7 +301,7 @@ class InviteUserPage extends React.Component {
       )
     );
   };
-  handleCallingCode = event => {
+  handleCallingCode = (event) => {
     let obj = event.target.value;
     this.setState({ [event.target.name]: obj.callingCodes[0] });
     this.setState(
@@ -314,7 +317,7 @@ class InviteUserPage extends React.Component {
 
   handleToggle() {
     this.setState({
-      checked: !this.state.checked
+      checked: !this.state.checked,
     });
   }
 
@@ -333,12 +336,14 @@ class InviteUserPage extends React.Component {
       this.setState({ preRegisteredUser: true });
     }
     //COUNTRIES
-    const res = await axios.get(endpoint.BASE_URL_STAGING_AXIOS + "fx-crm/public/countriesMetaData");
+    const res = await axios.get(
+      endpoint.BASE_URL_STAGING_AXIOS + "fx-crm/public/countriesMetaData"
+    );
     if (res.data.errorCode) {
       this.setState({
         isNoticeModal: true,
         noticeModalHeaderMsg: "Error",
-        noticeModalMsg: res.data.userDesc
+        noticeModalMsg: res.data.userDesc,
       });
     } else {
       let countries = res.data.countryMetaData;
@@ -376,7 +381,7 @@ class InviteUserPage extends React.Component {
         <Dialog
           classes={{
             root: classes.center + " " + classes.modalRoot,
-            paper: classes.modal
+            paper: classes.modal,
           }}
           open={this.state.inviteModal}
           disableBackdropClick
@@ -433,7 +438,7 @@ class InviteUserPage extends React.Component {
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ firstNamePristine: false });
                             this.change(event, "firstName", [
                               { type: "required" },
@@ -441,12 +446,12 @@ class InviteUserPage extends React.Component {
                                 type: "length",
                                 params: {
                                   min: 1,
-                                  max: 100
-                                }
-                              }
+                                  max: 100,
+                                },
+                              },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.firstNamePristine) {
                               this.setState({ firstNamePristine: false });
                               this.change(event, "firstName", [
@@ -455,12 +460,12 @@ class InviteUserPage extends React.Component {
                                   type: "length",
                                   params: {
                                     min: 1,
-                                    max: 100
-                                  }
-                                }
+                                    max: 100,
+                                  },
+                                },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -490,7 +495,7 @@ class InviteUserPage extends React.Component {
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ lastNamePristine: false });
                             this.change(event, "lastName", [
                               { type: "required" },
@@ -498,12 +503,12 @@ class InviteUserPage extends React.Component {
                                 type: "length",
                                 params: {
                                   min: 1,
-                                  max: 100
-                                }
-                              }
+                                  max: 100,
+                                },
+                              },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.lastNamePristine) {
                               this.setState({ lastNamePristine: false });
                               this.change(event, "lastName", [
@@ -512,12 +517,12 @@ class InviteUserPage extends React.Component {
                                   type: "length",
                                   params: {
                                     min: 1,
-                                    max: 100
-                                  }
-                                }
+                                    max: 100,
+                                  },
+                                },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -547,27 +552,28 @@ class InviteUserPage extends React.Component {
                         inputProps={{
                           value: this.state.email,
                           disabled: this.state.preRegisteredUser,
-                          onChange: event => this.handleChange("email", event)
+                          onChange: (event) =>
+                            this.handleChange("email", event),
                         }}
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ emailPristine: false });
                             this.change(event, "email", [
                               { type: "required" },
-                              { type: "email" }
+                              { type: "email" },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.emailPristine) {
                               this.setState({ emailPristine: false });
                               this.change(event, "email", [
                                 { type: "required" },
-                                { type: "email" }
+                                { type: "email" },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -600,7 +606,7 @@ class InviteUserPage extends React.Component {
                             backgroundColor: "white",
                             paddingTop: 5,
                             marginTop: 0,
-                            textAlign: "left"
+                            textAlign: "left",
                           }}
                           success={this.state.callingCodeState === "success"}
                           error={this.state.callingCodeState === "error"}
@@ -613,31 +619,31 @@ class InviteUserPage extends React.Component {
                         </FormHelperText>
                         <Select
                           MenuProps={{
-                            className: classes.selectMenu
+                            className: classes.selectMenu,
                           }}
                           classes={{
-                            select: classes.select
+                            select: classes.select,
                           }}
                           value={this.state.callingCodeObj}
                           onChange={this.handleCallingCode}
                           inputProps={{
                             name: "callingCodeObj",
-                            id: "callingCodeObj"
+                            id: "callingCodeObj",
                           }}
                         >
                           <MenuItem
                             disabled
                             classes={{
-                              root: classes.selectMenuItem
+                              root: classes.selectMenuItem,
                             }}
                           >
                             Choose Code
                           </MenuItem>
-                          {this.state.countries.map(item => (
+                          {this.state.countries.map((item) => (
                             <MenuItem
                               classes={{
                                 root: classes.selectMenuItem,
-                                selected: classes.selectMenuItemSelected
+                                selected: classes.selectMenuItemSelected,
                               }}
                               value={item.callingCodes[0]}
                               // value={item}
@@ -668,14 +674,14 @@ class InviteUserPage extends React.Component {
                             style={{
                               backgroundColor: "white",
                               margin: "5px 12px 0px 12px",
-                              textAlign: "left"
+                              textAlign: "left",
                             }}
                             success={this.state.phoneNumberState === "success"}
                             error={this.state.phoneNumberState === "error"}
                           >
                             Phone Number*
                           </FormHelperText>
-                          <CustomNumberFormat
+                          <CustomInput
                             success={this.state.phoneNumberState === "success"}
                             error={this.state.phoneNumberState === "error"}
                             helpText={
@@ -692,14 +698,20 @@ class InviteUserPage extends React.Component {
                                 classes.customFormControlClasses,
                                 classes.phoneFormControl
                               ),
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 this.setState({ phoneNumberPristine: false });
                                 this.change(event, "phoneNumber", [
                                   { type: "required" },
                                   // { type: "phone" }
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
+                                if (!/^[0-9]*$/.test(event.target.value)) {
+                                  event.target.value = event.target.value.replace(
+                                    /\D/g,
+                                    ""
+                                  );
+                                }
                                 if (!this.state.phoneNumberPristine) {
                                   this.setState({ phoneNumberPristine: false });
                                   this.change(event, "phoneNumber", [
@@ -707,7 +719,7 @@ class InviteUserPage extends React.Component {
                                     // { type: "phoneNumber" }
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                           {/* <CustomInput
@@ -778,20 +790,20 @@ class InviteUserPage extends React.Component {
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 this.setState({ inviteCodePristine: false });
                                 this.change(event, "inviteCode", [
-                                  { type: "required" }
+                                  { type: "required" },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!this.state.inviteCodePristine) {
                                   this.setState({ inviteCodePristine: false });
                                   this.change(event, "inviteCode", [
-                                    { type: "required" }
+                                    { type: "required" },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                             inputProps={{ type: "password" }}
                           />
@@ -824,7 +836,7 @@ class InviteUserPage extends React.Component {
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 this.setState({ passwordPristine: false });
                                 this.change(event, "password", [
                                   { type: "required" },
@@ -832,13 +844,13 @@ class InviteUserPage extends React.Component {
                                     type: "length",
                                     params: {
                                       min: 8,
-                                      max: 16
-                                    }
+                                      max: 16,
+                                    },
                                   },
-                                  { type: "password" }
+                                  { type: "password" },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!this.state.passwordPristine) {
                                   this.setState({ passwordPristine: false });
                                   this.change(event, "password", [
@@ -847,13 +859,13 @@ class InviteUserPage extends React.Component {
                                       type: "length",
                                       params: {
                                         min: 8,
-                                        max: 16
-                                      }
+                                        max: 16,
+                                      },
                                     },
-                                    { type: "password" }
+                                    { type: "password" },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                             inputProps={{ type: "password" }}
                           />
@@ -886,46 +898,46 @@ class InviteUserPage extends React.Component {
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 this.setState({ passwordPristine: false });
                                 this.change(event, "passwordConfirmation", [
                                   { type: "required" },
                                   {
                                     type: "matchPassword",
-                                    params: this.state.password
+                                    params: this.state.password,
                                   },
                                   {
                                     type: "length",
                                     params: {
                                       min: 8,
-                                      max: 16
-                                    }
+                                      max: 16,
+                                    },
                                   },
-                                  { type: "password" }
+                                  { type: "password" },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!this.state.passwordConfirmationPristine) {
                                   this.setState({
-                                    passwordConfirmationPristine: false
+                                    passwordConfirmationPristine: false,
                                   });
                                   this.change(event, "passwordConfirmation", [
                                     { type: "required" },
                                     {
                                       type: "matchPassword",
-                                      params: this.state.password
+                                      params: this.state.password,
                                     },
                                     {
                                       type: "length",
                                       params: {
                                         min: 8,
-                                        max: 16
-                                      }
+                                        max: 16,
+                                      },
                                     },
-                                    { type: "password" }
+                                    { type: "password" },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                             inputProps={{ type: "password" }}
                           />
@@ -940,7 +952,7 @@ class InviteUserPage extends React.Component {
                       className={classes.center}
                       classes={{
                         root: classes.checkboxLabelControl,
-                        label: classes.checkboxLabel
+                        label: classes.checkboxLabel,
                       }}
                       control={
                         <Checkbox
@@ -952,23 +964,23 @@ class InviteUserPage extends React.Component {
                           icon={<Check className={classes.uncheckedIcon} />}
                           classes={{
                             checked: classes.checked,
-                            root: classes.checkRoot
+                            root: classes.checkRoot,
                           }}
                         />
                       }
                       label={
                         <div className={classes.termsText}>
                           I agree to the{" "}
-                          <NavLink
-                            target="_blank"
-                            to={"/home/privacy-policy"}
-                          >
+                          <NavLink target="_blank" to={"/home/privacy-policy"}>
                             Privacy Policy *
-                          </NavLink>
-                          {" "}and{" "}
-                          <a href="/cms/public/pdfs/Terms_and_Conditions_FXGuard.pdf" target="_blank">
+                          </NavLink>{" "}
+                          and{" "}
+                          <a
+                            href="/cms/public/pdfs/Terms_and_Conditions_FXGuard.pdf"
+                            target="_blank"
+                          >
                             Terms and Conditions *
-                            </a>
+                          </a>
                           {/* <NavLink
                             target="_blank"
                             to={"/home/terms-and-conditions"}
@@ -1004,7 +1016,7 @@ class InviteUserPage extends React.Component {
         <Dialog
           classes={{
             root: classes.center + " " + classes.modalRoot,
-            paper: classes.modal
+            paper: classes.modal,
           }}
           open={this.state.noticeModal}
           TransitionComponent={Transition}
@@ -1060,7 +1072,7 @@ class InviteUserPage extends React.Component {
 }
 
 InviteUserPage.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(style)(InviteUserPage);

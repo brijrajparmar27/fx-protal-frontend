@@ -36,19 +36,19 @@ import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSel
 import signupPageStyle from "assets/jss/material-dashboard-pro-react/views/signupPageStyle";
 import customInputStyle from "assets/jss/material-dashboard-pro-react/components/customInputStyle.jsx";
 
-const style = theme => ({
+const style = (theme) => ({
   ...signupPageStyle,
   ...customSelectStyle,
   ...customInputStyle,
   selectLabel: {
     fontSize: 14,
     textTransform: "none",
-    color: "#AAAAAA !important"
+    color: "#AAAAAA !important",
     //top: 7
   },
   select: {
     paddingBottom: 10,
-    fontSize: 14
+    fontSize: 14,
   },
   selectFormControl: {
     // [theme.breakpoints.up("md")]: {
@@ -56,25 +56,25 @@ const style = theme => ({
     // }
   },
   countryFormControl: {
-    marginTop: 5
+    marginTop: 5,
   },
   modalCloseButton: {
-    float: "right"
+    float: "right",
   },
   loginMaxWidth: {
-    maxWidth: 650
+    maxWidth: 650,
   },
   closeButton: {
     position: "absolute",
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500]
+    color: theme.palette.grey[500],
   },
   emptyIcon: {
     [theme.breakpoints.up("lg")]: {
-      display: "none"
-    }
-  }
+      display: "none",
+    },
+  },
 });
 
 function Transition(props) {
@@ -85,23 +85,23 @@ class CreateAdminUser extends React.Component {
   error = {
     firstNameErrorMsg: {
       required: "First name is required",
-      range: "First name should be 1 to 100 characters"
+      range: "First name should be 1 to 100 characters",
     },
     lastNameErrorMsg: {
       required: "Last name is required",
-      range: "Last name should be 1 to 100 characters"
+      range: "Last name should be 1 to 100 characters",
     },
     emailErrorMsg: {
       required: "Email is required",
       company: "Please enter a company email",
-      valid: "Please enter a valid email"
+      valid: "Please enter a valid email",
     },
     callingCodeErrorMsg: {
-      required: "Country Code is required"
+      required: "Country Code is required",
     },
     phoneNumberErrorMsg: {
       required: "Phone number is required",
-      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)"
+      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)",
     },
     roleErrorMsg: {
       required: "Role is required",
@@ -110,15 +110,15 @@ class CreateAdminUser extends React.Component {
       required: "Password is required",
       range: "Password should be 8 to 16 characters",
       password:
-        "Match contain Capital, Alphanumeric character, number and special characters( ~!@#$%^&*()_+)"
+        "Match contain Capital, Alphanumeric character, number and special characters( ~!@#$%^&*()_+)",
     },
     passwordConfirmationErrorMsg: {
       required: "Password confirmation is required",
       range: "Password should be 8 to 16 characters",
       password:
         "Match contain Capital, Alphanumeric character, number and special characters( ~!@#$%^&*()_+)",
-      matchPassword: "Confirm Password should match Password"
-    }
+      matchPassword: "Confirm Password should match Password",
+    },
   };
 
   initialState = {
@@ -157,9 +157,9 @@ class CreateAdminUser extends React.Component {
     roles: [
       "role-fxguard-adminstrator",
       "role-admin-manager",
-      "role-customer-administrator"
+      "role-customer-administrator",
     ],
-    callInProgress: false
+    callInProgress: false,
   };
 
   constructor(props) {
@@ -170,7 +170,7 @@ class CreateAdminUser extends React.Component {
   static getDerivedStateFromProps(props, state) {
     if (props.showModal !== state.showAdminUserModal) {
       return {
-        showAdminUserModal: props.showModal
+        showAdminUserModal: props.showModal,
       };
     }
     return null;
@@ -199,7 +199,7 @@ class CreateAdminUser extends React.Component {
           this.state.callingCode + this.state.phoneNumber.replace(/-/g, ""),
         password: this.state.password,
         mfaEnabled: true,
-        mfaChannel: "EMAIL"
+        mfaChannel: "EMAIL",
       };
       this.props.addRecord(user);
       this.closeModal();
@@ -257,10 +257,10 @@ class CreateAdminUser extends React.Component {
     this.setState(this.initialState);
     this.props.closeModal();
   }
-  handleEmailChange = event => {
+  handleEmailChange = (event) => {
     this.setState({ email: event.target.value });
   };
-  handleSimple = event => {
+  handleSimple = (event) => {
     this.setState(
       validate(
         event.target.value,
@@ -292,7 +292,7 @@ class CreateAdminUser extends React.Component {
         <Dialog
           classes={{
             root: classes.center + " " + classes.modalRoot,
-            paper: classes.modal + " " + classes.loginMaxWidth
+            paper: classes.modal + " " + classes.loginMaxWidth,
           }}
           open={this.state.showAdminUserModal}
           disableBackdropClick
@@ -354,13 +354,13 @@ class CreateAdminUser extends React.Component {
                         id="cau_firstName"
                         inputProps={{
                           value: this.state.firstName,
-                          onChange: event =>
-                            this.handleChange("firstName", event)
+                          onChange: (event) =>
+                            this.handleChange("firstName", event),
                         }}
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ firstNamePristine: false });
                             this.change(event, "firstName", [
                               { type: "required" },
@@ -368,12 +368,12 @@ class CreateAdminUser extends React.Component {
                                 type: "length",
                                 params: {
                                   min: 1,
-                                  max: 100
-                                }
-                              }
+                                  max: 100,
+                                },
+                              },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.firstNamePristine) {
                               this.setState({ firstNamePristine: false });
                               this.change(event, "firstName", [
@@ -382,12 +382,12 @@ class CreateAdminUser extends React.Component {
                                   type: "length",
                                   params: {
                                     min: 1,
-                                    max: 100
-                                  }
-                                }
+                                    max: 100,
+                                  },
+                                },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -416,13 +416,13 @@ class CreateAdminUser extends React.Component {
                         id="cau_lastName"
                         inputProps={{
                           value: this.state.lastName,
-                          onChange: event =>
-                            this.handleChange("lastName", event)
+                          onChange: (event) =>
+                            this.handleChange("lastName", event),
                         }}
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ lastNamePristine: false });
                             this.change(event, "lastName", [
                               { type: "required" },
@@ -430,12 +430,12 @@ class CreateAdminUser extends React.Component {
                                 type: "length",
                                 params: {
                                   min: 1,
-                                  max: 100
-                                }
-                              }
+                                  max: 100,
+                                },
+                              },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.lastNamePristine) {
                               this.setState({ lastNamePristine: false });
                               this.change(event, "lastName", [
@@ -444,12 +444,12 @@ class CreateAdminUser extends React.Component {
                                   type: "length",
                                   params: {
                                     min: 1,
-                                    max: 100
-                                  }
-                                }
+                                    max: 100,
+                                  },
+                                },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -484,27 +484,27 @@ class CreateAdminUser extends React.Component {
                         id="cau_email"
                         inputProps={{
                           value: this.state.email,
-                          onChange: event => this.handleEmailChange(event)
+                          onChange: (event) => this.handleEmailChange(event),
                         }}
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ emailPristine: false });
                             this.change(event, "email", [
                               { type: "required" },
-                              { type: "email" }
+                              { type: "email" },
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!this.state.emailPristine) {
                               this.setState({ emailPristine: false });
                               this.change(event, "email", [
                                 { type: "required" },
-                                { type: "email" }
+                                { type: "email" },
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -539,7 +539,7 @@ class CreateAdminUser extends React.Component {
                             backgroundColor: "white",
                             paddingTop: 5,
                             marginTop: 0,
-                            textAlign: "left"
+                            textAlign: "left",
                           }}
                           success={this.state.callingCodeState === "success"}
                           error={this.state.callingCodeState === "error"}
@@ -552,22 +552,22 @@ class CreateAdminUser extends React.Component {
                         </FormHelperText>
                         <Select
                           MenuProps={{
-                            className: classes.selectMenu
+                            className: classes.selectMenu,
                           }}
                           classes={{
-                            select: classes.select
+                            select: classes.select,
                           }}
                           value={this.state.callingCode}
                           onChange={this.handleSimple}
                           inputProps={{
                             name: "callingCode",
-                            id: "callingCode"
+                            id: "callingCode",
                           }}
                         >
                           <MenuItem
                             disabled
                             classes={{
-                              root: classes.selectMenuItem
+                              root: classes.selectMenuItem,
                             }}
                           >
                             Choose Code
@@ -576,7 +576,7 @@ class CreateAdminUser extends React.Component {
                             <MenuItem
                               classes={{
                                 root: classes.selectMenuItem,
-                                selected: classes.selectMenuItemSelected
+                                selected: classes.selectMenuItemSelected,
                               }}
                               value={item.callingCodes[0]}
                               key={index}
@@ -609,14 +609,14 @@ class CreateAdminUser extends React.Component {
                           backgroundColor: "white",
                           paddingTop: 5,
                           marginTop: 0,
-                          textAlign: "left"
+                          textAlign: "left",
                         }}
                         success={this.state.phoneNumberState === "success"}
                         error={this.state.phoneNumberState === "error"}
                       >
                         Phone Number*
                       </FormHelperText>
-                      <CustomNumberFormat
+                      <CustomInput
                         success={this.state.phoneNumberState === "success"}
                         error={this.state.phoneNumberState === "error"}
                         helptext={
@@ -631,14 +631,20 @@ class CreateAdminUser extends React.Component {
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             this.setState({ phoneNumberPristine: false });
                             this.change(event, "phoneNumber", [
                               { type: "required" },
                               // { type: "phone" }
                             ]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
+                            if (!/^[0-9]*$/.test(event.target.value)) {
+                              event.target.value = event.target.value.replace(
+                                /\D/g,
+                                ""
+                              );
+                            }
                             if (!this.state.phoneNumberPristine) {
                               this.setState({ phoneNumberPristine: false });
                               this.change(event, "phoneNumber", [
@@ -646,7 +652,7 @@ class CreateAdminUser extends React.Component {
                                 // { type: "phoneNumber" }
                               ]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
@@ -678,7 +684,7 @@ class CreateAdminUser extends React.Component {
                             backgroundColor: "white",
                             paddingTop: 5,
                             marginTop: 0,
-                            textAlign: "left"
+                            textAlign: "left",
                           }}
                           success={this.state.roleState === "success"}
                           error={this.state.roleState === "error"}
@@ -691,31 +697,31 @@ class CreateAdminUser extends React.Component {
                         </FormHelperText>
                         <Select
                           MenuProps={{
-                            className: classes.selectMenu
+                            className: classes.selectMenu,
                           }}
                           classes={{
-                            select: classes.select
+                            select: classes.select,
                           }}
                           value={this.state.role}
                           onChange={this.handleSimple}
                           inputProps={{
                             name: "role",
-                            id: "role"
+                            id: "role",
                           }}
                         >
                           <MenuItem
                             disabled
                             classes={{
-                              root: classes.selectMenuItem
+                              root: classes.selectMenuItem,
                             }}
                           >
                             Choose Code
                           </MenuItem>
-                          {this.state.roles.map(item => (
+                          {this.state.roles.map((item) => (
                             <MenuItem
                               classes={{
                                 root: classes.selectMenuItem,
-                                selected: classes.selectMenuItemSelected
+                                selected: classes.selectMenuItemSelected,
                               }}
                               value={item}
                               key={item}
@@ -761,13 +767,13 @@ class CreateAdminUser extends React.Component {
                             inputProps={{
                               value: this.state.password,
                               type: "password",
-                              onChange: event =>
-                                this.handleChange("password", event)
+                              onChange: (event) =>
+                                this.handleChange("password", event),
                             }}
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 this.setState({ passwordPristine: false });
                                 this.change(event, "password", [
                                   { type: "required" },
@@ -775,13 +781,13 @@ class CreateAdminUser extends React.Component {
                                     type: "length",
                                     params: {
                                       min: 8,
-                                      max: 16
-                                    }
+                                      max: 16,
+                                    },
                                   },
-                                  { type: "password" }
+                                  { type: "password" },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!this.state.passwordPristine) {
                                   this.setState({ passwordPristine: false });
                                   this.change(event, "password", [
@@ -790,13 +796,13 @@ class CreateAdminUser extends React.Component {
                                       type: "length",
                                       params: {
                                         min: 8,
-                                        max: 16
-                                      }
+                                        max: 16,
+                                      },
                                     },
-                                    { type: "password" }
+                                    { type: "password" },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                         </GridItem>
@@ -828,52 +834,55 @@ class CreateAdminUser extends React.Component {
                             inputProps={{
                               value: this.state.passwordConfirmation,
                               type: "password",
-                              onChange: event =>
-                                this.handleChange("passwordConfirmation", event)
+                              onChange: (event) =>
+                                this.handleChange(
+                                  "passwordConfirmation",
+                                  event
+                                ),
                             }}
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 this.setState({ passwordPristine: false });
                                 this.change(event, "passwordConfirmation", [
                                   { type: "required" },
                                   {
                                     type: "matchPassword",
-                                    params: this.state.password
+                                    params: this.state.password,
                                   },
                                   {
                                     type: "length",
                                     params: {
                                       min: 8,
-                                      max: 16
-                                    }
+                                      max: 16,
+                                    },
                                   },
-                                  { type: "password" }
+                                  { type: "password" },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!this.state.passwordConfirmationPristine) {
                                   this.setState({
-                                    passwordConfirmationPristine: false
+                                    passwordConfirmationPristine: false,
                                   });
                                   this.change(event, "passwordConfirmation", [
                                     { type: "required" },
                                     {
                                       type: "matchPassword",
-                                      params: this.state.password
+                                      params: this.state.password,
                                     },
                                     {
                                       type: "length",
                                       params: {
                                         min: 8,
-                                        max: 16
-                                      }
+                                        max: 16,
+                                      },
                                     },
-                                    { type: "password" }
+                                    { type: "password" },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                         </GridItem>
@@ -939,7 +948,7 @@ CreateAdminUser.propTypes = {
   showModal: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
   addRecord: PropTypes.func,
-  countries: PropTypes.array
+  countries: PropTypes.array,
 };
 
 export default withRouter(withStyles(style)(CreateAdminUser));

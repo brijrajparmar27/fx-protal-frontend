@@ -59,32 +59,32 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
   const error = {
     firstNameErrorMsg: {
       required: "First name is required",
-      range: "First name should be 1 to 100 characters"
+      range: "First name should be 1 to 100 characters",
     },
     lastNameErrorMsg: {
       required: "Last name is required",
-      range: "Last name should be 1 to 100 characters"
+      range: "Last name should be 1 to 100 characters",
     },
     emailErrorMsg: {
       required: "Email is required",
       company: "Please enter a company email",
-      valid: "Please enter a valid email"
+      valid: "Please enter a valid email",
     },
     phoneNumberErrorMsg: {
       required: "Phone number is required",
-      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)"
+      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)",
     },
     companyNameErrorMsg: {
       required: "Company name is required",
       valid: "Please enter a valid company name",
-      range: "Company Name should be 1 to 200 characters"
+      range: "Company Name should be 1 to 200 characters",
     },
     queryErrorMsg: {
-      required: "Query is required"
+      required: "Query is required",
     },
     countryCodeErrorMsg: {
-      required: "Country is required"
-    }
+      required: "Country is required",
+    },
   };
 
   const rulesList = {
@@ -94,17 +94,31 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
     phoneNumber: [{ type: "required" }, { type: "phone" }],
     companyName: [{ type: "required" }],
     query: [{ type: "required" }],
-    countryCode: [{ type: "required" }]
+    countryCode: [{ type: "required" }],
   };
 
   const [contactInfo, setContactInfo] = useState({
     firstName: userDetails.firstName ? userDetails.firstName : "",
     lastName: userDetails.lastName ? userDetails.lastName : "",
     email: userDetails.email ? userDetails.email : "",
-    countryCode: userDetails.phoneNumber ? userDetails.phoneNumber.length > 10 ? userDetails.phoneNumber.substring(0,userDetails.phoneNumber.length-10) : "" : "",
-    phoneNumber: userDetails.phoneNumber ? userDetails.phoneNumber.length > 10 ? userDetails.phoneNumber.substring(userDetails.phoneNumber.length-10, userDetails.phoneNumber.length) : userDetails.phoneNumber : "",
+    countryCode: userDetails.phoneNumber
+      ? userDetails.phoneNumber.length > 10
+        ? userDetails.phoneNumber.substring(
+            0,
+            userDetails.phoneNumber.length - 10
+          )
+        : ""
+      : "",
+    phoneNumber: userDetails.phoneNumber
+      ? userDetails.phoneNumber.length > 10
+        ? userDetails.phoneNumber.substring(
+            userDetails.phoneNumber.length - 10,
+            userDetails.phoneNumber.length
+          )
+        : userDetails.phoneNumber
+      : "",
     companyName: userDetails.customerName ? userDetails.customerName : "",
-    query: ""
+    query: "",
   });
 
   const contactInfoIntialState = {
@@ -129,7 +143,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
     companyNameErrorMsg: [],
     queryState: "",
     queryPristine: true,
-    queryErrorMsg: []
+    queryErrorMsg: [],
   };
 
   const [contactInfoState, setContactInfoState] = useState(
@@ -151,11 +165,11 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
     }
     setContactInfoState({
       ...contactInfoState,
-      ...validate(value, stateName, contactInfoState, rules, error)
+      ...validate(value, stateName, contactInfoState, rules, error),
     });
   };
 
-  const handleSimple = event => {
+  const handleSimple = (event) => {
     setContactInfo({ ...contactInfo, countryCode: event.target.value });
     change(event, "countryCode", [{ type: "required" }]);
   };
@@ -171,16 +185,16 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
 
     setContactInfo({
       ...contactInfo,
-      [name]: value
+      [name]: value,
     });
   };
-  const handleClose = e => {
+  const handleClose = (e) => {
     closeModal();
   };
   const isValidated = () => {
     let currentState = {};
-    let currentStateError = {...contactInfoState};
-    if (contactInfoState.firstNameState !== "success") {        
+    let currentStateError = { ...contactInfoState };
+    if (contactInfoState.firstNameState !== "success") {
       currentStateError = {
         ...currentStateError,
         ...validate(
@@ -189,7 +203,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           contactInfoState,
           rulesList.firstName,
           error
-        )
+        ),
       };
     }
     if (contactInfoState.lastNameState !== "success") {
@@ -201,7 +215,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           contactInfoState,
           rulesList.lastName,
           error
-        )
+        ),
       };
     }
     if (contactInfoState.emailState !== "success") {
@@ -213,7 +227,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           contactInfoState,
           rulesList.email,
           error
-        )
+        ),
       };
     }
     if (contactInfoState.countryCodeState !== "success") {
@@ -225,7 +239,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           contactInfoState,
           rulesList.countryCode,
           error
-        )
+        ),
       };
     }
     if (contactInfoState.phoneNumberState !== "success") {
@@ -242,7 +256,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           contactInfoState,
           rulesList.phoneNumber,
           error
-        )
+        ),
       };
     }
     if (contactInfoState.companyNameState !== "success") {
@@ -254,7 +268,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           contactInfoState,
           rulesList.companyName,
           error
-        )
+        ),
       };
     }
     if (contactInfoState.queryState !== "success") {
@@ -266,13 +280,13 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           contactInfoState,
           rulesList.query,
           error
-        )
+        ),
       };
     }
     setContactInfoState({
       ...contactInfoState,
       ...currentState,
-      ...currentStateError
+      ...currentStateError,
     });
 
     if (
@@ -293,14 +307,14 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
     if (isValidated()) {
       let contactInfoData = {
         ...contactInfo,
-        phoneNumber: contactInfo.countryCode + contactInfo.phoneNumber
+        phoneNumber: contactInfo.countryCode + contactInfo.phoneNumber,
       };
       setCallInProgress(true);
       const res = await apiHandler({
         method: "POST",
-        url: endpoint.CONTACTUS, 
+        url: endpoint.CONTACTUS,
         data: contactInfoData,
-        authToken: sessionStorage.getItem("token")
+        authToken: sessionStorage.getItem("token"),
       });
       setCallInProgress(false);
       const data = res.data;
@@ -312,8 +326,8 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
         } else {
           setNoticeModalHeader("Error");
           setNoticeModalErrMsg(data.userDesc);
-          setNoticeModal(true);   
-          setNneedToCloseModal(false); 
+          setNoticeModal(true);
+          setNneedToCloseModal(false);
         }
       } else {
         setContactInfoState(contactInfoIntialState);
@@ -324,12 +338,14 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           countryCode: "",
           phoneNumber: "",
           companyName: "",
-          query: ""
+          query: "",
         });
         setNoticeModalHeader("Information");
-        setNoticeModalErrMsg("Thank you for your recent enquiry. We are dealing with it, and will get in touch with you as soon as possible");
+        setNoticeModalErrMsg(
+          "Thank you for your recent enquiry. We are dealing with it, and will get in touch with you as soon as possible"
+        );
         setNoticeModal(true);
-        setNneedToCloseModal(true); 
+        setNneedToCloseModal(true);
       }
     }
   };
@@ -337,20 +353,20 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
     [" " + classes.labelRootError]:
       contactInfoState.countryCodeState === "error",
     [" " + classes.labelRootSuccess]:
-      contactInfoState.countryCodeState === "success"
+      contactInfoState.countryCodeState === "success",
   });
   const labelPhoneClasses = classNames({
     [" " + classes.labelRootError]:
       contactInfoState.phoneNumberState === "error",
     [" " + classes.labelRootSuccess]:
-      contactInfoState.phoneNumberState === "success"
+      contactInfoState.phoneNumberState === "success",
   });
 
   return (
     <div className={classes.container}>
       <Dialog
         classes={{
-          root: classes.center
+          root: classes.center,
         }}
         maxWidth="md"
         open={showModal}
@@ -370,7 +386,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
           <IconButton
             aria-label="close"
             className={classes.closeButton}
-            onClick={e => handleClose(e)}
+            onClick={(e) => handleClose(e)}
           >
             <CloseIcon />
           </IconButton>
@@ -380,7 +396,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                 fontSize: 20,
                 lineHeight: "25px",
                 textAlign: "center",
-                fontWeight: 600
+                fontWeight: 600,
               }}
             >
               Contact Us
@@ -427,16 +443,16 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             id="cu_firstName"
                             inputProps={{
                               value: contactInfo.firstName,
-                              onChange: event =>
-                                handleChange("firstName", event)
+                              onChange: (event) =>
+                                handleChange("firstName", event),
                             }}
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 setContactInfoState({
                                   ...contactInfoState,
-                                  firstNamePristine: false
+                                  firstNamePristine: false,
                                 });
                                 change(event, "firstName", [
                                   { type: "required" },
@@ -444,16 +460,16 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                     type: "length",
                                     params: {
                                       min: 1,
-                                      max: 100
-                                    }
-                                  }
+                                      max: 100,
+                                    },
+                                  },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!contactInfoState.firstNamePristine) {
                                   setContactInfoState({
                                     ...contactInfoState,
-                                    firstNamePristine: false
+                                    firstNamePristine: false,
                                   });
                                   change(event, "firstName", [
                                     { type: "required" },
@@ -461,12 +477,12 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                       type: "length",
                                       params: {
                                         min: 1,
-                                        max: 100
-                                      }
-                                    }
+                                        max: 100,
+                                      },
+                                    },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                         </GridItem>
@@ -497,15 +513,16 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             id="cu_lastName"
                             inputProps={{
                               value: contactInfo.lastName,
-                              onChange: event => handleChange("lastName", event)
+                              onChange: (event) =>
+                                handleChange("lastName", event),
                             }}
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 setContactInfoState({
                                   ...contactInfoState,
-                                  lastNamePristine: false
+                                  lastNamePristine: false,
                                 });
                                 change(event, "lastName", [
                                   { type: "required" },
@@ -513,16 +530,16 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                     type: "length",
                                     params: {
                                       min: 1,
-                                      max: 100
-                                    }
-                                  }
+                                      max: 100,
+                                    },
+                                  },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!contactInfoState.lastNamePristine) {
                                   setContactInfoState({
                                     ...contactInfoState,
-                                    lastNamePristine: false
+                                    lastNamePristine: false,
                                   });
                                   change(event, "lastName", [
                                     { type: "required" },
@@ -530,12 +547,12 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                       type: "length",
                                       params: {
                                         min: 1,
-                                        max: 100
-                                      }
-                                    }
+                                        max: 100,
+                                      },
+                                    },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                         </GridItem>
@@ -569,33 +586,33 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             id="cu_email"
                             inputProps={{
                               value: contactInfo.email,
-                              onChange: event => handleChange("email", event)
+                              onChange: (event) => handleChange("email", event),
                             }}
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 setContactInfoState({
                                   ...contactInfoState,
-                                  emailPristine: false
+                                  emailPristine: false,
                                 });
                                 change(event, "email", [
                                   { type: "required" },
-                                  { type: "email" }
+                                  { type: "email" },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!contactInfo.email) {
                                   setContactInfoState({
                                     ...contactInfoState,
-                                    emailPristine: false
+                                    emailPristine: false,
                                   });
                                   change(event, "email", [
                                     { type: "required" },
-                                    { type: "email" }
+                                    { type: "email" },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                         </GridItem>
@@ -631,31 +648,31 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             </InputLabel>
                             <Select
                               MenuProps={{
-                                className: classes.selectMenu
+                                className: classes.selectMenu,
                               }}
                               classes={{
-                                select: classes.select
+                                select: classes.select,
                               }}
                               value={contactInfo.countryCode}
                               onChange={(e) => handleSimple(e)}
                               inputProps={{
                                 name: "countryCode",
-                                id: "countryCode"
+                                id: "countryCode",
                               }}
                             >
                               <MenuItem
                                 disabled
                                 classes={{
-                                  root: classes.selectMenuItem
+                                  root: classes.selectMenuItem,
                                 }}
                               >
                                 Choose Country
                               </MenuItem>
-                              {countries.map(item => (
+                              {countries.map((item) => (
                                 <MenuItem
                                   classes={{
                                     root: classes.selectMenuItem,
-                                    selected: classes.selectMenuItemSelected
+                                    selected: classes.selectMenuItemSelected,
                                   }}
                                   value={item.callingCodes[0]}
                                   key={item.callingCodes[0]}
@@ -696,7 +713,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                           >
                             {"Phone Number*"}
                           </InputLabel>
-                          <CustomNumberFormat
+                          <CustomInput
                             success={
                               contactInfoState.phoneNumberState === "success"
                             }
@@ -712,9 +729,15 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             // value={contactInfo.phoneNumber}
                             // format="###-###-####"
                             value={contactInfo.phoneNumber}
-                            onChange={event =>
-                              handleChange("phoneNumber", event)
-                            }
+                            onChange={(event) => {
+                              if (!/^[0-9]*$/.test(event.target.value)) {
+                                event.target.value = event.target.value.replace(
+                                  /\D/g,
+                                  ""
+                                );
+                              }
+                              handleChange("phoneNumber", event);
+                            }}
                             // inputProps={{
                             //   value: contactInfo.phoneNumber,
                             //   onChange: event => handleChange("phoneNumber", event)
@@ -722,28 +745,28 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 setContactInfoState({
                                   ...contactInfoState,
-                                  phoneNumberPristine: false
+                                  phoneNumberPristine: false,
                                 });
                                 change(event, "phoneNumber", [
                                   { type: "required" },
                                   // { type: "phone" }
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!contactInfo.phoneNumber) {
                                   setContactInfoState({
                                     ...contactInfoState,
-                                    phoneNumberPristine: false
+                                    phoneNumberPristine: false,
                                   });
                                   change(event, "phoneNumber", [
                                     { type: "required" },
                                     // { type: "phoneNumber" }
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                         </GridItem>
@@ -776,16 +799,16 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                             id="cu_companyName"
                             inputProps={{
                               value: contactInfo.companyName,
-                              onChange: event =>
-                                handleChange("companyName", event)
+                              onChange: (event) =>
+                                handleChange("companyName", event),
                             }}
                             formControlProps={{
                               fullWidth: true,
                               className: classes.customFormControlClasses,
-                              onBlur: event => {
+                              onBlur: (event) => {
                                 setContactInfoState({
                                   ...contactInfoState,
-                                  companyNamePristine: false
+                                  companyNamePristine: false,
                                 });
                                 change(event, "companyName", [
                                   { type: "required" },
@@ -793,16 +816,16 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                     type: "length",
                                     params: {
                                       min: 1,
-                                      max: 200
-                                    }
-                                  }
+                                      max: 200,
+                                    },
+                                  },
                                 ]);
                               },
-                              onChange: event => {
+                              onChange: (event) => {
                                 if (!contactInfo.companyName) {
                                   setContactInfoState({
                                     ...contactInfoState,
-                                    companyNamePristine: false
+                                    companyNamePristine: false,
                                   });
                                   change(event, "companyName", [
                                     { type: "required" },
@@ -810,12 +833,12 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                                       type: "length",
                                       params: {
                                         min: 1,
-                                        max: 200
-                                      }
-                                    }
+                                        max: 200,
+                                      },
+                                    },
                                   ]);
                                 }
-                              }
+                              },
                             }}
                           />
                         </GridItem>
@@ -835,42 +858,41 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
                           multiline: true,
                           rows: 2,
                           value: contactInfo.query,
-                          onChange: event => handleChange("query", event)
+                          onChange: (event) => handleChange("query", event),
                         }}
                         formControlProps={{
                           fullWidth: true,
-                          onBlur: event => {
+                          onBlur: (event) => {
                             setContactInfoState({
                               ...contactInfoState,
-                              queryPristine: false
+                              queryPristine: false,
                             });
                             change(event, "query", [{ type: "required" }]);
                           },
-                          onChange: event => {
+                          onChange: (event) => {
                             if (!contactInfo.query) {
                               setContactInfoState({
                                 ...contactInfoState,
-                                queryPristine: false
+                                queryPristine: false,
                               });
                               change(event, "query", [{ type: "required" }]);
                             }
-                          }
+                          },
                         }}
                       />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={12} lg={12}>
-                  <div className={classes.center}>
-                    <Button
-                      round={false}
-                      color="info"
-                      size="lg"
-                      onClick={handleSubmit}
-                    >
-                      {"Submit"}
-                    </Button>
-                  </div>
-                </GridItem>
-
+                      <div className={classes.center}>
+                        <Button
+                          round={false}
+                          color="info"
+                          size="lg"
+                          onClick={handleSubmit}
+                        >
+                          {"Submit"}
+                        </Button>
+                      </div>
+                    </GridItem>
                   </GridContainer>
                 </form>
               </GridItem>
@@ -882,7 +904,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
         <Dialog
           classes={{
             root: classes.center + " " + classes.modalRoot,
-            paper: classes.modal
+            paper: classes.modal,
           }}
           open={callInProgress}
           TransitionComponent={Transition}
@@ -921,7 +943,7 @@ const ContactUsModal = ({ showModal, closeModal, countries, userDetails }) => {
 ContactUsModal.propTypes = {
   showModal: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
-  userDetails: PropTypes.object
+  userDetails: PropTypes.object,
 };
 
 export default ContactUsModal;

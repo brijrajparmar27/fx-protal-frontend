@@ -321,7 +321,9 @@ const SignupPage = (props) => {
     console.log("Submit Data - ", user);
     // setState({ callInProgress: true, ProgressMSG: "Signing you In..." });
     setProgressBar(true);
-    setProgressBarMSG("You have successfully signed up. You can now proceed to select a risk plan to have full access to FX Risk Management.");
+    setProgressBarMSG(
+      "You have successfully signed up. You can now proceed to select a risk plan to have full access to FX Risk Management."
+    );
     const res = await axios.post(
       endpoint.BASE_URL_STAGING_AXIOS + endpoint.USER_SIGNUP,
       user
@@ -384,8 +386,8 @@ const SignupPage = (props) => {
   const ValidateExistingEmailId = async (email) => {
     const res = await axios.get(
       endpoint.BASE_URL_STAGING_AXIOS +
-      endpoint.VALIDATE_EMAIL +
-      encodeURIComponent(email)
+        endpoint.VALIDATE_EMAIL +
+        encodeURIComponent(email)
     );
     console.log(res.data);
     if (res.data) {
@@ -822,17 +824,17 @@ const SignupPage = (props) => {
   //     !(initial.callingCodeState === "error")
   // });
 
-  const onSignupSubmit = (e)=>{
+  const onSignupSubmit = (e) => {
     e.preventDefault();
     submit();
     console.log("signup submit");
-  }
+  };
 
-  const otpsubmit = (e)=>{
+  const otpsubmit = (e) => {
     e.preventDefault();
     console.log("otp submit");
     verifyOTP();
-  }
+  };
 
   const module = sessionStorage.getItem("module");
   return (
@@ -881,26 +883,41 @@ const SignupPage = (props) => {
                     {"Enter your OTP Code sent on your email: " + initial.email}
                   </h5>
                 </DialogTitle>
-                <DialogContent id="classic-modal-slide-description" className={cx(classes.otpModalBody, classes.loginMaxWidth)}>
+                <DialogContent
+                  id="classic-modal-slide-description"
+                  className={cx(classes.otpModalBody, classes.loginMaxWidth)}
+                >
                   <GridContainer justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <form onSubmit={e=>{otpsubmit(e)}}>
+                      <form
+                        onSubmit={(e) => {
+                          otpsubmit(e);
+                        }}
+                      >
                         <GridContainer justify="center">
-                          <Icon className={classes.inputAdornmentIcon} style={{ marginTop: 30 }}>
+                          <Icon
+                            className={classes.inputAdornmentIcon}
+                            style={{ marginTop: 30 }}
+                          >
                             lock_outline
                           </Icon>
                           <GridItem xs={8} sm={8} md={8}>
                             <CustomInput
-                              success={initial.emailOTPCodeState === 'success'}
-                              error={initial.emailOTPCodeState === 'error'}
-                              helpText={initial.emailOTPCodeState === 'error' && initial.emailOTPCodeErrorMsg[0]}
+                              success={initial.emailOTPCodeState === "success"}
+                              error={initial.emailOTPCodeState === "error"}
+                              helpText={
+                                initial.emailOTPCodeState === "error" &&
+                                initial.emailOTPCodeErrorMsg[0]
+                              }
                               labelText="OTP Code"
                               id="lp_emailOTPCode"
                               formControlProps={{
                                 fullWidth: false,
                                 onChange: (event) => {
                                   if (event.target.value.trim()) {
-                                    change(event, 'emailOTPCode', [{ type: 'required' }]);
+                                    change(event, "emailOTPCode", [
+                                      { type: "required" },
+                                    ]);
                                   }
                                 },
                               }}
@@ -908,12 +925,20 @@ const SignupPage = (props) => {
                           </GridItem>
                         </GridContainer>
                         <div className={classes.center}>
-                          <Button size="lg" type="submit" style={{ backgroundColor: primaryColor[5] }} onClick={() => verifyOTP()}>
+                          <Button
+                            size="lg"
+                            type="submit"
+                            style={{ backgroundColor: primaryColor[5] }}
+                            onClick={() => verifyOTP()}
+                          >
                             VERIFY
                           </Button>
                         </div>
                         <div>
-                          <a style={{ cursor: 'pointer' }} onClick={() => resetOTP()}>
+                          <a
+                            style={{ cursor: "pointer" }}
+                            onClick={() => resetOTP()}
+                          >
                             Resend OTP
                           </a>
                         </div>
@@ -996,7 +1021,12 @@ const SignupPage = (props) => {
                   id="classic-modal-slide-description"
                   className={classes.modalBody}
                 >
-                  <form className={classes.form} onSubmit={e=>{onSignupSubmit(e)}}>
+                  <form
+                    className={classes.form}
+                    onSubmit={(e) => {
+                      onSignupSubmit(e);
+                    }}
+                  >
                     <GridContainer justify="center">
                       <GridItem xs={12} sm={12} md={12} lg={12}>
                         <GridContainer spacing={1} alignItems="center">
@@ -1335,6 +1365,12 @@ const SignupPage = (props) => {
                                   ]);
                                 },
                                 onChange: (event) => {
+                                  if (!/^[0-9]*$/.test(event.target.value)) {
+                                    event.target.value = event.target.value.replace(
+                                      /\D/g,
+                                      ""
+                                    );
+                                  }
                                   if (!initial.phoneNumberPristine) {
                                     setState({ phoneNumberPristine: false });
                                     change(event, "phoneNumber", [
@@ -1697,7 +1733,7 @@ const SignupPage = (props) => {
                                   }
                                   helpText={
                                     initial.passwordConfirmationState ===
-                                    "error" &&
+                                      "error" &&
                                     initial.passwordConfirmationErrorMsg[0]
                                   }
                                   labelText="Password Confirmation*"
