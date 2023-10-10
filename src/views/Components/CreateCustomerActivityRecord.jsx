@@ -174,13 +174,17 @@ class CreateCustomerActivityRecord extends React.Component {
   };
   uploadSupportingDocument = async record => {
     if (this.state.documentLinks !== "") {
+      console.log(this.state.documentLinks, "this.state.documentLinks");
       const formData = new FormData();
       formData.append("file", this.state.documentLinks);
 
       const res = await apiHandler({
-        method: "POST",
-        url: endpoint.UPLOAD_FILE,
-        data: formData
+          method: "POST",
+          url: endpoint.UPLOAD_FILE,
+          data: formData,
+          headers: {
+              "content-type": "multipart/form-data",
+          },
       });
       if (res.data.errorCode) {
         this.setState({
