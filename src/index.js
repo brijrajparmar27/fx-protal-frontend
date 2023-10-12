@@ -10,6 +10,7 @@ import HomeLayout from "layouts/Home.jsx";
 import XeroOauth from "views/Pages/XeroOauth.jsx";
 import { refreshToken } from "utils/Utils.js";
 import { history } from "variables/general";
+import "./index.css";
 
 import "assets/scss/material-dashboard-pro-react.scss?v=1.5.0";
 
