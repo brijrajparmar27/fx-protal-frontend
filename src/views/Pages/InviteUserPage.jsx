@@ -44,6 +44,8 @@ import CustomNumberFormat from "components/CustomNumberFormat/CustomNumberFormat
 
 import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
 import signupPageStyle from "assets/jss/material-dashboard-pro-react/views/signupPageStyle";
+import TextField from "@mui/material/TextField";
+import { useState } from "react";
 
 const style = (theme) => ({
   ...signupPageStyle,
@@ -161,6 +163,7 @@ class InviteUserPage extends React.Component {
       passwordConfirmationErrorMsg: [],
       countries: [],
       callInProgress: false,
+      phone: true,
     };
     this.handleToggle = this.handleToggle.bind(this);
   }
@@ -183,7 +186,6 @@ class InviteUserPage extends React.Component {
         noticeModal: true,
         noticeModalErrMsg: "Please click the 'terms and conditions' checkbox",
       });
-
       return;
     }
 
@@ -192,8 +194,7 @@ class InviteUserPage extends React.Component {
         firstName: this.state.firstName,
         lastName: state.lastName,
         email: this.state.email,
-        phoneNumber:
-          this.state.callingCode + this.state.phoneNumber.replace(/-/g, ""),
+        phoneNumber: this.state.phone,
         inviteCode: this.state.inviteCode,
         password: this.state.password,
       };
@@ -231,7 +232,7 @@ class InviteUserPage extends React.Component {
       this.state.lastNameState === "success" &&
       this.state.emailState === "success" &&
       this.state.callingCodeState === "success" &&
-      this.state.phoneNumberState === "success" &&
+      // this.state.phoneNumberState === "success" &&
       this.state.inviteCodeState === "success" &&
       this.state.passwordState === "success" &&
       this.state.passwordConfirmationState === "success"
@@ -250,9 +251,9 @@ class InviteUserPage extends React.Component {
       if (this.state.callingCodeState !== "success") {
         this.setState({ callingCodeState: "error" });
       }
-      if (this.state.phoneNumberState !== "success") {
-        this.setState({ phoneNumberState: "error" });
-      }
+      // if (this.state.phoneNumberState !== "success") {
+      //   this.setState({ phoneNumberState: "error" });
+      // }
       if (this.state.inviteCodeState !== "success") {
         this.setState({ inviteCodeState: "error" });
       }
@@ -303,10 +304,11 @@ class InviteUserPage extends React.Component {
   };
   handleCallingCode = (event) => {
     let obj = event.target.value;
-    this.setState({ [event.target.name]: obj.callingCodes[0] });
+    console.log(obj);
+    this.setState({ [event.target.name]: obj});
     this.setState(
       validate(
-        obj.callingCodes[0],
+        obj,
         "callingCode",
         this.state,
         [{ type: "required" }],
@@ -661,7 +663,7 @@ class InviteUserPage extends React.Component {
                     <GridItem xs={12} sm={12} md={6} lg={6}>
                       <GridContainer spacing={1} alignItems="center">
                         <GridItem className={classes.textIcon}>
-                          <Phone className={classes.inputAdornmentIcon} />
+                          {/* <Phone className={classes.inputAdornmentIcon} /> */}
                         </GridItem>
                         <GridItem
                           className={classes.customText}
@@ -670,7 +672,23 @@ class InviteUserPage extends React.Component {
                           md={9}
                           lg={9}
                         >
-                          <FormHelperText
+                          <TextField
+                            id="standard-number"
+                            error={!this.state.phone}
+                            helperText={!this.state.phone && "Cannot be Empty"}
+                            label="Phone Number"
+                            type="number"
+                            variant="standard"
+                            required
+                            onChange={(event) => {
+                              console.log(event.target.value);
+                              // setPhone(event.target.value);
+                              this.setState({
+                                phone: event.target.value,
+                              });
+                            }}
+                          />
+                          {/* <FormHelperText
                             style={{
                               backgroundColor: "white",
                               margin: "5px 12px 0px 12px",
@@ -721,7 +739,7 @@ class InviteUserPage extends React.Component {
                                 }
                               },
                             }}
-                          />
+                          /> */}
                           {/* <CustomInput
                             success={this.state.phoneNumberState === "success"}
                             error={this.state.phoneNumberState === "error"}
