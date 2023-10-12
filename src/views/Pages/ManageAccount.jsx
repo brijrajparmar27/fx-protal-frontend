@@ -461,12 +461,13 @@ class ManageAccount extends React.Component {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        phoneNumber: phone,
+        phoneNumber: user.phoneNumber,
         companyName: user.customerName,
         customerStatus: user.customerStatus,
         kycStatus: user.kycStatus,
         customerId: user.customerId,
         countryCode: countryCode,
+        phone: user.phoneNumber,
         subscribedPlanName: user.subscribedPlanName,
         subscribedPlanId: user.subscribedPlanId,
         volumeDesc: user.volumeDesc,
@@ -1218,6 +1219,8 @@ class ManageAccount extends React.Component {
         this.state.newPassword !== "" ? this.state.newPassword : null,
     };
 
+    console.log(userData, this.isValidated() && this.validatePassword());
+
     if (this.isValidated() && this.validatePassword()) {
       this.setState({ callInProgress: true });
       const res = await apiHandler({
@@ -1403,18 +1406,18 @@ class ManageAccount extends React.Component {
         ),
       };
     }
-    // if (this.state.phoneState !== "success") {
-    //   states = {
-    //     ...states,
-    //     ...validate(
-    //       this.state.phoneNumber.replace(/-/g, ""),
-    //       "phone",
-    //       this.state,
-    //       this.rulesList.phone,
-    //       this.error
-    //     ),
-    //   };
-    // }
+    if (this.state.phoneState !== "success") {
+      states = {
+        ...states,
+        ...validate(
+          this.state.phone,
+          "phone",
+          this.state,
+          this.rulesList.phone,
+          this.error
+        ),
+      };
+    }
     if (this.state.companyNameState !== "success") {
       states = {
         ...states,
@@ -2025,6 +2028,7 @@ class ManageAccount extends React.Component {
                             type="number"
                             variant="standard"
                             required
+                            value={this.state.phone}
                             onChange={(event) => {
                               console.log(event.target.value);
                               // setPhone(event.target.value);

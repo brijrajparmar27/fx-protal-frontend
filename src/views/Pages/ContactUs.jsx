@@ -263,12 +263,17 @@ const ContactUsPage = (props) => {
     return false;
   };
 
+  useEffect(()=>{
+    console.log(phone);
+  },[phone])
+
   const handleSubmit = async () => {
     if (agreeDisclaimer && isValidated()) {
       let contactInfoData = {
         ...contactInfo,
-        phoneNumber: contactInfo.countryCode || "" + phone,
+        phoneNumber: contactInfo.countryCode + phone,
       };
+      console.log(contactInfoData);
       setCallInProgress(true);
       const res = await apiHandler({
         method: "POST",
@@ -299,6 +304,7 @@ const ContactUsPage = (props) => {
           companyName: "",
           query: "",
         });
+        setPhone(true);
         setAgreeDisclaimer(false);
       }
     } else if (!agreeDisclaimer) {
@@ -756,6 +762,7 @@ const ContactUsPage = (props) => {
                       type="number"
                       variant="standard"
                       required
+                      value={phone}
                       onChange={(event) => {
                         console.log(event.target.value);
                         setPhone(event.target.value);
