@@ -52,7 +52,8 @@ const ContactUsPage = (props) => {
   const [callInProgress, setCallInProgress] = useState(false);
   const [noticeModalErrMsg, setNoticeModalErrMsg] = useState("");
   const [countries, setCountries] = useState([]);
-  const [phone,setPhone] = useState(true)
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState(false);
 
   const history = useHistory();
 
@@ -263,9 +264,9 @@ const ContactUsPage = (props) => {
     return false;
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(phone);
-  },[phone])
+  }, [phone]);
 
   const handleSubmit = async () => {
     if (agreeDisclaimer && isValidated()) {
@@ -694,7 +695,7 @@ const ContactUsPage = (props) => {
               <GridItem xs={12} sm={12} md={12} lg={4}>
                 <GridContainer spacing={1} alignItems="flex-end">
                   <GridItem xs={1} sm={1} md={1} className={classes.textIcon}>
-                    {/* <Phone className={classes.inputAdornmentIcon} /> */}
+                    <Phone className={classes.inputAdornmentIcon} />
                   </GridItem>
                   <GridItem
                     className={classes.customText}
@@ -756,16 +757,31 @@ const ContactUsPage = (props) => {
                     /> */}
                     <TextField
                       id="standard-number"
-                      error={!phone}
-                      helperText={!phone && "Cannot be Empty"}
+                      style={{
+                        width: "100%",
+                        marginTop: "7px",
+                        marginLeft: "20px",
+                      }}
+                      error={phoneError}
+                      helperText={phoneError && "Cannot be Empty"}
                       label="Phone Number"
                       type="number"
                       variant="standard"
                       required
                       value={phone}
+                      onBlur={(event) => {
+                        if (event.target.value.length <= 0) {
+                          setPhoneError(true);
+                        } else {
+                          setPhoneError(false);
+                        }
+                      }}
                       onChange={(event) => {
                         console.log(event.target.value);
                         setPhone(event.target.value);
+                        if (event.target.value.length <= 0) {
+                          setPhoneError(false);
+                        }
                       }}
                     />
                   </GridItem>

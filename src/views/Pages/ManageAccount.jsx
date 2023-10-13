@@ -423,6 +423,12 @@ class ManageAccount extends React.Component {
     this.getExistingUserList();
   };
 
+  componentDidUpdate = ()=>{
+    // console.log(this.state.phone);
+    // document.getElementById("standard-number").value = this.state.phone;
+    console.log(this.state.countryCode)
+  }
+
   handleNegativeButton = () => {
     this.setState({
       confirmationModal: false,
@@ -455,8 +461,9 @@ class ManageAccount extends React.Component {
     } else {
       const user = res.data;
       let countryCode = user.phoneNumber && user.phoneNumber.slice(0, -10);
-      let phone =
-        user.phoneNumber && user.phoneNumber.slice(countryCode.length);
+      console.log(user.phoneNumber, "CountryCode");
+      console.log(countryCode, "CountryCode");
+      let phone = user.phoneNumber && user.phoneNumber.slice(countryCode.length);
       this.setState({
         firstName: user.firstName,
         lastName: user.lastName,
@@ -467,7 +474,7 @@ class ManageAccount extends React.Component {
         kycStatus: user.kycStatus,
         customerId: user.customerId,
         countryCode: countryCode,
-        phone: user.phoneNumber,
+        phone: phone,
         subscribedPlanName: user.subscribedPlanName,
         subscribedPlanId: user.subscribedPlanId,
         volumeDesc: user.volumeDesc,
@@ -1210,8 +1217,7 @@ class ManageAccount extends React.Component {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       companyName: this.state.companyName,
-      phoneNumber:
-        this.state.countryCode + this.state.phone,
+      phoneNumber: this.state.countryCode + this.state.phone,
       username: this.state.email,
       currentPassword:
         this.state.currentPassword !== "" ? this.state.currentPassword : null,
@@ -1948,6 +1954,7 @@ class ManageAccount extends React.Component {
                             >
                               Country Code*
                             </InputLabel>
+                            {console.log(this.state.countryCode)}
                             <Select
                               MenuProps={{
                                 className: classes.selectMenu,
@@ -2022,17 +2029,22 @@ class ManageAccount extends React.Component {
                             /> */}
                           <TextField
                             id="standard-number"
-                            error={!this.state.phone}
-                            helperText={!this.state.phone && "Cannot be Empty"}
+                            error={!this.state.phone || this.state.phone.length < 10}
+                            style={{
+                              width: "100%",
+                              marginTop: "9px",
+                              marginLeft: "20px",
+                            }}
+                            helperText={(!this.state.phone && "Cannot be Empty") || (this.state.phone.length < 10 && "Phone number should be 10 numbers")}
                             label="Phone Number"
                             type="number"
                             variant="standard"
                             required
-                            value={this.state.phone}
+                            value={this.state.phone.toString().replace(/\D/g, '')}
                             onChange={(event) => {
                               console.log(event.target.value);
                               // setPhone(event.target.value);
-                              this.setState({phone:event.target.value})
+                              this.setState({ phone: event.target.value });
                             }}
                           />
                           {/* <CustomInput

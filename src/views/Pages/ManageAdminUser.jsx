@@ -396,7 +396,7 @@ class ManageAdminUser extends React.Component {
         closeModal: true,
         showAdminUserModal: false,
         noticeModal: true,
-        noticeModalErrMsg: ""
+        noticeModalErrMsg: "Admin Added Successfully"
       });
     }
   };

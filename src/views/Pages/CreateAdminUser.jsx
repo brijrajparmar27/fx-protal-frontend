@@ -35,6 +35,7 @@ import CustomNumberFormat from "components/CustomNumberFormat/CustomNumberFormat
 import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
 import signupPageStyle from "assets/jss/material-dashboard-pro-react/views/signupPageStyle";
 import customInputStyle from "assets/jss/material-dashboard-pro-react/components/customInputStyle.jsx";
+import TextField from "@mui/material/TextField";
 
 const style = (theme) => ({
   ...signupPageStyle,
@@ -188,6 +189,7 @@ class CreateAdminUser extends React.Component {
   };
 
   submit = () => {
+    console.log("submit");
     if (this.isValidated()) {
       const user = {
         firstName: this.state.firstName,
@@ -212,7 +214,7 @@ class CreateAdminUser extends React.Component {
       this.state.lastNameState === "success" &&
       this.state.emailState === "success" &&
       this.state.callingCodeState === "success" &&
-      this.state.phoneNumberState === "success" &&
+      // this.state.phoneNumberState === "success" &&
       this.state.roleState === "success" &&
       this.state.passwordState === "success" &&
       this.state.passwordConfirmationState === "success"
@@ -231,9 +233,9 @@ class CreateAdminUser extends React.Component {
       if (this.state.callingCodeState !== "success") {
         this.setState({ callingCodeState: "error" });
       }
-      if (this.state.phoneNumberState !== "success") {
-        this.setState({ phoneNumberState: "error" });
-      }
+      // if (this.state.phoneNumberState !== "success") {
+      //   this.setState({ phoneNumberState: "error" });
+      // }
       if (this.state.roleState !== "success") {
         this.setState({ roleState: "error" });
       }
@@ -604,19 +606,7 @@ class CreateAdminUser extends React.Component {
                       md={10}
                       lg={5}
                     >
-                      <FormHelperText
-                        style={{
-                          backgroundColor: "white",
-                          paddingTop: 5,
-                          marginTop: 0,
-                          textAlign: "left",
-                        }}
-                        success={this.state.phoneNumberState === "success"}
-                        error={this.state.phoneNumberState === "error"}
-                      >
-                        Phone Number*
-                      </FormHelperText>
-                      <CustomInput
+                      {/* <CustomInput
                         success={this.state.phoneNumberState === "success"}
                         error={this.state.phoneNumberState === "error"}
                         helptext={
@@ -653,6 +643,33 @@ class CreateAdminUser extends React.Component {
                               ]);
                             }
                           },
+                        }}
+                      /> */}
+                      <TextField
+                        id="standard-number"
+                        style={{
+                          width: "100%",
+                          marginTop: "28px",
+                          marginLeft: "5px",
+                        }}
+                        error={
+                          !this.state.phoneNumber || this.state.phoneNumber.length < 10
+                        }
+                        helperText={
+                          (!this.state.phoneNumber && "Cannot be Empty") ||
+                          (this.state.phoneNumber.length < 10 &&
+                            "Phone number should be 10 numbers")
+                        }
+                        label="Phone Number"
+                        type="number"
+                        variant="standard"
+                        required
+                        onChange={(event) => {
+                          console.log(event.target.value);
+                          // setPhone(event.target.value);
+                          this.setState({
+                            phoneNumber: event.target.value,
+                          });
                         }}
                       />
                     </GridItem>

@@ -305,7 +305,7 @@ class InviteUserPage extends React.Component {
   handleCallingCode = (event) => {
     let obj = event.target.value;
     console.log(obj);
-    this.setState({ [event.target.name]: obj});
+    this.setState({ [event.target.name]: obj });
     this.setState(
       validate(
         obj,
@@ -663,7 +663,7 @@ class InviteUserPage extends React.Component {
                     <GridItem xs={12} sm={12} md={6} lg={6}>
                       <GridContainer spacing={1} alignItems="center">
                         <GridItem className={classes.textIcon}>
-                          {/* <Phone className={classes.inputAdornmentIcon} /> */}
+                          <Phone className={classes.inputAdornmentIcon} />
                         </GridItem>
                         <GridItem
                           className={classes.customText}
@@ -674,8 +674,13 @@ class InviteUserPage extends React.Component {
                         >
                           <TextField
                             id="standard-number"
-                            error={!this.state.phone}
-                            helperText={!this.state.phone && "Cannot be Empty"}
+                            style={{
+                              width: "100%",
+                              marginTop: "15px",
+                              marginLeft: "5px",
+                            }}
+                            error={!this.state.phone || this.state.phone.length < 10}
+                            helperText={(!this.state.phone && "Cannot be Empty") || (this.state.phone.length < 10 && "Phone number should be 10 numbers")}
                             label="Phone Number"
                             type="number"
                             variant="standard"
