@@ -69,13 +69,13 @@ import { formatMoney, formatDate } from "../../utils/Utils";
 
 import {
   cardTitle,
-  roseColor
+  roseColor,
 } from "assets/jss/material-dashboard-pro-react.jsx";
 import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
 import regularFormsStyle from "assets/jss/material-dashboard-pro-react/views/regularFormsStyle";
 import { apiHandler } from "api";
 import { endpoint } from "api/endpoint";
-const styles = theme => ({
+const styles = (theme) => ({
   ellipses: {
     overflow: "hidden",
     whiteSpace: "nowrap",
@@ -87,42 +87,42 @@ const styles = theme => ({
     fontSize: "1.2em",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', 'sans-serif'",
     fontWeight: 300,
-    lineHeight: 1.42857143
+    lineHeight: 1.42857143,
   },
   infoText: {
     fontWeight: "300",
     margin: "10px 0 30px",
-    textAlign: "center"
+    textAlign: "center",
   },
   title: {
     color: "black",
     position: "absolute",
     marginLeft: 20,
-    marginTop: 20
+    marginTop: 20,
   },
   cardTitle,
   cardTitleWhite: {
     ...cardTitle,
     color: "#FFFFFF",
-    marginTop: "0"
+    marginTop: "0",
   },
   cardCategoryWhite: {
     margin: "0",
     color: "rgba(255, 255, 255, 0.8)",
-    fontSize: ".875rem"
+    fontSize: ".875rem",
   },
   cardCategory: {
     color: "#999999",
-    marginTop: "10px"
+    marginTop: "10px",
   },
   filterInput: {
-    top: -20
+    top: -20,
   },
   closeButton: {
     position: "absolute",
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500]
+    color: theme.palette.grey[500],
   },
   linkButton: {
     backgroundColor: "transparent",
@@ -133,11 +133,11 @@ const styles = theme => ({
     margin: 0,
     padding: 0,
     "&:hover": {
-      textDecoration: "none"
+      textDecoration: "none",
     },
     "&:focus": {
-      textDecoration: "none"
-    }
+      textDecoration: "none",
+    },
   },
 
   // icon: {
@@ -158,7 +158,7 @@ const styles = theme => ({
   //   }
   // },
   iconRose: {
-    color: roseColor
+    color: roseColor,
   },
   icon: {
     //marginTop: "-3px",
@@ -171,81 +171,81 @@ const styles = theme => ({
     verticalAlign: "middle",
     display: "inline-block",
     color: "black",
-    borderRadius: 3
+    borderRadius: 3,
   },
   editIcon: {
     backgroundColor: "#4CAF50",
     color: "white",
-    padding: 3
+    padding: 3,
   },
   closeIcon: {
     backgroundColor: "#F44336",
     color: "white",
-    padding: 3
+    padding: 3,
   },
   editKycIcon: {
     backgroundColor: "#4CAF50",
     color: "white",
-    padding: 3
+    padding: 3,
   },
   closeKycIcon: {
     backgroundColor: "#F44336",
     color: "white",
-    padding: 3
+    padding: 3,
   },
   editSanctionIcon: {
     backgroundColor: "#F44336",
     color: "white",
-    padding: 3
+    padding: 3,
   },
   closeSanctionIcon: {
     backgroundColor: "#4CAF50",
     color: "white",
-    padding: 3
+    padding: 3,
   },
   errorIcon: {
-    color: "#F44336"
+    color: "#F44336",
   },
   addIcon: {
-    color: "#4CAF50"
+    color: "#4CAF50",
   },
   infoIcon: {
-    color: "#dfa52b"
+    color: "#dfa52b",
   },
   marginTop30: {
-    marginTop: "30px"
+    marginTop: "30px",
   },
   testimonialIcon: {
     marginTop: "30px",
     "& svg": {
       width: "40px",
-      height: "40px"
-    }
+      height: "40px",
+    },
   },
   input: {
     backgroundColor: "black",
     borderRadius: 4,
-    color: "white"
+    color: "white",
   },
   inputGrey: {
     backgroundColor: "#EEEAEB",
     borderRadius: 4,
-    color: "white"
+    color: "white",
   },
   labelRootInfo: {
     fontSize: "x-small",
     textAlign: "right",
-    marginLeft: -46
+    marginLeft: -46,
   },
   info: {
     display: "inline-block",
     verticalAlign: "middle",
     fontSize: 14,
-    marginRight: 5
+    marginRight: 5,
   },
   cardTestimonialDescription: {
     fontStyle: "italic",
-    color: "#999999"
+    color: "#999999",
   },
   listItemIcon: {
     marginTop: "-3px",
@@ -256,86 +256,86 @@ const styles = theme => ({
     height: "20px",
     verticalAlign: "middle",
     color: "inherit",
-    display: "inline-block"
+    display: "inline-block",
   },
   filledSelect: {
     backgroundColor: "grey",
-    color: "white !important"
+    color: "white !important",
   },
   white: {
-    color: "white"
+    color: "white",
   },
   selectDropDown: {
     backgroundColor: "#999999",
     paddingTop: 0,
-    color: "white"
+    color: "white",
   },
   helperText: {
     backgroundColor: "white",
     paddingTop: 5,
     marginTop: 0,
-    textAlign: "right"
+    textAlign: "right",
   },
   headerLabel: {
     color: "rgb(60,72,87)",
-    fontWeight: 300
+    fontWeight: 300,
   },
   clientsCardLabel: {
     color: "#AAAAAA !important",
     fontSize: 14,
     fontFamily: "'Roboto', 'Helvetica', 'Arial', 'sans-serif'",
     fontWeight: 400,
-    lineHeight: 1.42857
+    lineHeight: 1.42857,
   },
   kyc_label: {
     color: "#95c440",
-    textAlign: "end"
+    textAlign: "end",
   },
   kyc_ellipses: {
     marginLeft: 10,
     color: "green",
     fontSize: 15,
-    fontWeight: 400
+    fontWeight: 400,
   },
   ...customSelectStyle,
-  ...regularFormsStyle
+  ...regularFormsStyle,
 });
 
 class RiskUserInfoPage extends React.Component {
   error = {
     firstNameErrorMsg: {
       required: "First name is required",
-      range: "First name should be 1 to 100 characters"
+      range: "First name should be 1 to 100 characters",
     },
     lastNameErrorMsg: {
       required: "Last name is required",
-      range: "Last name should be 1 to 100 characters"
+      range: "Last name should be 1 to 100 characters",
     },
     emailErrorMsg: {
       required: "Email is required",
       company: "Please enter a company email",
-      valid: "Please enter a valid email"
+      valid: "Please enter a valid email",
     },
     phoneNumberErrorMsg: {
       required: "Phone number is required",
-      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)"
+      valid: "Please enter phone number in a valid format (xxx-xxx-xxxx)",
     },
     companyNameErrorMsg: {
       required: "Company name is required",
-      valid: "Please enter a valid company name"
+      valid: "Please enter a valid company name",
     },
     currentPasswordErrorMsg: {
-      required: "Current Password is required"
+      required: "Current Password is required",
     },
     newPasswordErrorMsg: {
-      required: "New Password is required"
+      required: "New Password is required",
     },
     confirmNewPasswordErrorMsg: {
-      required: "New Password Confirmation is required"
+      required: "New Password Confirmation is required",
     },
     queryErrorMsg: {
-      required: "KYC Change Message is required"
-    }
+      required: "KYC Change Message is required",
+    },
   };
   constructor(props) {
     super(props);
@@ -363,26 +363,26 @@ class RiskUserInfoPage extends React.Component {
         {
           id: 1,
           date: "25 MAY 2020",
-          summary: "Customer Status Changed"
+          summary: "Customer Status Changed",
         },
         {
           id: 2,
           date: "26 MAY 2020",
           summary: "KYC Status Updated",
-          link: "dummy.doc"
+          link: "dummy.doc",
         },
         {
           id: 3,
           date: "27 MAY 2020",
           summary: "Customer Meeting",
-          link: "dummy2.doc"
-        }
+          link: "dummy2.doc",
+        },
       ],
       activityColumns: [
         "Date of Entry ",
         "Type",
         "Brief Summary",
-        "Any Attachment?"
+        "Any Attachment?",
       ],
       activityData: [],
       selectedActivityData: [],
@@ -400,7 +400,7 @@ class RiskUserInfoPage extends React.Component {
       confirmationModalHeader: "",
       confirmationModalMsg: "",
       handlePositiveFunctionName: undefined,
-      eventId: -1
+      eventId: -1,
     };
   }
   rulesList = {
@@ -410,9 +410,9 @@ class RiskUserInfoPage extends React.Component {
         type: "length",
         params: {
           min: 1,
-          max: 100
-        }
-      }
+          max: 100,
+        },
+      },
     ],
     lastName: [
       { type: "required" },
@@ -420,9 +420,9 @@ class RiskUserInfoPage extends React.Component {
         type: "length",
         params: {
           min: 1,
-          max: 100
-        }
-      }
+          max: 100,
+        },
+      },
     ],
     email: [{ type: "required" }, { type: "email" }],
     phoneNumber: [{ type: "required" }, { type: "phone" }],
@@ -431,7 +431,7 @@ class RiskUserInfoPage extends React.Component {
     countryCode: [{ type: "required" }],
     currentPassword: [{ type: "required" }],
     newPassword: [{ type: "required" }],
-    confirmNewPassword: [{ type: "required" }]
+    confirmNewPassword: [{ type: "required" }],
   };
 
   componentDidMount = () => {
@@ -441,7 +441,7 @@ class RiskUserInfoPage extends React.Component {
     this.setState({
       noticeModal: false,
       noticeModalHeader: "",
-      noticeModalErrMsg: ""
+      noticeModalErrMsg: "",
     });
   };
   handleNegativeButton = () => {
@@ -451,11 +451,13 @@ class RiskUserInfoPage extends React.Component {
       confirmationModalHeader: "",
       confirmationModalMsg: "",
       handlePositiveFunctionName: undefined,
-      eventId: -1
+      eventId: -1,
     });
   };
   getCountryList = async () => {
-    const res = await axios.get(endpoint.BASE_URL_STAGING_AXIOS + 'fx-crm/public/countriesMetaData');
+    const res = await axios.get(
+      endpoint.BASE_URL_STAGING_AXIOS + "fx-crm/public/countriesMetaData"
+    );
     //   res => {
     let countries = res.data.countryMetaData;
     this.setState({ countries: countries }, () => {
@@ -468,7 +470,7 @@ class RiskUserInfoPage extends React.Component {
       this.setState({ callInProgress: true });
       const res = await apiHandler({
         url: endpoint.RISK_ADMIN_USERS_LIST,
-        authToken: sessionStorage.getItem("token")
+        authToken: sessionStorage.getItem("token"),
       });
       if (res.data.errorCode) {
         if (res.data.errorCode === 401) {
@@ -481,87 +483,94 @@ class RiskUserInfoPage extends React.Component {
           this.setState({
             noticeModal: true,
             noticeModalHeader: "Error",
-            noticeModalErrMsg: res.data.userDesc
+            noticeModalErrMsg: res.data.userDesc,
           });
         }
       } else {
-        const user = res.data.users.filter(u => u.prospectId == match.params.customerId);
+        const user = res.data.users.filter(
+          (u) => u.prospectId == match.params.customerId
+        );
         if (user[0]) {
-            this.setState({
-                callInProgress: false,
-                customerName: user[0].name,
-                customerId: user[0].prospectId,
-                customerStatus: user[0].status,
-                hiredPlan: user[0].planName,
-                hiredPlanId: user[0].hiredPlanId,
-                customerEmail: user[0].email,
-                createDate: user[0].startDate,
-                expiryDate: user[0].expiryDate,
-            }, () => {
+          this.setState(
+            {
+              callInProgress: false,
+              customerName: user[0].name,
+              customerId: user[0].prospectId,
+              customerStatus: user[0].status,
+              hiredPlan: user[0].planName,
+              hiredPlanId: user[0].hiredPlanId,
+              customerEmail: user[0].email,
+              createDate: user[0].startDate,
+              expiryDate: user[0].expiryDate,
+            },
+            () => {
               this.getRiskPlanUserList(user[0].email);
               this.getRiskUserInfo(user[0].email);
               this.getCustomerActivityDetails(user[0].prospectId);
-            });
+            }
+          );
         }
       }
     }
   };
   getRiskUserInfo = async (userEmail) => {
     const res = await apiHandler({
-      method: 'GET',
+      method: "GET",
       url: endpoint.RISK_ADMIN_USERS_INFO + encodeURIComponent(userEmail),
-      authToken: sessionStorage.getItem('token'),
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
-        console.log('Unauthorized Access');
-        this.props.history.push('/home/logout');
+        console.log("Unauthorized Access");
+        this.props.history.push("/home/logout");
         return;
       } else {
         this.setState({
           noticeModal: true,
-          noticeModalHeader: 'Error',
+          noticeModalHeader: "Error",
           noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
       console.log(res.data);
       let country = "";
-      const selCountry = this.state.countries.filter(c => c.countryCode === res.data.countryCode);
+      const selCountry = this.state.countries.filter(
+        (c) => c.countryCode === res.data.countryCode
+      );
       if (selCountry.length > 0) {
-        country = selCountry[0].countryName
+        country = selCountry[0].countryName;
       }
-      this.setState({userInfo: { ...res.data, country: country } });
+      this.setState({ userInfo: { ...res.data, country: country } });
     }
   };
   getRiskPlanUserList = async (userEmail) => {
     const res = await apiHandler({
-      method: 'GET',
+      method: "GET",
       url: endpoint.RISK_CLIENT_USERS_LIST + userEmail,
-      authToken: sessionStorage.getItem('token'),
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
-        console.log('Unauthorized Access');
-        this.props.history.push('/home/logout');
+        console.log("Unauthorized Access");
+        this.props.history.push("/home/logout");
         return;
       } else {
         this.setState({
           noticeModal: true,
-          noticeModalHeader: 'Error',
+          noticeModalHeader: "Error",
           noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
-      console.log(res.data);      
-      this.setState({customerUsers: [ ...res.data.customerUsers ] });
+      console.log(res.data);
+      this.setState({ customerUsers: [...res.data.customerUsers] });
     }
   };
-  getCustomerSettings = async customerId => {
+  getCustomerSettings = async (customerId) => {
     this.setState({ callInProgress: true });
     const res = await apiHandler({
       url: endpoint.ADMIN_CUSTOMER_SETTINGS + "?customerId=" + customerId,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
@@ -574,7 +583,7 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           noticeModal: true,
           noticeModalHeader: "Error",
-          noticeModalErrMsg: res.data.userDesc
+          noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
@@ -592,15 +601,15 @@ class RiskUserInfoPage extends React.Component {
       }
       this.setState({
         callInProgress: false,
-        settings: settings
+        settings: settings,
       });
     }
   };
-  handleRiskToggle = event => {
-    if (event.target.id === 'checkbox_0') {
+  handleRiskToggle = (event) => {
+    if (event.target.id === "checkbox_0") {
       this.setState({
         noticeModal: true,
-        noticeModalHeader: 'Error',
+        noticeModalHeader: "Error",
         noticeModalErrMsg: "Main User cannot be Disabled",
       });
     } else {
@@ -613,22 +622,22 @@ class RiskUserInfoPage extends React.Component {
           ? "Are you sure you want to Enable the User"
           : "Are you sure you want to Disable the User",
         handlePositiveFunctionName: "toggleActionConfirm",
-        eventId: event.target.id
+        eventId: event.target.id,
       });
     }
   };
   toggleActionConfirm = async () => {
     // console.log("user account enable");
     let id = this.state.eventId;
-    let index = id.lastIndexOf('_');
+    let index = id.lastIndexOf("_");
     if (index !== -1) {
       id = id.substring(index + 1, id.length);
     }
     // let enabledState = this.state.enableUserList;
     this.setState({
       confirmationModal: false,
-      confirmationModalHeader: '',
-      confirmationModalMsg: '',
+      confirmationModalHeader: "",
+      confirmationModalMsg: "",
       handlePositiveFunctionName: undefined,
       eventId: -1,
     });
@@ -637,36 +646,39 @@ class RiskUserInfoPage extends React.Component {
       return u.id.toString() === id.toString();
     });
     // if (enabledState[id]) {
-      // Deactivate User
-      const res = await apiHandler({
-        method: 'PUT',
-        url: endpoint.RISK_CLIENT_USERS_ENABLE_DISABLE,
-        authToken: sessionStorage.getItem('token'),
-        data: {
-          enabled: !user[0].enabled,
-          id: id
-        }
-      });
-      if (res.data.errorCode) {
-        if (res.data.errorCode === 401) {
-          console.log('Unauthorized Access');
-          this.props.history.push('/home/logout');
-          return;
-        } else {
-          return;
-        }
+    // Deactivate User
+    const res = await apiHandler({
+      method: "PUT",
+      url: endpoint.RISK_CLIENT_USERS_ENABLE_DISABLE,
+      authToken: sessionStorage.getItem("token"),
+      data: {
+        enabled: !user[0].enabled,
+        id: id,
+      },
+    });
+    if (res.data.errorCode) {
+      if (res.data.errorCode === 401) {
+        console.log("Unauthorized Access");
+        this.props.history.push("/home/logout");
+        return;
       } else {
-        this.getRiskPlanUserList(this.state.customerEmail);
+        return;
       }
+    } else {
+      this.getRiskPlanUserList(this.state.customerEmail);
+    }
   };
 
   /**************** CUSTOMER ACTIVITY START ****************/
-  getCustomerActivityDetails = async customerId => {
+  getCustomerActivityDetails = async (customerId) => {
     this.setState({ callInProgress: true });
     const res = await apiHandler({
       url:
-        endpoint.ADMIN_CUSTOMER_DUEDILIGENCE_FIND + "?customerId=" + customerId + "&prospect=true",
-      authToken: sessionStorage.getItem("token")
+        endpoint.ADMIN_CUSTOMER_DUEDILIGENCE_FIND +
+        "?customerId=" +
+        customerId +
+        "&prospect=true",
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
@@ -679,7 +691,7 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           noticeModal: true,
           noticeModalHeader: "Error",
-          noticeModalErrMsg: res.data.userDesc
+          noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
@@ -687,7 +699,7 @@ class RiskUserInfoPage extends React.Component {
       let fileList = [];
       activities &&
         activities.items &&
-        activities.items.forEach(fileObj => {
+        activities.items.forEach((fileObj) => {
           fileList.push([
             fileObj.type + "_" + fileObj.id,
             formatDate(fileObj.reportDate),
@@ -695,7 +707,7 @@ class RiskUserInfoPage extends React.Component {
             this.getActivityReason(fileObj.reason),
             fileObj.documentLinks && fileObj.documentLinks.length > 0
               ? this.getDocumentLink(fileObj.documentLinks[0])
-              : ""
+              : "",
           ]);
         });
       let selectedList = fileList.slice(0, this.state.activityRecordsPerPage);
@@ -703,23 +715,32 @@ class RiskUserInfoPage extends React.Component {
         callInProgress: false,
         activityData: fileList,
         selectedActivityData: selectedList,
-        activityPageIndex: 1
+        activityPageIndex: 1,
       });
     }
   };
   getActivityReason = (str) => {
     return (
-      <div style={{ maxWidth: 100, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{str}</div>
-    )
+      <div
+        style={{
+          maxWidth: 100,
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+      >
+        {str}
+      </div>
+    );
   };
-  addCustomerActivity = async record => {
-    record = {...record, prospect: true};
+  addCustomerActivity = async (record) => {
+    record = { ...record, prospect: true };
     //ADMIN_CUSTOMER_DUEDILIGENCE_CREATE
     const res = await apiHandler({
       method: "POST",
       url: endpoint.ADMIN_CUSTOMER_DUEDILIGENCE_CREATE,
       data: record,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
@@ -732,14 +753,14 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           noticeModal: true,
           noticeModalHeader: "Error",
-          noticeModalErrMsg: res.data.userDesc
+          noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
       this.getCustomerActivityDetails(record.customerId);
     }
   };
-  activityTableRowClick = async selectedID => {
+  activityTableRowClick = async (selectedID) => {
     let index = selectedID.lastIndexOf("_");
 
     const type = selectedID.substring(0, index);
@@ -748,7 +769,7 @@ class RiskUserInfoPage extends React.Component {
     let query = "?prospect=true&id=" + ID + "&type=" + type;
     const res = await apiHandler({
       url: endpoint.ADMIN_CUSTOMER_DUEDILIGENCE_GET + query,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
@@ -761,13 +782,13 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           noticeModal: true,
           noticeModalHeader: "Error",
-          noticeModalErrMsg: res.data.userDesc
+          noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
       this.setState({
         showCustomerActivityRecord: true,
-        customerActivityDetails: res.data
+        customerActivityDetails: res.data,
       });
     }
   };
@@ -781,17 +802,17 @@ class RiskUserInfoPage extends React.Component {
       if (index + 1 === this.state.activityPageIndex) {
         pageArray.push({
           text: `${index + 1}`,
-          active: true
+          active: true,
         });
       } else {
         pageArray.push({
-          text: `${index + 1}`
+          text: `${index + 1}`,
         });
       }
     });
     return pageArray;
   };
-  getActivityPageData = event => {
+  getActivityPageData = (event) => {
     let pageIndex = 0;
     let pageCount = Math.ceil(
       this.state.activityData.length / this.state.activityRecordsPerPage
@@ -822,7 +843,7 @@ class RiskUserInfoPage extends React.Component {
     );
     this.setState({
       activityPageIndex: pageIndex,
-      selectedActivityData: selectedList
+      selectedActivityData: selectedList,
     });
   };
   closeCreateActivityDialog = () => {
@@ -831,7 +852,7 @@ class RiskUserInfoPage extends React.Component {
   closeCustomerActivityDetailsModal = () => {
     this.setState({
       showCustomerActivityRecord: false,
-      customerActivityDetails: {}
+      customerActivityDetails: {},
     });
   };
   /**************** CUSTOMER ACTIVITY ENDS  ****************/
@@ -844,13 +865,13 @@ class RiskUserInfoPage extends React.Component {
             className={this.props.classes.center}
             classes={{
               root: this.props.classes.checkboxLabelControl,
-              label: this.props.classes.checkboxLabel
+              label: this.props.classes.checkboxLabel,
             }}
             control={
               <Switch
                 color="primary"
                 tabIndex={-1}
-                id={'checkbox_' + id}
+                id={"checkbox_" + id}
                 onChange={this.handleRiskToggle}
                 checked={enabled}
               />
@@ -867,26 +888,28 @@ class RiskUserInfoPage extends React.Component {
     //   this.state.phoneNumber,
     //   fillButtons()
     // ]] : [];
-    let users = [[
-      0,
-      this.state.customerEmail,
-      this.state.customerName,
-      this.state.userInfo && this.state.userInfo.phoneNumber ? this.state.userInfo.phoneNumber : "",
-      fillButtons(0, true)
-    ]];
+    let users = [
+      [
+        0,
+        this.state.customerEmail,
+        this.state.customerName,
+        this.state.userInfo && this.state.userInfo.phoneNumber
+          ? this.state.userInfo.phoneNumber
+          : "",
+        fillButtons(0, true),
+      ],
+    ];
     this.state.customerUsers &&
-      this.state.customerUsers.forEach(userRow => {
+      this.state.customerUsers.forEach((userRow) => {
         if (userRow.id) {
           let user = [
             userRow.id,
             userRow.email,
-            (userRow.firstName
-              ? userRow.firstName
-              : "") + " " + (userRow.lastName
-              ? userRow.lastName
-              : ""),
+            (userRow.firstName ? userRow.firstName : "") +
+              " " +
+              (userRow.lastName ? userRow.lastName : ""),
             userRow.phoneNumber,
-            fillButtons(userRow.id, userRow.enabled)
+            fillButtons(userRow.id, userRow.enabled),
           ];
           users.push(user);
         }
@@ -906,7 +929,7 @@ class RiskUserInfoPage extends React.Component {
     this.setState(validate(value, stateName, this.state, rules, this.error));
   };
 
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
     this.setState({ [name]: event.target.value });
   };
 
@@ -914,7 +937,7 @@ class RiskUserInfoPage extends React.Component {
     this.setState({ isDealExecuted: false });
   };
 
-  handleSimple = event => {
+  handleSimple = (event) => {
     this.setState({ countryCode: event.target.value });
     this.change(event, "countryCode", [{ type: "required" }]);
   };
@@ -933,14 +956,14 @@ class RiskUserInfoPage extends React.Component {
 
   inviteUser = async () => {
     const data = {
-      email: this.state.inviteEmail
+      email: this.state.inviteEmail,
     };
     this.setState({ callInProgress: true });
     const res = await apiHandler({
       method: "POST",
       url: endpoint.ADMIN_CUSTOMER_USER_RESGISTER,
       data: data,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     this.setState({ callInProgress: false, inviteEmail: "" });
     if (res.data.errorCode) {
@@ -952,19 +975,19 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           noticeModal: true,
           noticeModalHeader: "Error",
-          noticeModalErrMsg: res.data.userDesc
+          noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
       this.setState({
         noticeModal: true,
         noticeModalHeader: "Success",
-        noticeModalErrMsg: "Invitation Email is sent to user"
+        noticeModalErrMsg: "Invitation Email is sent to user",
       });
     }
   };
 
-  getClientStatusButton = status => {
+  getClientStatusButton = (status) => {
     // console.log(status);
     if (!status) return;
     if (
@@ -978,7 +1001,7 @@ class RiskUserInfoPage extends React.Component {
             fontSize: 20,
             borderRadius: 10,
             padding: "0.40625rem 0.7rem",
-            backgroundColor: "#95c440"
+            backgroundColor: "#95c440",
           }}
         >
           {status} <CheckCircleOutlineOutlinedIcon style={{ marginLeft: 10 }} />
@@ -992,7 +1015,7 @@ class RiskUserInfoPage extends React.Component {
             fontSize: 20,
             borderRadius: 10,
             padding: "0.40625rem 0.7rem",
-            backgroundColor: "rgb(223,165,43)"
+            backgroundColor: "rgb(223,165,43)",
           }}
         >
           {status} <AdjustOutlinedIcon style={{ marginLeft: 10 }} />
@@ -1006,7 +1029,7 @@ class RiskUserInfoPage extends React.Component {
           style={{
             fontSize: 20,
             borderRadius: 10,
-            padding: "0.40625rem 0.7rem"
+            padding: "0.40625rem 0.7rem",
           }}
         >
           {status} <CancelOutlinedIcon style={{ marginLeft: 10 }} />
@@ -1015,7 +1038,7 @@ class RiskUserInfoPage extends React.Component {
     }
   };
 
-  getFileIcon = type => {
+  getFileIcon = (type) => {
     if (type.toLowerCase() === "pdf") {
       return <PictureAsPdfIcon />;
     } else if (type.toLowerCase() === "image") {
@@ -1024,22 +1047,22 @@ class RiskUserInfoPage extends React.Component {
       return <DescriptionIcon />;
     }
   };
-  getDocumentLink = link => {
+  getDocumentLink = (link) => {
     return (
       <a href={link} target="_blank" rel="noopener noreferrer">
         Open Link
       </a>
     );
   };
-  handleReportClick = event => {
+  handleReportClick = (event) => {
     this.setState({
-      anchorReportEl: event.currentTarget
+      anchorReportEl: event.currentTarget,
     });
   };
 
   handleMenuClose = () => {
     this.setState({
-      anchorReportEl: null
+      anchorReportEl: null,
     });
   };
 
@@ -1047,7 +1070,7 @@ class RiskUserInfoPage extends React.Component {
     this.setState({ showCustomerSettings: false });
   };
 
-  getPageData = event => {
+  getPageData = (event) => {
     let pageIndex = 0;
     let pageCount = Math.ceil(
       this.state.dealAllData.length / this.state.recordsPerPage
@@ -1077,7 +1100,7 @@ class RiskUserInfoPage extends React.Component {
       pageIndex * this.state.recordsPerPage
     );
     this.setState({
-      dealSelectedData: selectedList
+      dealSelectedData: selectedList,
     });
   };
   getPageDetails = () => {
@@ -1090,11 +1113,11 @@ class RiskUserInfoPage extends React.Component {
       if (index + 1 === this.state.selectedPageIndex) {
         pageArray.push({
           text: `${index + 1}`,
-          active: true
+          active: true,
         });
       } else {
         pageArray.push({
-          text: `${index + 1}`
+          text: `${index + 1}`,
         });
       }
     });
@@ -1110,26 +1133,26 @@ class RiskUserInfoPage extends React.Component {
         color={color}
         size="sm"
         round
-        onClick={event => this.handleStatusTracker(activityId, type, event)}
+        onClick={(event) => this.handleStatusTracker(activityId, type, event)}
       >
         {status}
       </Button>
     );
   };
-  
+
   closeActivityTrackingDetails = () => {
     this.setState({
       activities: null,
-      showActivityTrackingDialog: false
+      showActivityTrackingDialog: false,
     });
   };
   closeChangeStatusDialog = () => {
     this.setState({
       showChangeStatusDialog: false,
-      taskDetails: null
+      taskDetails: null,
     });
   };
-  updateStatus = updatedInfo => {
+  updateStatus = (updatedInfo) => {
     switch (updatedInfo.taskType) {
       case "CLIENT":
         this.changeClientStatus(updatedInfo);
@@ -1144,17 +1167,17 @@ class RiskUserInfoPage extends React.Component {
         break;
     }
   };
-  handleStatusClick = name => {
+  handleStatusClick = (name) => {
     let statusList = [];
     switch (name) {
       case "CLIENT":
         statusList = ["ACTIVE", "PENDING", "DISABLED"].filter(
-          status => status !== this.state.customerStatus
+          (status) => status !== this.state.customerStatus
         );
         break;
       case "KYC":
         statusList = ["APPROVED", "PENDING", "REJECTED"].filter(
-          status => status !== this.state.kycStatus
+          (status) => status !== this.state.kycStatus
         );
         break;
       default:
@@ -1167,16 +1190,16 @@ class RiskUserInfoPage extends React.Component {
       customerId: this.state.customerId,
       customerName: this.state.customerName,
       statusList: statusList,
-      riskLevel: this.state.riskLevel
+      riskLevel: this.state.riskLevel,
     };
 
     this.setState({
       taskDetails: taskDetails,
-      showChangeStatusDialog: true
+      showChangeStatusDialog: true,
     });
   };
 
-  changeClientStatus = async updatedInfo => {
+  changeClientStatus = async (updatedInfo) => {
     const data = {
       customerEmail: this.state.customerEmail,
       customerId: this.state.customerId,
@@ -1185,14 +1208,14 @@ class RiskUserInfoPage extends React.Component {
       reportDate: updatedInfo.reportDate,
       reason: updatedInfo.reason,
       signature: updatedInfo.signature,
-      supportingDocs: updatedInfo.supportingDocs
+      supportingDocs: updatedInfo.supportingDocs,
     };
     this.setState({ callInProgress: true });
     const res = await apiHandler({
       method: "PUT",
       url: endpoint.ADMIN_CUSTOMER_UPDATE_STATUS,
       data: data,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
@@ -1210,7 +1233,7 @@ class RiskUserInfoPage extends React.Component {
           downloadData: [],
           exportedFileName: "FXG Pending Tasks",
           apiData: [],
-          columnSortKey: ""
+          columnSortKey: "",
         });
       }
     } else {
@@ -1219,7 +1242,7 @@ class RiskUserInfoPage extends React.Component {
           customerStatus: updatedInfo.status,
           callInProgress: false,
           taskDetails: {},
-          showChangeStatusDialog: false
+          showChangeStatusDialog: false,
         },
         () => this.getUserInfo()
       );
@@ -1227,7 +1250,7 @@ class RiskUserInfoPage extends React.Component {
     //ADMIN_CUSTOMER_UPDATE_STATUS
   };
 
-  changeKycStatus = async updatedInfo => {
+  changeKycStatus = async (updatedInfo) => {
     const data = {
       customerEmail: this.state.customerEmail,
       customerId: this.state.customerId,
@@ -1236,14 +1259,14 @@ class RiskUserInfoPage extends React.Component {
       reportDate: updatedInfo.reportDate,
       reason: updatedInfo.reason,
       signature: updatedInfo.signature,
-      supportingDocs: updatedInfo.supportingDocs
+      supportingDocs: updatedInfo.supportingDocs,
     };
     this.setState({ callInProgress: true });
     const res = await apiHandler({
       method: "PUT",
       url: endpoint.ADMIN_CUSTOMER_UPDATE_KYC_STATUS,
       data: data,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     if (res.data.errorCode) {
       if (res.data.errorCode === 401) {
@@ -1256,7 +1279,7 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           noticeModal: true,
           noticeModalHeader: "Error",
-          noticeModalErrMsg: res.data.userDesc
+          noticeModalErrMsg: res.data.userDesc,
         });
       }
     } else {
@@ -1265,7 +1288,7 @@ class RiskUserInfoPage extends React.Component {
           kycStatus: updatedInfo.status,
           callInProgress: false,
           taskDetails: {},
-          showChangeStatusDialog: false
+          showChangeStatusDialog: false,
         },
         () => this.getUserInfo()
       );
@@ -1286,7 +1309,7 @@ class RiskUserInfoPage extends React.Component {
         customerId +
         "&kycEntityId=" +
         kycEntityId,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
 
     this.setState({ callInProgress: false });
@@ -1299,29 +1322,29 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           isNoticeModal: true,
           noticeModalHeaderMsg: "Error",
-          noticeModalMsg: res.data.userDesc
+          noticeModalMsg: res.data.userDesc,
         });
       }
     } else {
       this.setState({ showAddCustomer: true, editCustomer: res.data });
     }
   };
-  addCustomer = company => {
+  addCustomer = (company) => {
     // Do Nothing
   };
-  updateCustomer = async company => {
+  updateCustomer = async (company) => {
     console.log(company);
     const addonCompany = {
       customerId: company.customerId,
       additionalCompany: true,
-      ...company
+      ...company,
     };
     this.setState({ callInProgress: true });
     const res = await apiHandler({
       method: "POST",
       url: endpoint.KYC_COMPANY_ONLY,
       data: addonCompany,
-      authToken: sessionStorage.getItem("token")
+      authToken: sessionStorage.getItem("token"),
     });
     this.setState({ callInProgress: false });
     if (res.data.errorCode) {
@@ -1333,7 +1356,7 @@ class RiskUserInfoPage extends React.Component {
         this.setState({
           isNoticeModal: true,
           noticeModalHeaderMsg: "Error",
-          noticeModalMsg: res.data.userDesc
+          noticeModalMsg: res.data.userDesc,
         });
       }
     } else {
@@ -1367,7 +1390,7 @@ class RiskUserInfoPage extends React.Component {
                       width: "200px",
                       float: "right",
                       backgroundColor: "rgb(236, 246, 248)",
-                      color: "grey"
+                      color: "grey",
                     }}
                   >
                     VIEW AS CLIENT
@@ -1384,15 +1407,17 @@ class RiskUserInfoPage extends React.Component {
                     <Card className={classes.clientsCardLabel}>
                       <CardBody>
                         <h4 className={classes.headerLabel}>
-                          <strong>{this.state.userInfo &&
-                                    this.state.userInfo.customerName}</strong>
+                          <strong>
+                            {this.state.userInfo &&
+                              this.state.userInfo.customerName}
+                          </strong>
                         </h4>
                         <p>{this.state.customerEmail}</p>
                         <GridContainer
                           direction="row"
                           style={{
                             borderBottom: "1px solid #d2d2d2",
-                            paddingBottom: 10
+                            paddingBottom: 10,
                           }}
                         >
                           <GridItem
@@ -1402,7 +1427,7 @@ class RiskUserInfoPage extends React.Component {
                             lg={12}
                             style={{
                               textAlign: "left",
-                              marginTop: 15
+                              marginTop: 15,
                             }}
                           >
                             <GridContainer direction="row">
@@ -1425,16 +1450,16 @@ class RiskUserInfoPage extends React.Component {
                             lg={12}
                             style={{
                               textAlign: "left",
-                              marginTop: 15
+                              marginTop: 15,
                             }}
                           >
                             <GridContainer direction="row">
-                              <GridItem xs={12} sm={12} md={12}lg={12}>
+                              <GridItem xs={12} sm={12} md={12} lg={12}>
                                 <span>RISK PLAN</span>
                               </GridItem>
                             </GridContainer>
                             <GridContainer direction="row">
-                            <GridItem xs={12} sm={12} md={12}lg={12}>
+                              <GridItem xs={12} sm={12} md={12} lg={12}>
                                 <span className={classes.ellipses}>
                                   {this.state.hiredPlan}
                                 </span>
@@ -1448,7 +1473,7 @@ class RiskUserInfoPage extends React.Component {
                             lg={12}
                             style={{
                               textAlign: "left",
-                              marginTop: 15
+                              marginTop: 15,
                             }}
                           >
                             <GridContainer direction="row">
@@ -1473,7 +1498,7 @@ class RiskUserInfoPage extends React.Component {
                         <GridContainer
                           direction="row"
                           style={{
-                            paddingBottom: 10
+                            paddingBottom: 10,
                           }}
                         >
                           <GridItem
@@ -1483,7 +1508,7 @@ class RiskUserInfoPage extends React.Component {
                             lg={12}
                             style={{
                               textAlign: "left",
-                              marginTop: 15
+                              marginTop: 15,
                             }}
                           >
                             <GridContainer direction="row">
@@ -1495,14 +1520,14 @@ class RiskUserInfoPage extends React.Component {
                           <GridItem xs={12} sm={12} md={12} lg={12}>
                             <GridContainer direction="row">
                               <GridItem xs={12} sm={12} md={5} lg={5}>
-                              <GridItem
+                                <GridItem
                                   xs={12}
                                   sm={12}
                                   md={12}
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1525,7 +1550,7 @@ class RiskUserInfoPage extends React.Component {
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1549,7 +1574,7 @@ class RiskUserInfoPage extends React.Component {
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1573,7 +1598,7 @@ class RiskUserInfoPage extends React.Component {
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1591,15 +1616,14 @@ class RiskUserInfoPage extends React.Component {
                                 </GridItem>
                               </GridItem>
                               <GridItem xs={12} sm={12} md={7} lg={7}>
-                                
-                              <GridItem
+                                <GridItem
                                   xs={12}
                                   sm={12}
                                   md={12}
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1623,7 +1647,7 @@ class RiskUserInfoPage extends React.Component {
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1647,7 +1671,7 @@ class RiskUserInfoPage extends React.Component {
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1672,7 +1696,7 @@ class RiskUserInfoPage extends React.Component {
                                   lg={12}
                                   style={{
                                     textAlign: "left",
-                                    marginTop: 15
+                                    marginTop: 15,
                                   }}
                                 >
                                   <GridContainer direction="row">
@@ -1701,16 +1725,13 @@ class RiskUserInfoPage extends React.Component {
                         <CardText style={{ backgroundColor: "#95c440" }}>
                           <FolderIcon className={classes.listItemIcon} />
                         </CardText>
-                        <span className={classes.title}>
-                          {" "}
-                          Customer Activity{" "}
-                        </span>
+                        <span className={classes.title}>Customer Activity</span>
                         <Button
                           size="lg"
                           color="info"
                           style={{
                             width: "200px",
-                            float: "right"
+                            float: "right",
                           }}
                           onClick={() => {
                             this.setState({ showCreateCustomerActivity: true });
@@ -1729,7 +1750,7 @@ class RiskUserInfoPage extends React.Component {
                           style={{
                             textAlign: "left",
                             marginTop: 10,
-                            borderBottom: "1px solid #d2d2d2"
+                            borderBottom: "1px solid #d2d2d2",
                           }}
                         >
                           <Table
@@ -1740,13 +1761,13 @@ class RiskUserInfoPage extends React.Component {
                             customCellClasses={[
                               classes.center,
                               classes.right,
-                              classes.right
+                              classes.right,
                             ]}
                             customClassesForCells={[0, 4, 5]}
                             customHeadCellClasses={[
                               classes.center,
                               classes.right,
-                              classes.right
+                              classes.right,
                             ]}
                             customHeadClassesForCells={[0, 4, 5]}
                             onClick={this.activityTableRowClick}
@@ -1760,7 +1781,7 @@ class RiskUserInfoPage extends React.Component {
                         lg={12}
                         style={{
                           textAlign: "right",
-                          borderBottom: "1px solid #d2d2d2"
+                          borderBottom: "1px solid #d2d2d2",
                         }}
                       >
                         <Pagination
@@ -1844,30 +1865,30 @@ class RiskUserInfoPage extends React.Component {
                         </div>
                         {this.state.customerUsers.length > 0 && (
                           <> */}
-                            <GridItem xs={12} sm={12} md={12} lg={12}>
-                              <Table
-                                tableHead={[
-                                  "E-mail",
-                                  "Name",
-                                  "Phone Number",
-                                  "Actions"
-                                ]}
-                                tableData={this.getUserRows()}
-                                customCellClasses={[
-                                  classes.center,
-                                  classes.right,
-                                  classes.right
-                                ]}
-                                customClassesForCells={[0, 4, 5]}
-                                customHeadCellClasses={[
-                                  classes.center,
-                                  classes.right,
-                                  classes.right
-                                ]}
-                                customHeadClassesForCells={[0, 4, 5]}
-                              />
-                            </GridItem>
-                          {/* </>
+                        <GridItem xs={12} sm={12} md={12} lg={12}>
+                          <Table
+                            tableHead={[
+                              "E-mail",
+                              "Name",
+                              "Phone Number",
+                              "Actions",
+                            ]}
+                            tableData={this.getUserRows()}
+                            customCellClasses={[
+                              classes.center,
+                              classes.right,
+                              classes.right,
+                            ]}
+                            customClassesForCells={[0, 4, 5]}
+                            customHeadCellClasses={[
+                              classes.center,
+                              classes.right,
+                              classes.right,
+                            ]}
+                            customHeadClassesForCells={[0, 4, 5]}
+                          />
+                        </GridItem>
+                        {/* </>
                         )} */}
                       </CardBody>
                     </Card>
@@ -1936,7 +1957,7 @@ class RiskUserInfoPage extends React.Component {
 
 RiskUserInfoPage.propTypes = {
   classes: PropTypes.object.isRequired,
-  match: PropTypes.object
+  match: PropTypes.object,
 };
 
 export default withRouter(withStyles(styles)(RiskUserInfoPage));

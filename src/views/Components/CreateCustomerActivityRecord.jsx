@@ -194,9 +194,10 @@ class CreateCustomerActivityRecord extends React.Component {
           noticeModalMsg: res.data.userDesc
         });
       } else {
+        let doclink = JSON.parse(res.data).name
         record = {
           ...record,
-          documentLinks: [res.data.name]
+          documentLinks: [doclink]
         };
         // res.data.path
         this.props.addRecord(record);
